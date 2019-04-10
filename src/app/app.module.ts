@@ -9,6 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import { HomeModule } from './home/home.module';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
@@ -24,6 +25,7 @@ import {AuthModule} from './auth/auth.module';
         AppComponent,        
     ],
     imports: [
+        HomeModule,
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
