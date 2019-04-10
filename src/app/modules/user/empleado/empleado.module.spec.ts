@@ -1,4 +1,5 @@
 import { EmpleadoModule } from './empleado.module';
+import 'jasmine'
 
 describe('EmpleadoModule', () => {
   let empleadoModule: EmpleadoModule;
