@@ -28,7 +28,7 @@ getActuaciones(): Observable<Actuacion[]>{
     * @paramactuacion The new actuacion
     * @returns The actuacion with its new id if it was created, false if it wasn't
     */
-   createBook(actuacion): Observable<Actuacion> {
+   createActuacion(actuacion): Observable<Actuacion> {
     return this.http.post<Actuacion>(API_URL + actuaciones, actuacion);
 }
   /**
@@ -36,7 +36,7 @@ getActuaciones(): Observable<Actuacion[]>{
         * @param book The updated book
         * @returns The updated book
         */
-       updateBook(actuacion): Observable<Actuacion> {
+       updateActuacionk(actuacion): Observable<Actuacion> {
         return this.http.put<Actuacion>(API_URL + actuaciones + '/' + actuacion.fecha, actuacion);
     }
 
@@ -45,7 +45,7 @@ getActuaciones(): Observable<Actuacion[]>{
     * @param actuacionId el id de la actuacion a borrar
     * @returns True if the book was deleted, false otherwise
     */
-   deleteBook(actuacionId): Observable<Actuacion> {
+   deleteActuacion(actuacionId): Observable<Actuacion> {
     return this.http.delete<Actuacion>(API_URL + actuaciones + '/' + actuacionId);
 }
 
