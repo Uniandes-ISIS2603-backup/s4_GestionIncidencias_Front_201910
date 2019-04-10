@@ -1,3 +1,15 @@
-<p>
-  empleado-list works!
-</p>
+<table *ngIf="shows" class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Cedula</th>
+            <th scope="col">usuario</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let empleado of empleados">
+            {{empleado.id}} {{empleado.name}} {{empleado.cedula}} {{empleado.usuario}}
+        </tr>
+    </tbody>
+</table>

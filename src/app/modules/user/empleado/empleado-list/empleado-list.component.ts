@@ -28,6 +28,12 @@ export class EmpleadoListComponent implements OnInit {
    empleados:Empleado[];
 
 
+    /**
+     * Shoy the list of empleados
+     */
+
+   shows: boolean=false;
+
    /**
     * Shows or hides the create component
     */
