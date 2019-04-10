@@ -13,14 +13,6 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
-import { TecnicoComponent } from './components/tecnico/tecnico.component';
-import { UsuarioComponent } from './components/usuario/usuario.component';
-import { ComponentsComponent } from './components/components.component';
-import { EmpleadoComponent } from './components/usuario/empleado/empleado.component';
-import { EmpleadoDetailComponent } from './components/usuario/empleado-detail/empleado-detail.component';
-import { EmpleadoCreateComponent } from './components/usuario/empleado-create/empleado-create.component';
-import { EmpleadoEditComponent } from './components/usuario/empleado-edit/empleado-edit.component';
-import { EmpleadoListComponent } from './components/usuario/empleado-list/empleado-list.component';
 
 
 
@@ -29,15 +21,7 @@ import { EmpleadoListComponent } from './components/usuario/empleado-list/emplea
 
 @NgModule({
     declarations: [
-        AppComponent,
-        TecnicoComponent,
-        UsuarioComponent,
-        ComponentsComponent,
-        EmpleadoComponent,
-        EmpleadoDetailComponent,
-        EmpleadoCreateComponent,
-        EmpleadoEditComponent,
-        EmpleadoListComponent
+        AppComponent,        
     ],
     imports: [
         BrowserModule,
