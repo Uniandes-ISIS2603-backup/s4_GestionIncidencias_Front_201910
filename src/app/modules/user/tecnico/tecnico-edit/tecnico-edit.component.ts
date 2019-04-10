@@ -7,7 +7,6 @@ import { Tecnico } from '../tecnico';
 
 
 
-
 @Component({
   selector: 'app-tecnico-edit',
   templateUrl: './tecnico-edit.component.html',
@@ -26,6 +25,12 @@ export class TecnicoEditComponent implements OnInit {
     ) {}
   
     /**
+     * The tecnico to create
+     */
+  
+    tecnico: Tecnico;
+
+    /**
     * The id of the tecnico that the user wants to edit
     * This is passed as a parameter by the parent component
     */
@@ -43,15 +48,30 @@ export class TecnicoEditComponent implements OnInit {
    */
    @Output() update = new EventEmitter();
   
-   getTecnico: void {
-    this.editorialService.getEditorialDetail(this.editorial_id)
-        .subscribe(editorial => {
-            this.editorial = editorial;
+    /**
+    * Retrieves the information of the tecnico
+    */
+   getTecnico(): void {
+    this.tecnicoService.getTecnico(this.tecnico_id)
+        .subscribe(tecnico => {
+            this.tecnico = tecnico;
         });
-  }
+}
 
+    /**
+    * The function which initializes the component
+    */
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+      this.tecnico= new Tecnico();
+      this.getTecnico();
+    }
+
+      /**
+    * The function which is called every time the user chooses to edit a different tecnico
+    */
+   ngOnChanges() {
+    this.ngOnInit();
+}
 
 }
