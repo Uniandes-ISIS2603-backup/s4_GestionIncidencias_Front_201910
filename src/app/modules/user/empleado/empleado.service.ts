@@ -27,7 +27,7 @@ export class EmpleadoService {
     * Returns the Observable object containing the list of tecnicos retrieved from the API
     * @returns The list of empleados in real time
     */
-    getTecnicos(): Observable<Empleado[]> {
+    getEmpleados(): Observable<Empleado[]> {
      return this.http.get<Empleado[]>(API_URL + empleados);
      }
 
@@ -45,7 +45,7 @@ export class EmpleadoService {
        * @param Empleado The updated empleado
        * @returns The updated empleado
        */
-      updateEmpleado(empleado): Observable<Empleado> {
+      updateEmpleados(empleado): Observable<Empleado> {
        return this.http.put<Empleado>(API_URL + empleados + '/' + empleado.id, empleado);
    }
 
