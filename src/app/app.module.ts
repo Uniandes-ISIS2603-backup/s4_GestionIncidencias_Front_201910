@@ -15,6 +15,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { TecnicoComponent } from './components/tecnico/tecnico.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { ComponentsComponent } from './components/components.component';
 
 
 
@@ -25,7 +26,8 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
     declarations: [
         AppComponent,
         TecnicoComponent,
-        UsuarioComponent
+        UsuarioComponent,
+        ComponentsComponent
     ],
     imports: [
         BrowserModule,
