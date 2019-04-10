@@ -1,20 +1,25 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import { EmpleadoService } from '../empleado.service';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
-
+import { TecnicoService } from '../tecnico.service';
 @Component({
-  selector: 'app-empleado-list',
-  templateUrl: './empleado-list.component.html',
-  styleUrls: ['./empleado-list.component.css']
+  selector: 'app-tecnico-list',
+  templateUrl: './tecnico-list.component.html',
+  styleUrls: ['./tecnico-list.component.css']
 })
-export class EmpleadoListComponent implements OnInit {
-  constructor(
-    private editorialService: EmpleadoService,
+export class TecnicoListComponent implements OnInit {
+
+   /**
+    * Constructor for the component
+    * @param editorialService The author's services provider
+    */
+   constructor(
+    private editorialService: TecnicoService,
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService) {}
+
   ngOnInit() {
   }
 
