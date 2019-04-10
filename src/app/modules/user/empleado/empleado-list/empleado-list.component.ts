@@ -4,7 +4,6 @@ import { EmpleadoService } from '../empleado.service';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 import { Empleado } from '../empleado';
-
 @Component({
   selector: 'app-empleado-list',
   templateUrl: './empleado-list.component.html',
@@ -29,6 +28,21 @@ export class EmpleadoListComponent implements OnInit {
    empleados:Empleado[];
 
 
+   /**
+    * Shows or hides the create component
+    */
+   showCreate: boolean;
+
+   /**
+    * Shows or hides the edit component.
+    */
+   showEdit: boolean;
+
+   /**
+    * The id of the empleado being edited.
+    */
+   empleado_edit_id: number;
+
     /**
     * Asks the service to update the list of empleados
     */
@@ -38,9 +52,20 @@ export class EmpleadoListComponent implements OnInit {
               this.empleados = empleados;
           });
     }
+  
+    updateEmpleado(): void {
+      this.showEdit = false;
+  }
 
-
-  ngOnInit() {
+ 
+  /**
+    * This will initialize the component by retrieving the list of empleados from the service
+    * This method will be called when the component is created
+    */
+     ngOnInit() {
+      this.showCreate = false;
+      this.showEdit = false;
+      this.getEmpleados();
   }
 
 }
