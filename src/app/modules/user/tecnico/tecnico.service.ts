@@ -49,6 +49,14 @@ export class TecnicoService {
     updateTecnico(tecnico): Observable<Tecnico> {
         return this.http.put<Tecnico>(API_URL + tecnicos + '/' + tecnico.id, tecnico);
     }
-
+    
+   /**
+    * Returns the Observable object containing the list of editorials retrieved from the API
+    * @returns The list of books in real time
+    */
+   
+    getTecnico(tecnicoId): Observable<Tecnico> {
+      return this.http.get<Tecnico>(API_URL + tecnicos + '/' + tecnicoId);
+  }
 
 }

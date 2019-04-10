@@ -49,6 +49,9 @@ export class EmpleadoService {
        return this.http.put<Empleado>(API_URL + empleados + '/' + empleado.id, empleado);
    }
 
+   getEmpleado(empleadoId): Observable<Empleado> {
+    return this.http.get<Empleado>(API_URL + empleados + '/' + empleadoId);
+}
 
 
 }
