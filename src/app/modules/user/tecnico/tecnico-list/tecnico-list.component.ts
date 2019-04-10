@@ -1,16 +1,16 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { TecnicoService } from '../tecnico.service';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
-import { TecnicoService } from '../tecnico.service';
 import { Tecnico } from '../tecnico';
+
 @Component({
   selector: 'app-tecnico-list',
   templateUrl: './tecnico-list.component.html',
   styleUrls: ['./tecnico-list.component.css']
 })
 export class TecnicoListComponent implements OnInit {
-
    /**
     * Constructor for the component
     * @param tecnicoService The author's services provider
@@ -20,34 +20,50 @@ export class TecnicoListComponent implements OnInit {
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService) {}
-    
 
-    showCreate:boolean;
-    showEdit:boolean;
-
-    /**
-    * List of tecnicos
+  /**
+    * List of empleados
     */
 
-    tecnicos:Tecnico[];
-   
+   tecnicos:Tecnico[];
+
+  /**
+    * Shows or hides the create component
+    */
+   showCreate: boolean;
+
+   /**
+    * Shows or hides the edit component.
+    */
+   showEdit: boolean;
+
+   /**
+    * The id of the tecnico being edited.
+    */
+   tecnico_edit_id: number;
+
+
     /**
     * Asks the service to update the list of empleados
     */
-   getTecnicos(): void {
-    this.tecnicoService.getTecnicos()
-        .subscribe(tecnicos => {
-            this.tecnicos = tecnicos;
-        });
+     getEmpleados(): void {
+      this.tecnicoService.getTecnicos()
+          .subscribe(tecnicos => {
+              this.tecnicos = tecnicos;
+          });
+    }
+
+    updateTecnico(): void {
+      this.showEdit = false;
   }
 
-      /**
-    * This will initialize the component by retrieving the list of editorials from the service
-    * This method will be called when the component is created
-    */
-   ngOnInit() {
-    this.showCreate = false;
-    this.showEdit = false;
-    this.getTecnicos();
-}
+   /**
+      * This will initialize the component by retrieving the list of empleados from the service
+      * This method will be called when the component is created
+      */
+       ngOnInit() {
+        this.showCreate = false;
+        this.showEdit = false;
+        this.getEmpleados();
+      }
 }
