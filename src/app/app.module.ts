@@ -16,6 +16,7 @@ import {AuthModule} from './auth/auth.module';
 import { TecnicoComponent } from './components/tecnico/tecnico.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ComponentsComponent } from './components/components.component';
+import { EmpleadoComponent } from './components/usuario/empleado/empleado.component';
 
 
 
@@ -27,7 +28,8 @@ import { ComponentsComponent } from './components/components.component';
         AppComponent,
         TecnicoComponent,
         UsuarioComponent,
-        ComponentsComponent
+        ComponentsComponent,
+        EmpleadoComponent
     ],
     imports: [
         BrowserModule,
