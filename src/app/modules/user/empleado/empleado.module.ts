@@ -4,11 +4,12 @@ import { EmpleadoCreateComponent } from './empleado-create/empleado-create.compo
 import { EmpleadoDetailComponent } from './empleado-detail/empleado-detail.component';
 import { EmpleadoEditComponent } from './empleado-edit/empleado-edit.component';
 import { EmpleadoListComponent } from './empleado-list/empleado-list.component';
+import { EmpleadoComponent } from './empleado/empleado.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [EmpleadoCreateComponent, EmpleadoDetailComponent, EmpleadoEditComponent, EmpleadoListComponent]
+  declarations: [EmpleadoCreateComponent, EmpleadoDetailComponent, EmpleadoEditComponent, EmpleadoListComponent, EmpleadoComponent]
 })
 export class EmpleadoModule { }
