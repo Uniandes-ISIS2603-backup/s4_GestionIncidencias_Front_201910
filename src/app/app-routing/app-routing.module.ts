@@ -50,6 +50,15 @@ const routes: Routes = [
             }]
     },
     {
+        path: 'admins',
+        component:EmpleadoListComponent,
+        children: [
+            {
+                path: 'list',
+                component: EmpleadoListComponent
+            }]
+    },
+    {
         path: '**',
         redirectTo: 'home'
     }
