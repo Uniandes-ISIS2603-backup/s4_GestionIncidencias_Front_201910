@@ -16,12 +16,14 @@ import {AuthModule} from './auth/auth.module';
 import { UserModule } from './modules/user/user.module';
 import {equipoComputoModule} from './modules/equipoComputo/equipoComputo.module';
 import { calificacionModule } from './modules/calificacion/calificacion.module';
+import { AdministradorComponent } from './administrador/administrador.component';
 
 
 
 @NgModule({
     declarations: [
-        AppComponent,        
+        AppComponent,
+        AdministradorComponent,        
     ],
     imports: [
         HomeModule,
