@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Actuacion} from './actuacion';
 import {environment} from '../../../environments/environment';
+import {ActuacionDetail} from './actuacion-detail'
 
 const API_URL = environment.apiURL;
 const actuaciones = '/Actuaciones';
