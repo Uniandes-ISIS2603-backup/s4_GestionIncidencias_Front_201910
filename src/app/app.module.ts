@@ -13,6 +13,8 @@ import { HomeModule } from './home/home.module';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
+import { EmpleadoModule } from './modules/user/empleado/empleado.module';
+
 
 
 
@@ -39,7 +41,8 @@ import {AuthModule} from './auth/auth.module';
         }),
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
-        NgbModule
+        NgbModule,
+        EmpleadoModule
     ],
     bootstrap: [AppComponent],
     providers: [

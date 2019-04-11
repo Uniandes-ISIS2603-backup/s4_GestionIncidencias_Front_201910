@@ -6,6 +6,8 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { HomeComponent } from '../home/home/home.component';
+import { EmpleadoListComponent } from '../modules/user/empleado/empleado-list/empleado-list.component'
+
 
 const routes: Routes = [
 
@@ -39,9 +41,18 @@ const routes: Routes = [
         component: HomeComponent
     },
     {
+        path: 'empleados',
+        children: [
+            {
+                path: 'list',
+                component: EmpleadoListComponent
+            }]
+    },
+    {
         path: '**',
         redirectTo: 'home'
     }
+
 ];
 
 @NgModule({
