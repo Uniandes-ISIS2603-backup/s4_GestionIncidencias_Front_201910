@@ -60,7 +60,7 @@ export class EmpleadoListComponent implements OnInit {
     }
   
     updateEmpleado(): void {
-      console.log("Yo creo que es el console log lo que falla");
+ 
       this.showEdit = false;
   }
 
@@ -81,13 +81,14 @@ export class EmpleadoListComponent implements OnInit {
     * This will initialize the component by retrieving the list of empleados from the service
     * This method will be called when the component is created
     */
-     ngOnInit() {
+     ngOnInit() {       
       this.showCreate = false;
       this.showEdit = false;
       this.getEmpleados();
   }
 
-  ngOnChanges() {
+  ngOnChanges() {    
     this.ngOnInit();
+    this.getEmpleados();
   }
 }

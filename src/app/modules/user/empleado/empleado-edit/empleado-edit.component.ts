@@ -71,8 +71,7 @@ export class EmpleadoEditComponent implements OnInit {
     * Updates the editorial's information
     */
    editEmpleado(): void {
-     console.log("Te digo algo? a mi no me funcionan los logs generalmente ... :(")
-    this.empleadoService.updateEmpleados(this.empleado)
+     this.empleadoService.updateEmpleados(this.empleado)
         .subscribe(() => {
             this.update.emit();    
             

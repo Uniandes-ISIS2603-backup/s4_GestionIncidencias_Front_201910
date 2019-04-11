@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewContainerRef, Input, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { TecnicoService } from '../tecnico.service';
-import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
+
 import { ToastrService} from 'ngx-toastr';
 import { Tecnico } from '../tecnico';
 
@@ -29,13 +28,14 @@ export class TecnicoEditComponent implements OnInit {
      */
   
     tecnico: Tecnico;
-    howEdit:boolean;
+    showEdit:boolean;
+    
 
     /**
     * The id of the tecnico that the user wants to edit
     * This is passed as a parameter by the parent component
     */
-   @Input() tecnico_id: number;
+   @Input() tecnico_edit_id: number;
 
    /**
    * The output which tells the parent component
@@ -49,11 +49,14 @@ export class TecnicoEditComponent implements OnInit {
    */
    @Output() update = new EventEmitter();
   
+
+
+
     /**
     * Retrieves the information of the tecnico
     */
    getTecnico(): void {
-    this.tecnicoService.getTecnico(this.tecnico_id)
+    this.tecnicoService.getTecnico(this.tecnico_edit_id)
         .subscribe(tecnico => {
             this.tecnico = tecnico;
         });
@@ -71,12 +74,21 @@ export class TecnicoEditComponent implements OnInit {
     * Updates the editorial's information
     */
    editTecnico(): void {
-    console.log("Te digo algo? a mi no me funcionan los logs generalmente ... :(")
-   this.tecnicoService.updateTecnico(this.tecnico)
+    this.tecnicoService.updateTecnico(this.tecnico)
        .subscribe(() => {
            this.update.emit();             
            
        });
+}
+
+showHideEdit(tecnico_edit_id: number): void {
+  if (!this.showEdit || (this.showEdit && (tecnico_edit_id != this.tecnico_edit_id)) {
+      this.showEdit = true;
+      this.tecnico_edit_id = tecnico_edit_id;
+  }
+  else {
+      this.showEdit = false;
+  }
 }
 
     /**
