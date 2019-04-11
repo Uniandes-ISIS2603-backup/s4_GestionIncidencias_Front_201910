@@ -1,77 +1,36 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+
+import 'rxjs/add/operator/filter';
 import { ActuacionService } from '../actuacion.service';
-import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
-import {ToastrService} from 'ngx-toastr';
-import { Actuacion } from '../Actuacion';
-@Component({
-  selector: 'app-actuacion-list',
-  templateUrl: './actuacion-list.component.html',
-  styleUrls: ['./actuacion-list.component.css']
+import {Actuacion} from '../actuacion';
+	import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+
+    @Component({
+    selector: 'app-actuacion-list',	  
+    templateUrl: './actuacion-list.component.html',	 
+    
+    styleUrls: ['./actuacion-list.component.css']
 })
-export class ActuacionListComponent implements OnInit {
 
-  /**
-    * Constructor for the component
-    * @param empleadoService The author's services provider
-    */
-  constructor(
-    private empleadoService: ActuacionService,
-    private modalDialogService: ModalDialogService,
-    private viewRef: ViewContainerRef,
-    private toastrService: ToastrService) {}
-
-  /**      
-    * List of empleados
-    */
-
-   empleados:Actuacion[];
+    export class ActuacionListComponent {
 
 
-    /**
-     * Shoy the list of empleados
-     */
+        @Input() actuaciones: Actuacion[];
 
-   shows: boolean=false;
+        /**
+         * El  constructor del componente
+         *  */
+        constructor(private actuacionService: ActuacionService, private route: ActivatedRoute) {}
 
-   /**
-    * Shows or hides the create component
-    */
-   showCreate: boolean;
+        allactuaciones: string = 'no';
 
-   /**
-    * Shows or hides the edit component.
-    */
-   showEdit: boolean;
+        getActuacion(): void {
+            this.actuacionService.getActuaciones()	     
+                .subscribe(actuacions => {	          
+                    this.actuaciones = actuacions;	            
+                });	         
 
-   /**
-    * The id of the empleado being edited.
-    */
-   empleado_edit_id: number;
-
-    /**
-    * Asks the service to update the list of empleados
-    */
-     getActuacion(): void {
-      this.empleadoService.getActuaciones()
-          .subscribe(empleados => {
-              this.empleados = empleados;
-          });
-    }
   
-    updateActuacion(): void {
-      this.showEdit = false;
-  }
-
- 
-  /**
-    * This will initialize the component by retrieving the list of empleados from the service
-    * This method will be called when the component is created
-    */
-     ngOnInit() {
-      this.showCreate = false;
-      this.showEdit = false;
-      this.getActuacion();
-  }
-
+    }
 }

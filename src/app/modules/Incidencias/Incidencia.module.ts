@@ -10,6 +10,11 @@ import {IncidenciaService } from './Incidencia.service';
 import {AppRoutingModule} from '../../app-routing/app-routing.module';
 
 import {ActuacionModule} from '../actuacion/actuacion.module';
+import {IncidenciaDetailComponent} from './incidencia-list-detail/incidencia-detail.component';
+import {IncidenciaCreateComponent} from  './incidencia-create/incidencia-create.component';
+
+import {IncidenciaEditComponent} from './incidencia-edit/incidencia-edit.component';
+
 
 @NgModule({
     imports: [
@@ -21,7 +26,7 @@ import {ActuacionModule} from '../actuacion/actuacion.module';
         FormsModule,
         ActuacionModule
     ],
-    declarations: [],
+    declarations: [IncidenciaListComponent,IncidenciaDetailComponent, IncidenciaCreateComponent, IncidenciaEditComponent],
     providers: [IncidenciaService]
 })
 export class IncidencialModule {}

@@ -10,7 +10,7 @@ import {IncidenciaDetail} from '../Incidencia-detail';
     templateUrl: './actuacion-edit.component.html',
     styleUrls: ['./actuacion-edit.component.css']
 })
-export class ActuacionEditComponent implements OnInit {
+export class IncidenciaEditComponent implements OnInit {
 
     /**
     * The component's constructor
