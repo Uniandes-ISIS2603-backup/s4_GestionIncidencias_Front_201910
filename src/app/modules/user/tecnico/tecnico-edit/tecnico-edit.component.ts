@@ -57,6 +57,26 @@ export class TecnicoEditComponent implements OnInit {
         .subscribe(tecnico => {
             this.tecnico = tecnico;
         });
+  }
+
+  /**    
+     * Informs the parent component that the user no longer wants to update the editorial
+     */
+    cancelEdition(): void {
+     this.cancel.emit();
+  }
+
+
+    /**
+    * Updates the editorial's information
+    */
+   editTecnico(): void {
+    console.log("Te digo algo? a mi no me funcionan los logs generalmente ... :(")
+   this.tecnicoService.updateTecnico(this.tecnico)
+       .subscribe(() => {
+           this.update.emit();             
+           
+       });
 }
 
     /**
