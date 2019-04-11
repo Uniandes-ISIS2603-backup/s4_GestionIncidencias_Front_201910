@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {NgxPermissionsGuard} from 'ngx-permissions';
@@ -42,6 +42,7 @@ const routes: Routes = [
     },
     {
         path: 'empleados',
+        component:EmpleadoListComponent,
         children: [
             {
                 path: 'list',
