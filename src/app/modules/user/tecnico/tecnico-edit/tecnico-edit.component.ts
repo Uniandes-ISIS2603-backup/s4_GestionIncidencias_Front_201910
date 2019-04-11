@@ -73,16 +73,17 @@ export class TecnicoEditComponent implements OnInit {
     /**
     * Updates the editorial's information
     */
-   editTecnico(): void {
+   editTecnico(): void {     
     this.tecnicoService.updateTecnico(this.tecnico)
        .subscribe(() => {
            this.update.emit();             
+           
            
        });
 }
 
 showHideEdit(tecnico_edit_id: number): void {
-  if (!this.showEdit || (this.showEdit && (tecnico_edit_id != this.tecnico_edit_id)) {
+  if (!this.showEdit || (this.showEdit && (tecnico_edit_id != this.tecnico_edit_id))) {
       this.showEdit = true;
       this.tecnico_edit_id = tecnico_edit_id;
   }

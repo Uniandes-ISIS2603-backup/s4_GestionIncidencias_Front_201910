@@ -46,7 +46,7 @@ export class TecnicoListComponent implements OnInit {
      * Shoy the list of tecnicos
      */
 
-    shows: boolean=false;
+    shows: boolean=true;
 
     /**
     * Asks the service to update the list of tecnicos
@@ -55,11 +55,13 @@ export class TecnicoListComponent implements OnInit {
       this.tecnicoService.getTecnicos()
           .subscribe(tecnicos => {
               this.tecnicos = tecnicos;
+
           });
     }
 
     updateTecnico(): void {
       this.showEdit = false;
+      location.reload();
   }
 
 
@@ -86,6 +88,8 @@ export class TecnicoListComponent implements OnInit {
         this.getTecnicos();
       }
       ngOnChanges() {
+        console.log("Entering in changes");
+        location.reload();
         this.ngOnInit();
       }
 }

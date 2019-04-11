@@ -32,7 +32,7 @@ export class EmpleadoListComponent implements OnInit {
      * Shoy the list of empleados
      */
 
-   shows: boolean=false;
+   shows: boolean=true;
 
    /**
     * Shows or hides the create component
@@ -59,9 +59,9 @@ export class EmpleadoListComponent implements OnInit {
           });
     }
   
-    updateEmpleado(): void {
- 
+    updateEmpleado(): void { 
       this.showEdit = false;
+      location.reload();
   }
 
      /**

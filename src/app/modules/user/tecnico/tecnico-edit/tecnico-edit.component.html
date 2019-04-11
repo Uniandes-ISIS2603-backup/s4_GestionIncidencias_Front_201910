@@ -20,7 +20,7 @@
         </form>
 
         <div class="row form-inline justify-content-center align-self-center">
-            <button type="submit" class="btn btn-primary" (click)="editTecnico() && location.reload()">Edit</button>
+            <button type="submit" class="btn btn-primary" (click)="editTecnico() && ngOnChanges()">Edit</button>
             <div class="divider"></div>
             <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
         </div>

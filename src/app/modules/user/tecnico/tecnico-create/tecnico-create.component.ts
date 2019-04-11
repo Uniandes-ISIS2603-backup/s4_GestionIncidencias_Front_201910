@@ -41,7 +41,8 @@ export class TecnicoCreateComponent implements OnInit {
       this.editorialService.createTecnico(this.tecnico)
           .subscribe((tecnico) => {
               this.tecnico = tecnico;
-              this.create.emit();              
+              this.create.emit();    
+              location.reload();          
           });
       return this.tecnico;    
     }

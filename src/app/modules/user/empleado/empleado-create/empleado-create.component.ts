@@ -39,6 +39,7 @@ export class EmpleadoCreateComponent implements OnInit {
         .subscribe((empleado) => {
             this.empleado = empleado;
             this.create.emit();            
+            location.reload();
         });
     return this.empleado;    
   }
