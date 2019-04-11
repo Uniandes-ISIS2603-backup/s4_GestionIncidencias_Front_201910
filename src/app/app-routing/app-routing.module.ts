@@ -57,8 +57,17 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: TecnicoListComponent
+            }]},
+
+        {
+        path: 'admins',
+        component:EmpleadoListComponent,
+        children: [
+            {
+                path: 'list',
+                component: EmpleadoListComponent
             }]
-    },
+    },    
     {
         path: '**',
         redirectTo: 'home'
