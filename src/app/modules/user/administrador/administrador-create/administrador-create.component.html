@@ -1,3 +1,62 @@
 <p>
-  administrador-create works!
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Crear administrador
+      </button>
 </p>
+
+<div class="collapse" id="collapseExample">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-8">
+              <br>
+              <h2 class="text-center">Crear un nuevo administrador</h2>
+              <br>
+              <form name="book" (ngSubmit)="f.form.valid && createAdministrador()" #f="ngForm" novalidate>
+
+                  <div class="form-group">
+                      <label for="administradorName"><b>Nombre</b></label>
+                      <input type="text" name="administradorName" class="form-control" id="administradorName" [(ngModel)]="administrador.name" #administradorName="ngModel" required>
+                      <div class="invalid-feedback">
+                          <div>Nombre inválido</div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="administradorUser"><b>Usuario</b></label>
+                      <input type="text" name="administradorUser" class="form-control" id="administradorUser" [(ngModel)]="administrador.usuario" #administradorUser="ngModel" required>
+                      <div class="invalid-feedback">
+                          <div>Usuario inválido</div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="administradorPassword"><b>Contraseña</b></label>
+                      <input type="password" name="administradorPassword" class="form-control" id="administradorPassword" [(ngModel)]="administrador.password" #administradorPassword="ngModel" required>
+                      <div class="invalid-feedback">
+                          <div>Contraseña inválida</div>
+                      </div>
+                  </div>
+
+
+                  <div class="form-group">
+                      <label for="administradorCedula"><b>Cédula</b></label>
+                      <input type="text" name="administradorCedula" class="form-control" id="administradorCedula" [(ngModel)]="administrador.cedula" #administradorPassword="ngModel" required>
+                      <div class="invalid-feedback">
+                          <div>Cédula inválida</div>
+                      </div>
+                  </div>
+
+                  <br>
+                  <div class="row form-inline justify-content-center align-self-center">
+                      <button type="submit" class="btn btn-primary">Crear</button>
+                      <div class="divider"></div>
+                      <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+                  </div>
+              </form>
+              <br>
+          </div>
+      </div>
+  </div>
+  <br>
+  <br>
+</div>
