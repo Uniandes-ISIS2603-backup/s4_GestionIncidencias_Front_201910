@@ -1,53 +1,51 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: violet;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(204, 255, 204);">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+            
             <!-- active -->
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['home']"> Inicio </a>
+                <a class="nav-link" [routerLink]="['home']"> A </a>
             </li>
 
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['empleados/list']"> Empleados</a>
             </li>
+
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['tecnicos/list']"> Tecnicos </a>
+                <a class="nav-link" [routerLink]="['tecnicos/list']"> Técnicos </a>
             </li>
+
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['Actuaciones/list']"> Actuacion </a>
-              
+                <a class="nav-link" [routerLink]="['admins/list']"> Administradores </a>
             </li>
+
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" > Incidencia </a>
+                <a class="nav-link" [routerLink]="['Actuaciones/list']"> Actuaciones </a>
             </li>
+
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['equipos/list']">  Equipos </a>
+                <a class="nav-link" > Incidencias </a>
             </li>
+
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['calificaciones/list']">  Calificaciones </a>
+                <a class="nav-link" [routerLink]="['equipos/list']"> Equipos de Cómputo </a>
             </li>
-            <a class="nav-link" [routerLink]="['admins/list']"> Administradores </a>
+
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['calificaciones/list']"> Calificaciones </a>
+            </li>
+
             <li>
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link"> Incidencias </a>
                 </li>
-                
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Ensayo que no sirve :c
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Listar emplea</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-
+            
         </ul>
     </div>
 </nav>
+
+
 <router-outlet></router-outlet>
