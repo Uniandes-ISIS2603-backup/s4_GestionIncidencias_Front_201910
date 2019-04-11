@@ -31,6 +31,14 @@ getActuaciones(): Observable<Actuacion[]>{
    createActuacion(actuacion): Observable<Actuacion> {
     return this.http.post<Actuacion>(API_URL + actuaciones, actuacion);
 }
+    
+    /**
+    * Returns the Observable object containing the editorial retrieved from the API
+    * @returns The editorial
+    */
+   getActuacionDetail(id: any ): Observable<ActuacionDetail> {
+    return this.http.get<Actuacion>(API_URL + actuaciones + '/' + id);
+}
   /**
         * Updates a new book
         * @param book The updated book
