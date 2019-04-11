@@ -1,12 +1,12 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 
-import {ActuacionService} from '../actuacion.service';
-import {ActuacionDetail} from '../actuacion-detail';
+import {IncidenciaService} from '../incidencia.service';
+import {IncidenciaDetail} from '../incidencia-detail';
 
 
 @Component({
-    selector: 'app-actuacion-edit',
+    selector: 'app-incidencia-edit',
     templateUrl: './actuacion-edit.component.html',
     styleUrls: ['./actuacion-edit.component.css']
 })
@@ -14,18 +14,18 @@ export class ActuacionEditComponent implements OnInit {
 
     /**
     * The component's constructor
-    * @param editorialService The editorial's service
+    * @param IncidenciaService The editorial's service
     * @param toastrService The toastr to show messages to the user 
     */
     constructor(
-        private editorialService: ActuacionService,
+        private IncidenciaService: IncidenciaService,
         private toastrService: ToastrService
     ) {}
 
     /**
     * el id de la actuacion que se quiere editar
     */
-    @Input() editorial_id: number;
+    @Input() incidencia_id: number;
 
     /**
      * La respuesta que representa que el usuario no quiere seguir editando la actuacion actual
@@ -38,28 +38,28 @@ export class ActuacionEditComponent implements OnInit {
     @Output() update = new EventEmitter();
 
     /**
-    * la actuacion que va a ser editada
+    * Tla incidencia que va a ser  editada
     */
-    actuacion: ActuacionDetail;
+    incidencia: IncidenciaDetail;
 
     /**
-    * Le hace retriev a la informacion de la actuacion
+    * Le hace retriev a la informacion de la incidencia
     */
-    getActuacion(): void {
-        this.editorialService.getActuacionDetail(this.editorial_id)
-            .subscribe(act => {
-                this.actuacion = act;
+    getIncidencia(): void {
+        this.IncidenciaService.getIncidenciaDetail(this.incidencia_id)
+            .subscribe(inc => {
+                this.incidencia = inc;
             });
     }
 
     /**
     * Updates the editorial's information
     */
-    editActuacion(): void {
-        this.editorialService.updateActuacion(this.actuacion)
+    editIncidencia(): void {
+        this.IncidenciaService.updateEditorial(this.incidencia)
             .subscribe(() => {
                 this.update.emit();
-                this.toastrService.success("La informacion de la actuacion ha sido actualizada", "Actuacion edition");
+                this.toastrService.success("La informacion de la incidencia ha sido actualizada", "Incidencia edition");
             });
     }
 
@@ -74,8 +74,8 @@ export class ActuacionEditComponent implements OnInit {
     * The function which initializes the component
     */
     ngOnInit() {
-        this.actuacion = new ActuacionDetail();
-        this.getActuacion();
+        this.incidencia = new IncidenciaDetail();
+        this.getIncidencia();
     }
 
     /**

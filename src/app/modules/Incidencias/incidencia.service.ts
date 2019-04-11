@@ -43,7 +43,7 @@ export class IncidenciaService {
     * @param Incidencia la incidencia que sera creada
     * @returns confirma si se crea la incidencia
     */
-    createEditorial(Incidencia): Observable<Incidencia> {
+    createIncidencia(Incidencia): Observable<Incidencia> {
         return this.http.post<Incidencia>(API_URL + incidencias, Incidencia);
     }
     

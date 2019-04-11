@@ -1,0 +1,63 @@
+<div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <br>
+            <h2 class="text-center">Crear una incidencia</h2>
+            <br>
+            <form name="actuacion" (ngSubmit)="f.form.valid && createActuacion()" #f="ngForm" novalidate>
+                <div class="form-group">
+                       <label for="IncidenciaId"><b>Id</b></label>
+                    <input type="text" name="id" class="form-control" id="IncidenciaId" [(ngModel)]="incidencia.id"
+                        #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && IncidenciaId.invalid }"
+                        required>
+    
+                <label for="IncidenciaFecha"><b>Fecha</b></label>
+                 <input type="text" name="fecha" class="form-control" id="IncidenciaFecha" [(ngModel)]="incidencia.fecha"
+                        #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && IncidenciaFecha.invalid }"
+                        required>
+    
+                  <label for="IncidenciaDescripcion"><b>Descripcion</b></label>
+                 <input type="text" name="descripcion" class="form-control" id="incidenciaDescripcion" [(ngModel)]="incidencia.descripcion"
+                        #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && incidenciaDescripcion.invalid }"
+                        required>
+
+                 <label for="IncidenciaDescripcion"><b>Descripcion</b></label>
+                 <input type="text" name="descripcion" class="form-control" id="incidenciaDescripcion" [(ngModel)]="incidencia.descripcion"
+                        #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && incidenciaDescripcion.invalid }"
+                        required>
+                
+                <label for="IncidenciaDescripcion"><b>Estado</b></label>
+                 <input type="text" name="descripcion" class="form-control" id="incidenciaDescripcion" [(ngModel)]="incidencia.descripcion"
+                        #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && incidenciaDescripcion.invalid }"
+                        required>
+            <label for="IncidenciaDescripcion"><b>Tecnico</b></label>
+                        <input type="text" name="descripcion" class="form-control" id="incidenciaDescripcion" [(ngModel)]="incidencia.descripcion"
+                               #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && incidenciaDescripcion.invalid }"
+                               required>
+                    <label for="IncidenciaDescripcion"><b>Equipo de computo</b></label>
+                               <input type="text" name="descripcion" class="form-control" id="incidenciaDescripcion" [(ngModel)]="incidencia.descripcion"
+                                      #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && incidenciaDescripcion.invalid }"
+                                      required>
+                 <label for="IncidenciaDescripcion"><b>Empleado</b></label>
+                                      <input type="text" name="descripcion" class="form-control" id="incidenciaDescripcion" [(ngModel)]="incidencia.descripcion"
+                                             #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && incidenciaDescripcion.invalid }"
+                                             required>
+                                             <label for="IncidenciaDescripcion"><b>Prioridad</b></label>
+                                             <input type="text" name="descripcion" class="form-control" id="incidenciaDescripcion" [(ngModel)]="incidencia.descripcion"
+                                                    #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && incidenciaDescripcion.invalid }"
+                                                    required>
+
+
+                    <div class="invalid-feedback">
+                        <div>La informacion introducida es incorrecta</div>
+                    </div>
+                </div>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <div class="divider"></div>
+                    <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>

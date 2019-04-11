@@ -22,6 +22,6 @@ import {ActuacionModule} from '../actuacion/actuacion.module';
         ActuacionModule
     ],
     declarations: [],
-    providers: []
+    providers: [IncidenciaService]
 })
 export class IncidencialModule {}
