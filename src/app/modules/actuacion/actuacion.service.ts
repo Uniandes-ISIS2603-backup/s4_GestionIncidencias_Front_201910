@@ -13,7 +13,8 @@ const actuaciones = '/Actuaciones';
 /**
  * Servicio creado para manipular actuaciones
  */
-@Injectable()
+@Injectable({providedIn: 'root'})
+
 export class ActuacionService {
 /**
  * Constructor del servicio de actuacion
