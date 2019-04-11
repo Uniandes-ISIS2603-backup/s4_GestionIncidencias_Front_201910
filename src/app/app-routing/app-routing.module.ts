@@ -94,15 +94,17 @@ const routes: Routes = [
                 path: 'list',
                 component: EmpleadoListComponent
             }]
-    },   
+    }, 
+    
+      
    
      
     {
         path: '**',
         redirectTo: 'home'
-    },
+    }
 
-    
+   
 ];
 
 @NgModule({

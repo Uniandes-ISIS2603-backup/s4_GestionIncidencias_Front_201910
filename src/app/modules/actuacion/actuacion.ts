@@ -13,5 +13,5 @@ descripcion : string;
  */
 tipo: string;
 
-constructor(){}
+
 }

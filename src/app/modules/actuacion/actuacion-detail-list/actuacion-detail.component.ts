@@ -4,9 +4,9 @@ import { ActivatedRoute, Params } from '@angular/router';
 import {ActuacionDetail} from '../actuacion-detail'
 import {Actuacion} from '../actuacion'
 @Component({
-  selector: 'app-clientes-detail',
-  templateUrl: './clientes-detail.component.html',
-  styleUrls: ['./clientes-detail.component.css']
+  selector: 'app-actuacion-detail',
+  templateUrl: './actuacion-detail-list.html',
+  styleUrls: ['./actuacion-detail-list.css']
 })
 export class ActuacionDetailComponent implements OnInit {
 
