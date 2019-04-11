@@ -9,8 +9,7 @@ export class Prioridad {
     sla = Sla;
   
     
-    constructor(priori, sla){
-        this.tipoPrioridad = priori;
-        this.sla = sla;
+    constructor(){
+        
     }
     }
