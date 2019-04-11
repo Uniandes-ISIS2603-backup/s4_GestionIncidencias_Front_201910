@@ -50,6 +50,7 @@ export class EmpleadoService {
    }
 
    getEmpleado(empleadoId): Observable<Empleado> {
+    console.log("Paso por el modulo correcto");
     return this.http.get<Empleado>(API_URL + empleados + '/' + empleadoId);
 }
 

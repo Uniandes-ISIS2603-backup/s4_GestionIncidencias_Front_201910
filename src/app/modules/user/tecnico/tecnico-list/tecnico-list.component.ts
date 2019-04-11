@@ -22,7 +22,7 @@ export class TecnicoListComponent implements OnInit {
     private toastrService: ToastrService) {}
 
   /**
-    * List of empleados
+    * List of tecnicos
     */
 
    tecnicos:Tecnico[];
@@ -44,9 +44,15 @@ export class TecnicoListComponent implements OnInit {
 
 
     /**
-    * Asks the service to update the list of empleados
+     * Shoy the list of tecnicos
+     */
+
+    shows: boolean=false;
+
+    /**
+    * Asks the service to update the list of tecnicos
     */
-     getEmpleados(): void {
+     getTecnicos(): void {
       this.tecnicoService.getTecnicos()
           .subscribe(tecnicos => {
               this.tecnicos = tecnicos;
@@ -64,6 +70,6 @@ export class TecnicoListComponent implements OnInit {
        ngOnInit() {
         this.showCreate = false;
         this.showEdit = false;
-        this.getEmpleados();
+        this.getTecnicos();
       }
 }

@@ -5,6 +5,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
+
+
 import { EmpleadoCreateComponent } from './empleado-create/empleado-create.component';
 import { EmpleadoDetailComponent } from './empleado-detail/empleado-detail.component';
 import { EmpleadoEditComponent } from './empleado-edit/empleado-edit.component';

@@ -7,6 +7,7 @@ import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { HomeComponent } from '../home/home/home.component';
 import { EmpleadoListComponent } from '../modules/user/empleado/empleado-list/empleado-list.component'
+import { TecnicoListComponent } from '../modules/user/tecnico/tecnico-list/tecnico-list.component';
 
 
 const routes: Routes = [
@@ -42,7 +43,7 @@ const routes: Routes = [
     },
     {
         path: 'empleados',
-        component:EmpleadoListComponent,
+        
         children: [
             {
                 path: 'list',
@@ -50,6 +51,15 @@ const routes: Routes = [
             }]
     },
     {
+        path: 'tecnicos',
+        
+        children: [
+            {
+                path: 'list',
+                component: TecnicoListComponent
+            }]},
+
+        {
         path: 'admins',
         component:EmpleadoListComponent,
         children: [
@@ -57,7 +67,7 @@ const routes: Routes = [
                 path: 'list',
                 component: EmpleadoListComponent
             }]
-    },
+    },    
     {
         path: '**',
         redirectTo: 'home'
