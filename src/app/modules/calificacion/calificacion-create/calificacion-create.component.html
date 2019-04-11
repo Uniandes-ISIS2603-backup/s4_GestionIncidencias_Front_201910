@@ -1,0 +1,45 @@
+<p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Crear calificacion
+        </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <br>
+                <h2 class="text-center">Crear una nueva calificación</h2>
+                <br>
+                <form name="book" (ngSubmit)="f.form.valid && createcalificacion()" #f="ngForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="tecnicoUser"><b>Puntaje</b></label>
+                        <input type="number" name="calificacionEst" class="form-control" id="calificacionEst" [(ngModel)]="calificacion.numeroEst" #TecnicoUser="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The tecnicos's user is missing</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calificacionDes"><b>Descripción</b></label>
+                        <input type="text" name="calificacionDes" class="form-control" id="calificacionDes" [(ngModel)]="calificacion.descripcion" #calificacionUser="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The calificacions's description is missing</div>
+                        </div>
+                    </div>
+
+                   
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        <div class="divider"></div>
+                        <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

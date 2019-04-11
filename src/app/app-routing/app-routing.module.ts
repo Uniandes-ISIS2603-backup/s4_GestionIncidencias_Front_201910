@@ -8,6 +8,8 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import { HomeComponent } from '../home/home/home.component';
 import { EmpleadoListComponent } from '../modules/user/empleado/empleado-list/empleado-list.component'
 import { TecnicoListComponent } from '../modules/user/tecnico/tecnico-list/tecnico-list.component';
+import { equipoComputoListComponent } from '../modules/equipoComputo/equipoComputo-list/equipoComputo-list.component';
+import { calificacionListComponent } from '../modules/calificacion/calificacion-list/calificacion-list.component';
 
 
 const routes: Routes = [
@@ -48,6 +50,24 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: EmpleadoListComponent
+            }]
+    },
+    {
+        path: 'equipos',
+        
+        children: [
+            {
+                path: 'list',
+                component: equipoComputoListComponent
+            }]
+    },
+    {
+        path: 'calificaciones',
+        
+        children: [
+            {
+                path: 'list',
+                component: calificacionListComponent
             }]
     },
     {

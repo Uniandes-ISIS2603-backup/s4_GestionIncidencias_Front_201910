@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {DatePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 
-import {IncidenciaService} from '../incidencia.service';
+import {IncidenciaService} from '../Incidencia.service';
 
 import {Incidencia} from '../Incidencia';
 import {Empleado} from '../../user/empleado/empleado';

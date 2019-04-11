@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Incidencia } from './Incidencia';
-import { IncidenciaDetail } from './incidencia-detail';
+import { IncidenciaDetail } from './Incidencia-detail';
 
 import { environment } from '../../../environments/environment';
 const API_URL = environment.apiURL;

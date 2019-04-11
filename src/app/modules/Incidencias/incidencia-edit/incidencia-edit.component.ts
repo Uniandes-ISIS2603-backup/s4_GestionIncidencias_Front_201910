@@ -1,8 +1,8 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 
-import {IncidenciaService} from '../incidencia.service';
-import {IncidenciaDetail} from '../incidencia-detail';
+import {IncidenciaService} from '../Incidencia.service';
+import {IncidenciaDetail} from '../Incidencia-detail';
 
 
 @Component({

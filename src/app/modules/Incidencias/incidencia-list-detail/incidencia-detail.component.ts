@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {IncidenciaService} from '../incidencia.service'
+import {IncidenciaService} from '../Incidencia.service'
 import { ActivatedRoute, Params } from '@angular/router';
-import {IncidenciaDetail} from '../incidencia-detail'
+import {IncidenciaDetail} from '../Incidencia-detail'
 import {Incidencia} from '../Incidencia'
 @Component({
   selector: 'app-clientes-detail',

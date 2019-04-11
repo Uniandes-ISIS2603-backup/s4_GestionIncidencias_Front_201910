@@ -14,6 +14,8 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { UserModule } from './modules/user/user.module';
+import {equipoComputoModule} from './modules/equipoComputo/equipoComputo.module';
+import { calificacionModule } from './modules/calificacion/calificacion.module';
 
 
 
@@ -38,7 +40,9 @@ import { UserModule } from './modules/user/user.module';
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
         NgbModule,        
-        UserModule
+        UserModule,
+        equipoComputoModule,
+        calificacionModule
     ],
     bootstrap: [AppComponent],
     providers: [

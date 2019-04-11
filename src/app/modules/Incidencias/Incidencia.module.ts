@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {NgxPermissionsModule} from 'ngx-permissions';
 
 import {IncidenciaListComponent} from './incidencia-list/incidencia-list.component';
-import {IncidenciaService } from './incidencia.service';
+import {IncidenciaService } from './Incidencia.service';
 import {AppRoutingModule} from '../../app-routing/app-routing.module';
 
 import {ActuacionModule} from '../actuacion/actuacion.module';
