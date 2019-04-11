@@ -28,7 +28,7 @@ export class TecnicoService {
     */
 
   getTecnicos(): Observable<Tecnico[]> {
-    return this.http.get<Tecnico[]>(API_URL + tecnicos);
+    return this.http.get<Tecnico[]>(API_URL + '/tecnicos');
     }
 
     /**
@@ -56,6 +56,7 @@ export class TecnicoService {
     */
    
     getTecnico(tecnicoId): Observable<Tecnico> {
+      console.log("Paso por el modulo correcto");
       return this.http.get<Tecnico>(API_URL + tecnicos + '/' + tecnicoId);
   }
 

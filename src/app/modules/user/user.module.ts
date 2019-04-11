@@ -7,6 +7,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { EmpleadoModule } from './empleado/empleado.module';
+import { TecnicoModule } from './tecnico/tecnico.module';
 
 
 
@@ -20,7 +21,8 @@ import { EmpleadoModule } from './empleado/empleado.module';
     ReactiveFormsModule,
     NgxPermissionsModule,
     AppRoutingModule,
-    EmpleadoModule
+    EmpleadoModule, 
+    TecnicoModule
 
   ],
   exports:[

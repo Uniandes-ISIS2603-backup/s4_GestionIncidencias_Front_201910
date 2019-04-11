@@ -1,3 +1,29 @@
-<p>
-  tecnico-list works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <table *ngIf="shows" class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Cedula</th>
+                        <th scope="col">usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tecnico of tecnicos">
+                        <td>{{tecnico.id}} </td>
+                        <td>{{tecnico.name}}</td>
+                        <td> {{tecnico.cedula}} </td>
+                        <td>{{tecnico.usuario}}</td>
+                        <td>{{tecnico.usuario}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button (click)=" shows = !shows  " class="btn btn-outline-primary btn-block">
+        Mostrar/Ocultar
+        </button>
+        </div>
+    </div>
+</div>
