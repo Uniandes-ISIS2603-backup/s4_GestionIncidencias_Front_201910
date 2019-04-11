@@ -1,5 +1,5 @@
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(0, 247, 255);">
+    <nav class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background-color:black;">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -8,7 +8,7 @@
 
                 <!-- active -->
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['home']"> <img src="https://agsolutionsdelhi.files.wordpress.com/2016/08/computer-sorlando-1.jpg" alt="Inicio" height="35" width="35"> </a>
+                    <a class="nav-link" [routerLink]="['home']"> <img src="https://i.ytimg.com/vi/PWHHR_Ocs5A/maxresdefault.jpg" alt="Inicio" height="35" width="35"> </a>
                 </li>
 
                 <li class="nav-item" routerLinkActive="active">
@@ -50,18 +50,5 @@
     </nav>
     <br>
     <br>
-    <div class="container-fluid" style="max-height: 100%">
-        <div class="row" style="align-content: center">
-            <div class="col-12" style="display:flex; justify-content: center;">
-                <img src="https://agsolutionsdelhi.files.wordpress.com/2016/08/computer-sorlando-1.jpg" alt="Click"></div>
-        </div>
-
-
-        <div class="row" style="align-content: center">
-            <p>Soluciones sencillas al alcance de un click</p>
-        </div>
-
-    </div>
-
-
     <router-outlet></router-outlet>
+</div>
