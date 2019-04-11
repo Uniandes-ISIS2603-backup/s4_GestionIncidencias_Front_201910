@@ -1,3 +1,59 @@
 <p>
-  tecnico-create works!
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Crear tecnico
+        </button>
 </p>
+<div class="collapse" id="collapseExample">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <br>
+                <h2 class="text-center">Crear un nuevo tecnico</h2>
+                <br>
+                <form name="book" (ngSubmit)="f.form.valid && createTecnico()" #f="ngForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="tecnico.name"><b>Name</b></label>
+                        <input type="text" name="tecnicoName" class="form-control" id="tecnicoName" [(ngModel)]="tecnico.name" #tecnicoName="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The tecnicos's name is missing</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tecnicoUser"><b>User</b></label>
+                        <input type="text" name="tecnicoUser" class="form-control" id="tecnicoUser" [(ngModel)]="tecnico.usuario" #TecnicoUser="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The tecnicos's user is missing</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tecnicoPassword"><b>Password</b></label>
+                        <input type="password" name="tecnicoPassword" class="form-control" id="tecnicoPassword" [(ngModel)]="tecnico.password" #tecnicoPassword="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The tecnicos's user is missing</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tecnico.cedula"><b>Cedula</b></label>
+                        <input type="text" name="tecnicoCedula" class="form-control" id="tecnicoCedula" [(ngModel)]="tecnico.cedula" #tecnicoCedula="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The tecnicos's cedula is missing</div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        <div class="divider"></div>
+                        <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

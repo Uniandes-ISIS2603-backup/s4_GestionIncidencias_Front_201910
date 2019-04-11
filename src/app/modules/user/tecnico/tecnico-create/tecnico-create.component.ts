@@ -1,6 +1,7 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import { Tecnico } from '../tecnico';
 import {ToastrService} from 'ngx-toastr';
+
+import { Tecnico } from '../tecnico';
 import { TecnicoService} from '../tecnico.service'
 
 @Component({
@@ -40,10 +41,7 @@ export class TecnicoCreateComponent implements OnInit {
       this.editorialService.createTecnico(this.tecnico)
           .subscribe((tecnico) => {
               this.tecnico = tecnico;
-              this.create.emit();
-              this.toastrService.success("El técnico fue creado", "Creación del técnico");
-          }, err => {
-              this.toastrService.error(err, "Error");
+              this.create.emit();              
           });
       return this.tecnico;    
     }

@@ -38,10 +38,7 @@ export class EmpleadoCreateComponent implements OnInit {
     this.editorialService.createEmpleado(this.empleado)
         .subscribe((empleado) => {
             this.empleado = empleado;
-            this.create.emit();
-            this.toastrService.success("El empleado fue creado", "Creación del empleado");
-        }, err => {
-            this.toastrService.error(err, "Error");
+            this.create.emit();            
         });
     return this.empleado;    
   }
