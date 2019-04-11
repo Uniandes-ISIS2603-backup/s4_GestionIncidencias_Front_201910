@@ -18,13 +18,13 @@
                         <td> {{tecnico.cedula}} </td>
                         <td>{{tecnico.usuario}}</td>
                         <td *ngxPermissionsOnly="['ADMIN']">
-                            <button class="btn btn-primary" (click)="showEdit=!showEdit"><span class="fa fa-pencil"></span></button>
+                            <button class="btn btn-primary" (click)="showHideEdit(tecnico.id) && ngOnChanges()"><span class="fa fa-pencil"></span></button>
                         </td>
                     </tr>
                 </tbody>
             </table>
 
-            <button (click)=" shows = !shows  " class="btn btn-outline-primary btn-block">
+            <button (click)=" shows = !shows " class="btn btn-outline-primary btn-block">
                 Mostrar/Ocultar
         </button>
         </div>
@@ -32,6 +32,10 @@
 </div>
 <br>
 <br>
+
+<div *ngIf="showEdit">
+    <app-tecnico-edit [tecnico_edit_id]="tecnico_edit_id" (cancel)="showEdit=!showEdit && ngOnChanges()" (update)="updateTecnico() && ngOnChanges()"></app-tecnico-edit>
+</div>
 <div class="container">
     <app-tecnico-create></app-tecnico-create>
 </div>

@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { TecnicoService } from '../tecnico.service';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
@@ -62,6 +61,20 @@ export class TecnicoListComponent implements OnInit {
     updateTecnico(): void {
       this.showEdit = false;
   }
+
+
+      /**
+    * Shows or hides the create component
+    */
+   showHideEdit(tecnico_id: number): void {
+    if (!this.showEdit || (this.showEdit && tecnico_id != this.tecnico_edit_id)) {        
+        this.tecnico_edit_id = tecnico_id;
+        this.showEdit = !this.showEdit;
+    }
+    else {
+        this.showEdit = !this.showEdit;
+    }
+}
 
    /**
       * This will initialize the component by retrieving the list of empleados from the service

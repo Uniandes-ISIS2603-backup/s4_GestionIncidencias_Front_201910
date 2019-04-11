@@ -4,23 +4,23 @@
         <br>
         <h2 class="text-center">Editar un empleado</h2>
         <br>
-        <form name="editorial" (ngSubmit)="f.form.valid && editTecnico()" #f="ngForm" novalidate>
+        <form name="tecnico" (ngSubmit)="f.form.valid && editTecnico()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="empleadoName"><b>Nombre</b></label>
-                <input type="text" name="empleadoName" class="form-control" id="empleadoName" [(ngModel)]="tecnico.name" #empledoName="ngModel" required>
+                <label for="tecnicoName"><b>Nombre</b></label>
+                <input type="text" name="tecnicoName" class="form-control" id="tecnicoName" [(ngModel)]="tecnico.name" #tecnicoName="ngModel" required>
             </div>
             <div class="form-group">
-                <label for="empleadoCedula"><b>Cedula</b></label>
-                <input type="text" name="empleadoCedula" class="form-control" id="empleadoCedula" [(ngModel)]="tecnico.cedula" #empledoName="ngModel" required>
+                <label for="tecnicoCedula"><b>Cedula</b></label>
+                <input type="text" name="tecnicoCedula" class="form-control" id="empleadoCedula" [(ngModel)]="tecnico.cedula" #tecnicoCedula="ngModel" required>
             </div>
             <div class="form-group">
                 <label for="empleadoUsuario"><b>Usuario</b></label>
-                <input type="text" name="empleadoUsuario" class="form-control" id="empleadoUsuario" [(ngModel)]="tecnico.usuario" #empledoName="ngModel" required>
+                <input type="text" name="tecnicoUsuario" class="form-control" id="tecnicoUsuario" [(ngModel)]="tecnico.usuario" #tecnicoUsuario="ngModel" required>
             </div>
         </form>
 
         <div class="row form-inline justify-content-center align-self-center">
-            <button type="submit" class="btn btn-primary" (click)="editTecnico()">Edit</button>
+            <button type="submit" class="btn btn-primary" (click)="editTecnico() && location.reload()">Edit</button>
             <div class="divider"></div>
             <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
         </div>
