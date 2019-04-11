@@ -1,4 +1,13 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
-import {Actuacion} from './actuacion';
+import {ActuacionModule} from './actuacion.module';
+
+describe('BookModule', () => {
+    let actuacionModule: ActuacionModule;
+
+    beforeEach(() => {
+        actuacionModule = new ActuacionModule();
+    });
+
+    it('should create an instance', () => {
+        expect(actuacionModule).toBeTruthy();
+    });
+});

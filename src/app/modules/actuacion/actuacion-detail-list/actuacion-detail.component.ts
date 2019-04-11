@@ -8,7 +8,7 @@ import {Actuacion} from '../actuacion'
   templateUrl: './clientes-detail.component.html',
   styleUrls: ['./clientes-detail.component.css']
 })
-export class ClientesDetailComponent implements OnInit {
+export class ActuacionDetailComponent implements OnInit {
 
   constructor( private actuacionService : ActuacionService,
   private route : ActivatedRoute ) { }
@@ -27,7 +27,7 @@ export class ClientesDetailComponent implements OnInit {
 
   loader: any;
   /**
-  * Le hace retriev a la informacion de la actuacion
+  * Le hace retriev a la informacion de la actuacion y espero  que se halla arreglado el error
   */
   getActuacionDetail(): void {
 

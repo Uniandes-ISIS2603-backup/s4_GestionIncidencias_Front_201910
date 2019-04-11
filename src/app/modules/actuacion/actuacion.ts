@@ -11,7 +11,7 @@ descripcion : string;
 /**
  * Atributo  que representa la desripcion de una actuacion
  */
-tipo:string;
+tipo: string;
 
-
+constructor(){}
 }

@@ -1,0 +1,18 @@
+<div class="container-fluid">
+        <div class = "col-md-2">
+          <table class = "table table-striped">
+            <thead class = "thead-dark">  
+            <tr>   
+            <th scope="col">Fecha</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor = "let c of  actuaciones">
+            <td style="cursor: pointer;">
+            <a class="figure-caption" [routerLink] ="['/Actuaciones', { outlets: { 'detail': [c.fecha] } }]" >{{c.fecha}}</a>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>  
+        

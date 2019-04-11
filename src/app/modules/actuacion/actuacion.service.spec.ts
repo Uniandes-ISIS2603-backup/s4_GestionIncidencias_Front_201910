@@ -33,7 +33,7 @@ describe('Service: ActuacionService', () => {
     it('#createActuacion should return value from observable',
     (done: DoneFn) => {
    let actuacion:Actuacion = {fecha: "2017/01/06",descripcion:"Prueba", tipo : "Prueba" };
-    service.createBook(actuacion).subscribe(value => {
+    service.createActuacion(actuacion).subscribe(value => {
         expect(value.fecha).toEqual(actuacion.fecha);
         done();
         });
@@ -41,7 +41,7 @@ describe('Service: ActuacionService', () => {
     it('#updateBook should return the book updated',
     (done: DoneFn) => {
 	let actuacion:Actuacion  = {fecha: "2017/01/06",descripcion:"Prueba", tipo : "Prueba" };
-    service.updateBook(actuacion).subscribe(value => {
+    service.updateActuacion(actuacion).subscribe(value => {
         expect(value.fecha).toEqual(actuacion.fecha);
         done();
         });

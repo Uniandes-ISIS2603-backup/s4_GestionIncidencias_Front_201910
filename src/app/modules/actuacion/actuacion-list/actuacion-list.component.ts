@@ -9,7 +9,7 @@ import {ActuacionService} from '../actuacion.service';
     templateUrl: './actuacion-list.component.html',
     styleUrls: ['./actuacion-list.component.css']
 })
-export class BookListComponent implements OnInit {
+export class ActuacionListComponent implements OnInit {
 
     /**
     * La lista de actuaciones 
