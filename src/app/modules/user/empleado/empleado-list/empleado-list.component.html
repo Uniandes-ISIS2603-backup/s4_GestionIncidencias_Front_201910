@@ -1,18 +1,28 @@
-<table *ngIf="shows" class="table">
-    <thead>
-        <tr>
-            <th scope="col">id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Cedula</th>
-            <th scope="col">usuario</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let empleado of empleados">
-            {{empleado.id}} {{empleado.name}} {{empleado.cedula}} {{empleado.usuario}}
-        </tr>
-    </tbody>
-</table>
-<button (click)=" shows = !shows  " class="btn btn-outline-primary btn-block">
-    Mostrar/Ocultar
-</button>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <table *ngIf="shows" class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Cedula</th>
+                        <th scope="col">usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let empleado of empleados">
+                        <td>{{empleado.id}} </td>
+                        <td>{{empleado.name}}</td>
+                        <td> {{empleado.cedula}} </td>
+                        <td>{{empleado.usuario}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button (click)=" shows = !shows  " class="btn btn-outline-primary btn-block">
+        Mostrar/Ocultar
+        </button>
+        </div>
+    </div>
+</div>

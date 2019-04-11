@@ -13,11 +13,7 @@ import { HomeModule } from './home/home.module';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
-import { EmpleadoModule } from './modules/user/empleado/empleado.module';
-
-
-
-
+import { UserModule } from './modules/user/user.module';
 
 
 
@@ -36,13 +32,13 @@ import { EmpleadoModule } from './modules/user/empleado/empleado.module';
         FormsModule,
         ToastrModule.forRoot({
             timeOut: 10000,
-            positionClass: 'toast-bottom-right',
+            positionClass: 'toast-bot tom-right',
             preventDuplicates: true,
         }),
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
-        NgbModule,
-        EmpleadoModule
+        NgbModule,        
+        UserModule
     ],
     bootstrap: [AppComponent],
     providers: [
@@ -52,5 +48,6 @@ import { EmpleadoModule } from './modules/user/empleado/empleado.module';
             multi: true
         }
     ]
+    
 })
 export class AppModule {}

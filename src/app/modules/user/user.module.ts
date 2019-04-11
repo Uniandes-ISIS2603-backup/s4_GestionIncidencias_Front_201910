@@ -7,7 +7,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { EmpleadoModule } from './empleado/empleado.module';
-import { EmpleadoListComponent } from './empleado/empleado-list/empleado-list.component';
 
 
 
@@ -25,7 +24,7 @@ import { EmpleadoListComponent } from './empleado/empleado-list/empleado-list.co
 
   ],
   exports:[
-    EmpleadoListComponent 
+     
   ],
   declarations: []
 })
