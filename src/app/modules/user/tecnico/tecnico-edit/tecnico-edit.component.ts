@@ -15,7 +15,7 @@ export class TecnicoEditComponent implements OnInit {
 
   /**
     * The component's constructor
-    * @param tecnicoService The editorial's service
+    * @param tecnicoService The tecnico's service
     * @param toastrService The toastr to show messages to the user 
     */
      constructor(
@@ -63,7 +63,7 @@ export class TecnicoEditComponent implements OnInit {
   }
 
   /**    
-     * Informs the parent component that the user no longer wants to update the editorial
+     * Informs the parent component that the user no longer wants to update the tecnico
      */
     cancelEdition(): void {
      this.cancel.emit();
@@ -71,7 +71,7 @@ export class TecnicoEditComponent implements OnInit {
 
 
     /**
-    * Updates the editorial's information
+    * Updates the tecnico's information
     */
    editTecnico(): void {     
     this.tecnicoService.updateTecnico(this.tecnico)

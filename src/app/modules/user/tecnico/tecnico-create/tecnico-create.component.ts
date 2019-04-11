@@ -12,7 +12,7 @@ import { TecnicoService} from '../tecnico.service'
 
 export class TecnicoCreateComponent implements OnInit {
   constructor(
-    private editorialService: TecnicoService,
+    private tecnicoService: TecnicoService,
     private toastrService: ToastrService
     ) {}
 
@@ -29,7 +29,7 @@ export class TecnicoCreateComponent implements OnInit {
 
    /**
    * The output which tells the parent component
-   * that the user created a new editorial
+   * that the user created a new tecnico
    */
    @Output() create = new EventEmitter();
 
@@ -38,7 +38,7 @@ export class TecnicoCreateComponent implements OnInit {
     * Creates a new tecnico
     */
      createTecnico(): Tecnico {
-      this.editorialService.createTecnico(this.tecnico)
+      this.tecnicoService.createTecnico(this.tecnico)
           .subscribe((tecnico) => {
               this.tecnico = tecnico;
               this.create.emit();    
@@ -48,7 +48,7 @@ export class TecnicoCreateComponent implements OnInit {
     }
 
     /**
-      * Informs the parent component that the user no longer wants to create an editorial
+      * Informs the parent component that the user no longer wants to create an tecnico
       */
      cancelCreation(): void {
       this.cancel.emit();

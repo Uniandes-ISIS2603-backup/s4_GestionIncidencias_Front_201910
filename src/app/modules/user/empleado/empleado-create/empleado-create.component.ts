@@ -9,7 +9,7 @@ import {Empleado} from '../empleado';
 })
 export class EmpleadoCreateComponent implements OnInit {
   constructor(
-    private editorialService: EmpleadoService,
+    private empleadoService: EmpleadoService,
     private toastrService: ToastrService
     ) {}
 
@@ -26,7 +26,7 @@ export class EmpleadoCreateComponent implements OnInit {
 
    /**
    * The output which tells the parent component
-   * that the user created a new editorial
+   * that the user created a new empleado
    */
    @Output() create = new EventEmitter();
 
@@ -35,7 +35,7 @@ export class EmpleadoCreateComponent implements OnInit {
     * Creates a new empleado
     */
    createEmpleado(): Empleado {
-    this.editorialService.createEmpleado(this.empleado)
+    this.empleadoService.createEmpleado(this.empleado)
         .subscribe((empleado) => {
             this.empleado = empleado;
             this.create.emit();            
@@ -45,7 +45,7 @@ export class EmpleadoCreateComponent implements OnInit {
   }
 
   /**
-    * Informs the parent component that the user no longer wants to create an editorial
+    * Informs the parent component that the user no longer wants to create an emplado
     */
    cancelCreation(): void {
     this.cancel.emit();

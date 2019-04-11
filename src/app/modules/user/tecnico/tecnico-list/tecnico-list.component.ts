@@ -79,7 +79,7 @@ export class TecnicoListComponent implements OnInit {
 }
 
    /**
-      * This will initialize the component by retrieving the list of empleados from the service
+      * This will initialize the component by retrieving the list of tecnicos from the service
       * This method will be called when the component is created
       */
        ngOnInit() {

@@ -1,7 +1,6 @@
-<div class="container">
+<div class="container" style="display:flex; justify-content: center;">
     <div class="row">
-        <div class="col-md-12">
-
+        <div class="col">
             <table *ngIf="shows" class="table">
                 <thead>
                     <tr>
@@ -28,14 +27,14 @@
         Mostrar/Ocultar
         </button>
         </div>
+        <div class="col">
+            <div *ngIf="showEdit">
+                <app-empleado-edit [empleado_edit_id]="empleado_edit_id" (cancel)="showEdit=!showEdit" (update)="updateEmpleado()"></app-empleado-edit>
+            </div>
+        </div>
     </div>
 </div>
 <br>
-<br>
-<div *ngIf="showEdit">
-    <app-empleado-edit [empleado_edit_id]="empleado_edit_id" (cancel)="showEdit=!showEdit" (update)="updateEmpleado()"></app-empleado-edit>
-</div>
-
-<div class="container">
+<div class="container" style="display:flex; justify-content: space-around;">
     <app-empleado-create></app-empleado-create>
 </div>
