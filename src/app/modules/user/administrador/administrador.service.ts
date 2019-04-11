@@ -24,7 +24,7 @@ export class AdministradorService {
     * Returns the Observable object containing the list of tecnicos retrieved from the API
     * @returns The list of administradores in real time
     */
-    getAdministradors(): Observable<Administrador[]> {
+    getAdministradores(): Observable<Administrador[]> {
      return this.http.get<Administrador[]>(API_URL + administradores);
      }
 
@@ -33,7 +33,7 @@ export class AdministradorService {
     * @param administrador The new administrador
     * @returns The administrador with its new id if it was created, false if it wasn't
     */
-    createAdministrador(administrador): Observable<Administrador> {
+    createAdministrador( administrador ): Observable<Administrador> {
       return this.http.post<Administrador>(API_URL + administradores, administrador);
     }
 

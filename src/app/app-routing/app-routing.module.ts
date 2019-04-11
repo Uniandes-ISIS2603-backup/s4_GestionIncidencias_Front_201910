@@ -11,6 +11,7 @@ import { TecnicoListComponent } from '../modules/user/tecnico/tecnico-list/tecni
 import { equipoComputoListComponent } from '../modules/equipoComputo/equipoComputo-list/equipoComputo-list.component';
 import { calificacionListComponent } from '../modules/calificacion/calificacion-list/calificacion-list.component';
 import { EmpleadoEditComponent } from '../modules/user/empleado/empleado-edit/empleado-edit.component';
+import { AdministradorListComponent } from '../modules/user/administrador/administrador-list/administrador-list.component'
 
 
 const routes: Routes = [
@@ -87,12 +88,12 @@ const routes: Routes = [
             }]},
 
         {
-        path: 'admins',
-        component:EmpleadoListComponent,
+        path: 'administradores',
+        component:AdministradorListComponent,
         children: [
             {
                 path: 'list',
-                component: EmpleadoListComponent
+                component: AdministradorListComponent
             }]
     }, 
     
