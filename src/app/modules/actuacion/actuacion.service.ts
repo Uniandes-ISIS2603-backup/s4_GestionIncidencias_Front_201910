@@ -45,7 +45,7 @@ getActuaciones(): Observable<Actuacion[]>{
         * @param book The updated book
         * @returns The updated book
         */
-       updateActuacionk(actuacion): Observable<Actuacion> {
+       updateActuacion(actuacion): Observable<Actuacion> {
         return this.http.put<Actuacion>(API_URL + actuaciones + '/' + actuacion.fecha, actuacion);
     }
 
