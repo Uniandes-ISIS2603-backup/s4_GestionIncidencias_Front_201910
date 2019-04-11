@@ -29,6 +29,7 @@ export class TecnicoEditComponent implements OnInit {
      */
   
     tecnico: Tecnico;
+    howEdit:boolean;
 
     /**
     * The id of the tecnico that the user wants to edit

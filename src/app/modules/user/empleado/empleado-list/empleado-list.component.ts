@@ -60,9 +60,22 @@ export class EmpleadoListComponent implements OnInit {
     }
   
     updateEmpleado(): void {
+      console.log("Yo creo que es el console log lo que falla");
       this.showEdit = false;
   }
 
+     /**
+    * Shows or hides the create component
+    */
+   showHideEdit(editorial_id: number): void {
+    if (!this.showEdit || (this.showEdit && editorial_id != this.empleado_edit_id)) {        
+        this.empleado_edit_id = editorial_id;
+        this.showEdit = !this.showEdit;
+    }
+    else {
+        this.showEdit = !this.showEdit;
+    }
+}
  
   /**
     * This will initialize the component by retrieving the list of empleados from the service
@@ -74,4 +87,7 @@ export class EmpleadoListComponent implements OnInit {
       this.getEmpleados();
   }
 
+  ngOnChanges() {
+    this.ngOnInit();
+  }
 }

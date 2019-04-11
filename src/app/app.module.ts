@@ -16,7 +16,8 @@ import {AuthModule} from './auth/auth.module';
 import { UserModule } from './modules/user/user.module';
 import {equipoComputoModule} from './modules/equipoComputo/equipoComputo.module';
 import { calificacionModule } from './modules/calificacion/calificacion.module';
-import { AdministradorComponent } from './administrador/administrador.component';
+import { AdministradorComponent } from './modules/user/administrador/administrador.component';
+
 
 
 

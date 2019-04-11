@@ -9,6 +9,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Cedula</th>
                         <th scope="col">usuario</th>
+                        <th scope="col">Optciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,6 +18,9 @@
                         <td>{{empleado.name}}</td>
                         <td> {{empleado.cedula}} </td>
                         <td>{{empleado.usuario}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="showHideEdit(empleado.id)"><span class="fa fa-pencil"></span></button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -28,6 +32,10 @@
 </div>
 <br>
 <br>
+<div *ngIf="showEdit">
+    <app-empleado-edit [empleado_edit_id]="empleado_edit_id" (cancel)="showEdit=!showEdit" (update)="updateEmpleado()"></app-empleado-edit>
+</div>
+
 <div class="container">
     <app-empleado-create></app-empleado-create>
 </div>

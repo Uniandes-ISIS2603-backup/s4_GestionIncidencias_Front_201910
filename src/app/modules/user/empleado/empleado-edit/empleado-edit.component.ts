@@ -3,6 +3,8 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import { Empleado } from '../empleado';
 import { EmpleadoService } from '../empleado.service';
+
+
 @Component({
   selector: 'app-empleado-edit',
   templateUrl: './empleado-edit.component.html',
@@ -16,14 +18,14 @@ export class EmpleadoEditComponent implements OnInit {
     * @param toastrService The toastr to show messages to the user 
     */
    constructor(
-    private editorialService: EmpleadoService,
+    private empleadoService: EmpleadoService,
     private toastrService: ToastrService
 ) {}
    /**
     * The id of the empleado that the user wants to edit
     * This is passed as a parameter by the parent component
     */
-   @Input() empleado_id: number;
+   @Input() empleado_edit_id: number;
 
    /**
    * The output which tells the parent component
@@ -42,12 +44,14 @@ export class EmpleadoEditComponent implements OnInit {
     */
   empleado: Empleado;
 
+  showEdit:boolean;
+
    /**
     * Retrieves the information of the empleado
     */
 
    getEmpleado(): void {
-    this.editorialService.getEmpleado(this.empleado_id)
+    this.empleadoService.getEmpleado(this.empleado_edit_id)
         .subscribe(empleado => {
             this.empleado = empleado;
         });
@@ -61,7 +65,39 @@ export class EmpleadoEditComponent implements OnInit {
     this.empleado= new Empleado();
     this.getEmpleado();
   }
+
+
+/**
+    * Updates the editorial's information
+    */
+   editEmpleado(): void {
+     console.log("Te digo algo? a mi no me funcionan los logs generalmente ... :(")
+    this.empleadoService.updateEmpleados(this.empleado)
+        .subscribe(() => {
+            this.update.emit();    
+            
+            
+        });
+}
+
+/**    
+    * Informs the parent component that the user no longer wants to update the editorial
+    */
+   cancelEdition(): void {
+    this.cancel.emit();
+}
+
   
+
+showHideEdit(empleado_edit_id: number): void {
+  if (!this.showEdit || (this.showEdit && empleado_edit_id != this.empleado_edit_id)) {
+      this.showEdit = true;
+      this.empleado_edit_id = empleado_edit_id;
+  }
+  else {
+      this.showEdit = false;
+  }
+}
    /**
     * The function which is called every time the user chooses to edit a different editorial
     */

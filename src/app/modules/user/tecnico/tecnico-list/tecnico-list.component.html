@@ -17,11 +17,15 @@
                         <td>{{tecnico.name}}</td>
                         <td> {{tecnico.cedula}} </td>
                         <td>{{tecnico.usuario}}</td>
+                        <td *ngxPermissionsOnly="['ADMIN']">
+                            <button class="btn btn-primary" (click)="showEdit=!showEdit"><span class="fa fa-pencil"></span></button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
+
             <button (click)=" shows = !shows  " class="btn btn-outline-primary btn-block">
-        Mostrar/Ocultar
+                Mostrar/Ocultar
         </button>
         </div>
     </div>

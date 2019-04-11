@@ -72,4 +72,7 @@ export class TecnicoListComponent implements OnInit {
         this.showEdit = false;
         this.getTecnicos();
       }
+      ngOnChanges() {
+        this.ngOnInit();
+      }
 }

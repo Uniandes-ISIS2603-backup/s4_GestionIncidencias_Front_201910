@@ -10,6 +10,7 @@ import { EmpleadoListComponent } from '../modules/user/empleado/empleado-list/em
 import { TecnicoListComponent } from '../modules/user/tecnico/tecnico-list/tecnico-list.component';
 import { equipoComputoListComponent } from '../modules/equipoComputo/equipoComputo-list/equipoComputo-list.component';
 import { calificacionListComponent } from '../modules/calificacion/calificacion-list/calificacion-list.component';
+import { EmpleadoEditComponent } from '../modules/user/empleado/empleado-edit/empleado-edit.component';
 
 
 const routes: Routes = [
@@ -50,7 +51,13 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: EmpleadoListComponent
-            }]
+            },
+            {
+                path: ':id/edit',
+                component: EmpleadoEditComponent,     
+            }          
+               
+        ]
     },
     {
         path: 'equipos',
