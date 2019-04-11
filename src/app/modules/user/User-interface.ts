@@ -1,10 +1,13 @@
 export interface userInterface{
      /**
-     * The name of user
+     * The name of uusuario
      */
+
+     
+
     name:string;
     /**
-     * The identification document of user
+     * The identification document of usersasa
      */
     cedula:string;
     /**
