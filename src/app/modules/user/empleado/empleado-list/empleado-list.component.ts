@@ -21,7 +21,7 @@ export class EmpleadoListComponent implements OnInit {
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService) {}
 
-  /**
+  /**      
     * List of empleados
     */
 
