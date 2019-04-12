@@ -5,14 +5,12 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">puntaje</th>
-                        <th scope="col">descripcion</th>
+                        <th scope="col">Puntaje</th>
+                        <th scope="col">Descripcion</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let calificacion of calificacions">
-                        <td>{{calificacion.id}} </td>
                         <td>{{calificacion.numeroEst}} </td>
                         <td>{{calificacion.descripcion}} </td>
                     </tr>

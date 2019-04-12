@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { calificacion } from './calificacion';
 import {Observable} from 'rxjs';
 const API_URL = environment.apiURL;
-const calificacions = '/calificacions';
+const calificaciones = '/calificaciones';
 @Injectable({
   providedIn: 'root'
 })
@@ -28,7 +28,7 @@ export class calificacionService {
     */
 
   getcalificacions(): Observable<calificacion[]> {
-    return this.http.get<calificacion[]>(API_URL + '/calificacions');
+    return this.http.get<calificacion[]>(API_URL + '/calificaciones');
     }
 
     /**
@@ -38,7 +38,7 @@ export class calificacionService {
     */
 
     createcalificacion(calificacion): Observable<calificacion> {
-      return this.http.post<calificacion>(API_URL + calificacions, calificacion);
+      return this.http.post<calificacion>(API_URL + calificaciones, calificacion);
     }
 
     /**
@@ -47,7 +47,7 @@ export class calificacionService {
         * @returns The updated calificacion
         */
     updatecalificacion(calificacion): Observable<calificacion> {
-        return this.http.put<calificacion>(API_URL + calificacions + '/' + calificacion.id, calificacion);
+        return this.http.put<calificacion>(API_URL + calificaciones + '/' + calificacion.id, calificacion);
     }
     
    /**
@@ -57,7 +57,7 @@ export class calificacionService {
    
     getcalificacion(calificacionId): Observable<calificacion> {
       console.log("Paso por el modulo correcto");
-      return this.http.get<calificacion>(API_URL + calificacions + '/' + calificacionId);
+      return this.http.get<calificacion>(API_URL + calificaciones + '/' + calificacionId);
   }
 
 }

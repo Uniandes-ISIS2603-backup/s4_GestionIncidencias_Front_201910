@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewContainerRef, Input, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { equipoComputoService } from '../equipoComputo.service';
-import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
+
 import { ToastrService} from 'ngx-toastr';
 import { equipoComputo } from '../equipoComputo';
 
@@ -16,7 +15,7 @@ export class equipoComputoEditComponent implements OnInit {
 
   /**
     * The component's constructor
-    * @param equipoComputoService The editorial's service
+    * @param equipoComputoService The equipoComputo's service
     * @param toastrService The toastr to show messages to the user 
     */
      constructor(
@@ -29,12 +28,14 @@ export class equipoComputoEditComponent implements OnInit {
      */
   
     equipoComputo: equipoComputo;
+    showEdit:boolean;
+    
 
     /**
     * The id of the equipoComputo that the user wants to edit
     * This is passed as a parameter by the parent component
     */
-   @Input() equipoComputo_id: number;
+   @Input() equipoComputo_edit_id: number;
 
    /**
    * The output which tells the parent component
@@ -48,14 +49,47 @@ export class equipoComputoEditComponent implements OnInit {
    */
    @Output() update = new EventEmitter();
   
+
+
+
     /**
     * Retrieves the information of the equipoComputo
     */
    getequipoComputo(): void {
-    this.equipoComputoService.getequipoComputo(this.equipoComputo_id)
+    this.equipoComputoService.getequipoComputo(this.equipoComputo_edit_id)
         .subscribe(equipoComputo => {
             this.equipoComputo = equipoComputo;
         });
+  }
+
+  /**    
+     * Informs the parent component that the user no longer wants to update the equipoComputo
+     */
+    cancelEdition(): void {
+     this.cancel.emit();
+  }
+
+
+    /**
+    * Updates the equipoComputo's information
+    */
+   editequipoComputo(): void {     
+    this.equipoComputoService.updateequipoComputo(this.equipoComputo)
+       .subscribe(() => {
+           this.update.emit();             
+           
+           
+       });
+}
+
+showHideEdit(equipoComputo_edit_id: number): void {
+  if (!this.showEdit || (this.showEdit && (equipoComputo_edit_id != this.equipoComputo_edit_id))) {
+      this.showEdit = true;
+      this.equipoComputo_edit_id = equipoComputo_edit_id;
+  }
+  else {
+      this.showEdit = false;
+  }
 }
 
     /**

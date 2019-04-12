@@ -10,12 +10,12 @@
                 <br>
                 <h2 class="text-center">Crear un nuevo equipoComputo</h2>
                 <br>
-                <form name="book" (ngSubmit)="f.form.valid && createequipoComputo()" #f="ngForm" novalidate>
+                <form name="book" (ngSubmit)="createequipoComputo()" #f="ngForm" novalidate>
 
 
                     <div class="form-group">
-                        <label for="equipoComputoUser"><b>Description</b></label>
-                        <input type="text" name="equipoComputoUser" class="form-control" id="equipoComputoUser" [(ngModel)]="equipoComputo.descripcion" #equipoComputoUser="ngModel" required>
+                        <label for="equipoComputoUser"><b>Descripción</b></label>
+                        <input type="text" name="equipoComputoDescripcion" class="form-control" id="equipoComputoDescripcion" [(ngModel)]="equipoComputo.descripcion" #equipoComputoDescripcion="ngModel" required>
                         <div class="invalid-feedback">
                             <div>The equipoComputos's description is missing</div>
                         </div>
@@ -25,8 +25,6 @@
                     <br>
                     <div class="row form-inline justify-content-center align-self-center">
                         <button type="submit" class="btn btn-primary">Create</button>
-                        <div class="divider"></div>
-                        <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
                     </div>
                 </form>
                 <br>

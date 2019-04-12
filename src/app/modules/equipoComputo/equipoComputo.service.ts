@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { equipoComputo } from './equipoComputo';
 import {Observable} from 'rxjs';
 const API_URL = environment.apiURL;
-const equipoComputos = '/equipoComputos';
+const equipoComputos = '/equipos';
 @Injectable({
   providedIn: 'root'
 })
@@ -28,7 +28,7 @@ export class equipoComputoService {
     */
 
   getequipoComputos(): Observable<equipoComputo[]> {
-    return this.http.get<equipoComputo[]>(API_URL + '/equipoComputos');
+    return this.http.get<equipoComputo[]>(API_URL + '/equipos');
     }
 
     /**
