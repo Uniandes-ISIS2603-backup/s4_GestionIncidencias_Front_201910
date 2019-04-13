@@ -106,6 +106,25 @@ const routes: Routes = [
                 component: AdministradorListComponent
             }]
     }, 
+     
+        {
+        path: 'actuaciones',
+        
+        children: [
+            {
+                path: 'list',
+                component: ActuacionListComponent
+            }]
+    }, 
+    {
+        path: 'incidencias',
+        
+        children: [
+            {
+                path: 'list',
+                component: IncidenciaListComponent
+            }]
+    }, 
     
       
    
