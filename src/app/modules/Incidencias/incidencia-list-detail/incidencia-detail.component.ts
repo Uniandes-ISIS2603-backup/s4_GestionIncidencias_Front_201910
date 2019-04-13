@@ -8,6 +8,7 @@ import {Incidencia} from '../Incidencia'
   templateUrl: './incidencia-list-detail.html',
   styleUrls: ['./incidencia-list-detail.css']
 })
+//arreglado
 export class IncidenciaDetailComponent implements OnInit {
 
   constructor( private actuacionService : IncidenciaService,
