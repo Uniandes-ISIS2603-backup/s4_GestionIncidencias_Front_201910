@@ -4,9 +4,9 @@ import { ActivatedRoute, Params } from '@angular/router';
 import {IncidenciaDetail} from '../Incidencia-detail'
 import {Incidencia} from '../Incidencia'
 @Component({
-  selector: 'app-clientes-detail',
-  templateUrl: './clientes-detail.component.html',
-  styleUrls: ['./clientes-detail.component.css']
+  selector: 'app-incidencia-detail',
+  templateUrl: './incidencia-list-detail.html',
+  styleUrls: ['./incidencia-list-detail.css']
 })
 export class IncidenciaDetailComponent implements OnInit {
 
