@@ -7,7 +7,7 @@ import {ActuacionDetail} from '../actuacion-detail';
 
 @Component({
     selector: 'app-actuacion-edit',
-    templateUrl: './actuacion-edit.component.html',
+    templateUrl: './atuacion-edit.component.html',
     styleUrls: ['./actuacion-edit.component.css']
 })
 export class ActuacionEditComponent implements OnInit {
