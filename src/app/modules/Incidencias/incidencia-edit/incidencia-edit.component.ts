@@ -7,8 +7,8 @@ import {IncidenciaDetail} from '../Incidencia-detail';
 
 @Component({
     selector: 'app-incidencia-edit',
-    templateUrl: './actuacion-edit.component.html',
-    styleUrls: ['./actuacion-edit.component.css']
+    templateUrl: './incidencia-edit.component.html',
+    styleUrls: ['./incidencia-edit.component.css']
 })
 export class IncidenciaEditComponent implements OnInit {
 
