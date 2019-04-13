@@ -29,4 +29,4 @@ import {IncidenciaEditComponent} from './incidencia-edit/incidencia-edit.compone
     declarations: [IncidenciaListComponent,IncidenciaDetailComponent, IncidenciaCreateComponent, IncidenciaEditComponent],
     providers: [IncidenciaService]
 })
-export class IncidencialModule {}
+export class IncidenciaModule {}
