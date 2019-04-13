@@ -1,42 +1,53 @@
-<div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
-            <br>
-            <h2 class="text-center">Actualizar una actuacion</h2>
-            <br>
-            <form name="editorial" (ngSubmit)="f.form.valid && editEditorial()" #f="ngForm" novalidate>
-                <div class="form-group">
-                        <label for="actuacionFecha"><b>Fecha</b></label>
-                        <input type="text" name="Fecha" class="form-control" id="actuacionFecha" [(ngModel)]="actuacion.fecha"
-                            #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actuacionFecha.invalid }"
-                            required>
-        
-                    <label for="ActuacionTipo"><b>Tipo</b></label>
-                     <input type="text" name="tipo" class="form-control" id="ActuacionTipo" [(ngModel)]="actuacion.tipo"
-                            #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ActuacionTipo.invalid }"
-                            required>
-        
-                      <label for="actuacionDescripcion"><b>Descripcion</b></label>
-                     <input type="text" name="descripcion" class="form-control" id="actuacionDescripcion" [(ngModel)]="actuacion.descripcion"
-                            #editorialName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actuacionDescripcion.invalid }"
-                            required>
-    
-    
-                    <div class="invalid-feedback">
-                        <div> valores invalidos de la actuacion</div>
-    
-    
-                      
-                        
+<p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Crear Actuacion
+    </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <br>
+                <h2 class="text-center">Editar una nueva actuacion</h2>
+                <br>
+                <form name="actuacion" (ngSubmit)="f.form.valid && createActuacion()" #f="ngForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="actuacion.fecha"><b>Fecha</b></label>
+                        <input type="text" name="actuacionFecha" class="form-control" id="actuacionFecha" [(ngModel)]="actuacion.fecha" #tecnicoName="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>La fecha de la actuacion no es correcta</div>
+                        </div>
                     </div>
-                </div>
-                <div class="row form-inline justify-content-center align-self-center">
-                    <button type="submit" class="btn btn-primary">Edit</button>
-                    <div class="divider"></div>
-                    <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
-                </div>
-            </form>
+
+                    <div class="form-group">
+                        <label for="actuacionTipo"><b>Tipo</b></label>
+                        <input type="text" name="actuacionTipo" class="form-control" id="actuacionTipo" [(ngModel)]="actuacion.tipo" #TecnicoUser="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>El tipo de la actuacion no es correcto</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="actuacionDescripcion"><b>Descripcion</b></label>
+                        <input type="descripcion" name="actuacionDescripcion" class="form-control" id="actuacionDescripcion" [(ngModel)]="actuacion.descripcion" #tecnicoPassword="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>La descripcion de la actuacion es incorrecta</div>
+                        </div>
+                    </div>
+                   
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary ">Editar</button>
+                        <div class="divider"></div>
+                        <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+                    </div>
+                </form>
+                <br>
+            </div>
         </div>
-        <div class="col-3"></div>
     </div>
+    <br>
+    <br>
+</div>
     
