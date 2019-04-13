@@ -18,6 +18,8 @@ import {equipoComputoModule} from './modules/equipoComputo/equipoComputo.module'
 import { calificacionModule } from './modules/calificacion/calificacion.module';
 import { AdministradorComponent } from './modules/user/administrador/administrador.component';
 import { PrioridadModule } from './modules/prioridad/prioridad.module';
+import { ActuacionModule } from './modules/actuacion/actuacion.module';
+import {IncidenciaModule} from './modules/Incidencias/incidencia.module';
 
 
 
@@ -46,7 +48,9 @@ import { PrioridadModule } from './modules/prioridad/prioridad.module';
         UserModule,
         equipoComputoModule,
         calificacionModule,
-        PrioridadModule
+        PrioridadModule,
+         ActuacionModule,
+        IncidenciaModule
     ],
     bootstrap: [AppComponent],
     providers: [
