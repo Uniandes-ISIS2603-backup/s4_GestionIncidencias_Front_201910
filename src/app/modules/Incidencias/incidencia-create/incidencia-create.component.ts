@@ -6,13 +6,13 @@ import {ToastrService} from 'ngx-toastr';
 import {IncidenciaService} from '../Incidencia.service';
 
 import {Incidencia} from '../Incidencia';
-import {Empleado} from '../../user/empleado/empleado';
+
 
 
 @Component({
     selector: 'app-incidencia-create',
     templateUrl: './incidencia-create.component.html',
-    styleUrls: ['./incidencia-create.component.css'],
+    styleUrls: ['./incidencia-create.css'],
     providers: [DatePipe]
 })
 export class IncidenciaCreateComponent implements OnInit {
