@@ -13,7 +13,7 @@ import { calificacionListComponent } from '../modules/calificacion/calificacion-
 import { EmpleadoEditComponent } from '../modules/user/empleado/empleado-edit/empleado-edit.component';
 import { AdministradorListComponent } from '../modules/user/administrador/administrador-list/administrador-list.component'
 import { PrioridadListComponent } from '../modules/prioridad/prioridad-list/prioridad-list.component';
-
+import {IncidenciaListComponent} from '../modules/Incidencias/incidencia-list/incidencia-list.component'
 
 const routes: Routes = [
 
