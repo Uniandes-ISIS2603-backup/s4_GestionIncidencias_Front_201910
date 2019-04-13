@@ -1,19 +1,39 @@
-<div class="container-fluid">
-       
-        <div class = "col-md-2">
-          <table class = "table table-striped">
-            <thead class = "thead-dark">  
-            <tr>   
-            <th scope="col">Identificador</th>
-           
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor = "let c of incidencias">
-            <td style="cursor: pointer;">
-            <a class="figure-caption" [routerLink] ="['/Incidencias', { outlets: { 'detail': [c.id] } }]" >{{c.id}}</a>
-            </td>
-            </tr>
-            </tbody>
-            </table>
-            </div>  
+      <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+          
+                      <table *ngIf="shows" class="table">
+                          <thead class = "thead-dark">
+                              <tr>
+                                  <th scope="col">Id</th>
+                                  <th scope="col">Fecha</th>
+                                  <th scope="col">Prioridad</th>
+                                  <th scope="col">Descripcion</th>
+                                  <th scope="col">Estado</th>
+                                  <th scope="col">Tecnico</th>
+                                  <th scope="col">Empleado</th>
+                                  <th scope="col">Calificacion</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr *ngFor="let c of actuaciones">
+                                  <td>{{c.id}} </td>
+                                  <td>{{c.name}}</td>
+                                  <td> {{c.cedula}} </td>
+                                  <td>{{c.usuario}}</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      <button (click)=" shows = !shows  " class="btn btn-outline-primary btn-block">
+                  Mostrar/Ocultar
+                  </button>
+                  </div>
+              </div>
+          </div>
+          <br>
+          <br>
+          <div class="container">
+          <app-incidencia-create></app-incidencia-create>   
+          <app-incidencia-edit></app-incidencia-edit>   
+          </div>
+            
