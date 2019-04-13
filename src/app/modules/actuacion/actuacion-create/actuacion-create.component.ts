@@ -8,8 +8,8 @@ import {Actuacion} from '../actuacion';
 
 @Component({
     selector: 'app-actuacion-create',
-    templateUrl: './editorial-create.component.html',
-    styleUrls: ['./editorial-create.component.css']
+    templateUrl: './actuacion-create.component.html',
+    styleUrls: ['./actuacion-create.component.css']
 })
 export class ActuacionCreateComponent implements OnInit {
 
