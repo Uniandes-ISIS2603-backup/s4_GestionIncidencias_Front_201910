@@ -6,17 +6,15 @@
                     <thead class = "thead-dark">
                         <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Fecha</th>
+                            <th scope="col">tipo</th>
                             <th scope="col">Descripcion</th>
-                            <th scope="col">Tipo</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let c of actuaciones">
+                        <tr *ngFor="let c of prioridades">
                             <td>{{c.id}} </td>
-                            <td>{{c.name}}</td>
-                            <td> {{c.cedula}} </td>
-                            <td>{{c.usuario}}</td>
+                            <td>{{c.descripcion}}</td>
+                            <td> {{c.tipoPrioridad}} </td>
                         </tr>
                     </tbody>
                 </table>
@@ -29,6 +27,6 @@
     <br>
     <br>
     <div class="container">
-       
+        <app-prioridad-create></app-prioridad-create>        
         
     </div>

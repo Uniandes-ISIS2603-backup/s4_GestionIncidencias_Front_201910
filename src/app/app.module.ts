@@ -17,7 +17,7 @@ import { UserModule } from './modules/user/user.module';
 import {equipoComputoModule} from './modules/equipoComputo/equipoComputo.module';
 import { calificacionModule } from './modules/calificacion/calificacion.module';
 import { AdministradorComponent } from './modules/user/administrador/administrador.component';
-
+import { PrioridadModule } from './modules/prioridad/prioridad.module';
 
 
 
@@ -45,7 +45,8 @@ import { AdministradorComponent } from './modules/user/administrador/administrad
         NgbModule,        
         UserModule,
         equipoComputoModule,
-        calificacionModule
+        calificacionModule,
+        PrioridadModule
     ],
     bootstrap: [AppComponent],
     providers: [

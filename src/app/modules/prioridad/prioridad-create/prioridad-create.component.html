@@ -1,0 +1,53 @@
+<p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Crear prioridad
+        </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <br>
+                <h2 class="text-center">Crear una nueva prioridad</h2>
+                <br>
+                <form name="prioridad" (ngSubmit)="f.form.valid && createPrioridad()" #f="ngForm" novalidate>
+
+
+                    <div class="form-group">
+                        <label for="prioridadId"><b>ID</b></label>
+                        <input type="text" name="prioridadId" class="form-control" id="prioridadId" [(ngModel)]="prioridad.id" #prioridad="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The prioridad's id is missing</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Prioridad"><b>Tipo</b></label>
+                        <input type="text" name="prioridadps" class="form-control" id="prioridadps" [(ngModel)]="prioridad.tipoPrioridad" #prioridad="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The prioridad's user is missing</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prioridadDes"><b>Descripción</b></label>
+                        <input type="text" name="prioridadDes" class="form-control" id="prioridadDes" [(ngModel)]="prioridad.descripcion" #prioridad="ngModel" required>
+                        <div class="invalid-feedback">
+                            <div>The prioridad's description is missing</div>
+                        </div>
+                    </div>
+
+                   
+                    <br>
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                    <div class="divider"></div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

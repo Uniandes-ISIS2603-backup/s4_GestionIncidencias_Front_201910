@@ -1,9 +1,6 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-
 import {ToastrService} from 'ngx-toastr';
-
 import {PrioridadService} from '../prioridad.service';
-
 import {Prioridad} from '../prioridad';
 
 @Component({
@@ -42,7 +39,7 @@ export class PrioridadCreateComponent implements OnInit {
     /**
     * Creates a new Prioridad
     */
-    createEditorial(): Prioridad {
+    createPrioridad(): Prioridad {
         this.prioridadService.createPrioridad(this.prioridad)
             .subscribe((prioridad) => {
                 this.prioridad = prioridad;

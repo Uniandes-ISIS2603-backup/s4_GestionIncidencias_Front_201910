@@ -10,7 +10,7 @@ import {AppModule} from '../../app.module';
 describe('Service: PrioridadService', () => {
     let injector: TestBed;
     let service: PrioridadService;
-	const books: Prioridad[] = require('../../assets/prioridad.json');
+	const prioridades: Prioridad[] = require('../../assets/prioridad.json');
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -32,8 +32,8 @@ describe('Service: PrioridadService', () => {
 
     it('#createPrioridad should return value from observable',
     (done: DoneFn) => {
-   let prioridad:Prioridad = { tipoPrioridad : "Prueba" };
-    service.createActuacion(prioridad).subscribe(value => {
+   let prioridad:Prioridad = { id : "Prueba" };
+    service.createPrioridad(prioridades).subscribe(value => {
         expect(value.tipoPrioridad).toEqual(prioridad.tipoPrioridad);
         done();
         });
@@ -41,7 +41,7 @@ describe('Service: PrioridadService', () => {
     it('#updatePriority should return the priority updated',
     (done: DoneFn) => {
 	let prioridad:Prioridad  = { tipoPrioridad : "Prueba" };
-    service.updateActuacion(prioridad).subscribe(value => {
+    service.updatePrioridad(prioridad).subscribe(value => {
         expect(value.tipoPrioridad).toEqual(prioridad.tipoPrioridad);
         done();
         });

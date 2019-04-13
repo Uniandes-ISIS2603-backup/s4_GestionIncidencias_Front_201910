@@ -8,10 +8,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import {PrioridadListComponent} from './prioridad-list/prioridad-list.component';
 
-import {PrioridadDetailComponent} from './prioridad-detail-list/prioridad-detail.component';
 import {PrioridadCreateComponent} from  './prioridad-create/prioridad-create.component';
-import {PrioridadEditComponent} from './prioridad-edit/prioridad-edit.component';
 import {PrioridadService} from './prioridad.service';
+import { PrioridadDetailComponent } from './prioridad-detail/prioridad-detail.component';
+import { PrioridadEditComponent } from './prioridad-edit/prioridad-edit.component';
 
 @NgModule({
     imports: [
@@ -25,9 +25,9 @@ import {PrioridadService} from './prioridad.service';
         NgxPermissionsModule
     ],
     declarations: [
-        PrioridadListComponent,PrioridadDetailComponent, PrioridadCreateComponent,PrioridadEditComponent
+        PrioridadListComponent, PrioridadCreateComponent, PrioridadDetailComponent, PrioridadEditComponent
     ],
     providers: [PrioridadService],
-    exports: [PrioridadListComponent, PrioridadDetailComponent]
+    exports: [PrioridadListComponent, PrioridadCreateComponent]
 })
 export class PrioridadModule {}

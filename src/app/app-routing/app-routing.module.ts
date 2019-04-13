@@ -12,6 +12,7 @@ import { equipoComputoListComponent } from '../modules/equipoComputo/equipoCompu
 import { calificacionListComponent } from '../modules/calificacion/calificacion-list/calificacion-list.component';
 import { EmpleadoEditComponent } from '../modules/user/empleado/empleado-edit/empleado-edit.component';
 import { AdministradorListComponent } from '../modules/user/administrador/administrador-list/administrador-list.component'
+import { PrioridadListComponent } from '../modules/prioridad/prioridad-list/prioridad-list.component';
 
 
 const routes: Routes = [
@@ -67,6 +68,15 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: equipoComputoListComponent
+            }]
+    },
+    {
+        path: 'prioridades',
+        
+        children: [
+            {
+                path: 'list',
+                component: PrioridadListComponent
             }]
     },
     {
