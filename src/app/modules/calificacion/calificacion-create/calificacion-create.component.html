@@ -1,3 +1,21 @@
+
+
+<style>
+    form p, form input[type = "submit"]{text-align:left; font-size:25px;}
+    
+    input[type = "radio"]{ display:none;/*position: absolute;top: -1000em;*/}
+    label{ color:grey;}
+    
+    .clasificacion{
+        direction: rtl;
+        unicode-bidi: bidi-override;
+    }
+    
+    label:hover,
+    label:hover ~ label{color:orange;}
+    input[type = "radio"]:checked ~ label{color:orange;}
+    </style>
+
 <p>
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
           Crear calificacion
@@ -14,10 +32,20 @@
 
                     <div class="form-group">
                         <label for="tecnicoUser"><b>Puntaje</b></label>
-                        <input type="number" name="calificacionEst" class="form-control" id="calificacionEst" [(ngModel)]="calificacion.numeroEst" #TecnicoUser="ngModel" required>
-                        <div class="invalid-feedback">
-                            <div>The tecnicos's user is missing</div>
-                        </div>
+                        <form>
+                            <p class="clasificacion">
+                              <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                              --><label for="radio1">★</label><!--
+                              --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                              --><label for="radio2">★</label><!--
+                              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                              --><label for="radio3">★</label><!--
+                              --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                              --><label for="radio4">★</label><!--
+                              --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                              --><label for="radio5">★</label>
+                            </p>
+                          </form>
                     </div>
 
                     <div class="form-group">
