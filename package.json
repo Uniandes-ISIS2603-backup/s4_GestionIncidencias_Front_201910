@@ -28,6 +28,7 @@
         "angular-dual-listbox": "^4.7.0",
         "angular-font-awesome": "^3.1.2",
         "angular2-fontawesome": "^5.2.1",
+        "auth0-js": "^9.10.2",
         "bootstrap": "^4.1.1",
         "bootstrap-duallistbox": "^3.0.6",
         "core-js": "^2.4.1",
