@@ -12,7 +12,7 @@ export class AuthService {
   auth0 = new auth0.WebAuth({
     clientID: 'y9TXGGaMcoABOQ2jd9uJhyKEmfeSayRV',
     domain: 'dev-v41g1bt6.auth0.com',
-    responseType: 'token id_token',
+    responseType: 'code',
     redirectUri: 'http://localhost:3000/callback',
     scope: 'openid'
   });

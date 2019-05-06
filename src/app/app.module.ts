@@ -20,7 +20,7 @@ import { AdministradorComponent } from './modules/user/administrador/administrad
 import { PrioridadModule } from './modules/prioridad/prioridad.module';
 import { ActuacionModule } from './modules/actuacion/actuacion.module';
 import {IncidenciaModule} from './modules/Incidencias/incidencia.module';
-
+import { LoginModule} from './modules/login/login.module'
 
 
 
@@ -51,7 +51,8 @@ import {IncidenciaModule} from './modules/Incidencias/incidencia.module';
         calificacionModule,
         PrioridadModule,
          ActuacionModule,
-        IncidenciaModule
+        IncidenciaModule,
+        LoginModule
     ],
     bootstrap: [AppComponent],
     providers: [

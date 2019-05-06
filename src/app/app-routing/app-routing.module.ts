@@ -15,6 +15,10 @@ import { AdministradorListComponent } from '../modules/user/administrador/admini
 import { PrioridadListComponent } from '../modules/prioridad/prioridad-list/prioridad-list.component';
 import {IncidenciaListComponent} from '../modules/Incidencias/incidencia-list/incidencia-list.component'
 
+//Service
+
+import {AuthService} from "../modules/login/auth.service";
+
 const routes: Routes = [
 
      {
@@ -143,7 +147,8 @@ const routes: Routes = [
         RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
     ],
     exports: [RouterModule],
-    declarations: []
+    declarations: [],
+    providers:[AuthService]
 })
 export class AppRoutingModule {
 
