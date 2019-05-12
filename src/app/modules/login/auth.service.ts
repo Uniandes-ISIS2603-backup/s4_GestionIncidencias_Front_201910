@@ -12,8 +12,8 @@ export class AuthService {
   auth0 = new auth0.WebAuth({
     clientID: 'y9TXGGaMcoABOQ2jd9uJhyKEmfeSayRV',
     domain: 'dev-v41g1bt6.auth0.com',
-    responseType: 'code',
-    redirectUri: 'http://localhost:3000/callback',
+    responseType: 'token id_token',
+    redirectUri: 'http://localhost:4200/callback',
     scope: 'openid'
   });
 
