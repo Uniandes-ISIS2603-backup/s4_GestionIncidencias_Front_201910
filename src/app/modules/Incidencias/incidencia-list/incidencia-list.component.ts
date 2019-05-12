@@ -4,6 +4,10 @@ import {Incidencia} from '../Incidencia';
 import {IncidenciaService} from '../Incidencia.service';
 
 /**
+*Esta es la clase que se encarga de controlar las incidencias
+*/
+
+/**
 * The component for the list of editorials in the BookStore
 */
 @Component({
