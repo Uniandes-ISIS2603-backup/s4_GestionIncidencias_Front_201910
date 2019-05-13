@@ -12,6 +12,7 @@ import { AdministradorCreateComponent } from './administrador/administrador-crea
 import { AdministradorDetailComponent } from './administrador/administrador-detail/administrador-detail.component';
 import { AdministradorEditComponent } from './administrador/administrador-edit/administrador-edit.component';
 import { AdministradorListComponent } from './administrador/administrador-list/administrador-list.component';
+import { MenuComponent } from './administrador/menu/menu.component';
 
 
 
@@ -32,6 +33,6 @@ import { AdministradorListComponent } from './administrador/administrador-list/a
   exports:[
      
   ],
-  declarations: [AdministradorCreateComponent, AdministradorDetailComponent, AdministradorEditComponent, AdministradorListComponent]
+  declarations: [AdministradorCreateComponent, AdministradorDetailComponent, AdministradorEditComponent, AdministradorListComponent, MenuComponent]
 })
 export class UserModule { }

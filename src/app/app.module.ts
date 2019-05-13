@@ -20,14 +20,16 @@ import { AdministradorComponent } from './modules/user/administrador/administrad
 import { PrioridadModule } from './modules/prioridad/prioridad.module';
 import { ActuacionModule } from './modules/actuacion/actuacion.module';
 import {IncidenciaModule} from './modules/Incidencias/incidencia.module';
-import { LoginModule} from './modules/login/login.module'
+import { LoginModule} from './modules/login/login.module';
+import { MenuComponent } from './app/modules/user/administrador/menu/menu.component'
 
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        AdministradorComponent,            
+        AdministradorComponent,
+        MenuComponent,            
     ],
     imports: [
         HomeModule,

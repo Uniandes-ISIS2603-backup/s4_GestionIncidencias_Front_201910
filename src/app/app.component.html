@@ -1,58 +1,51 @@
-<div class="container">
-    <nav class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background-color:black;">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+<div class="container-fluid">
 
-                <!-- active -->
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['home']"> <img src="https://i.ytimg.com/vi/PWHHR_Ocs5A/maxresdefault.jpg" alt="Inicio" height="35" width="35"> </a>
-                </li>
+    <body background="https://www.eltiempo.com/files/article_main/uploads/2017/11/13/5a0a68459c8b5.jpeg"></body>
 
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['empleados/list']"> Empleados</a>
-                </li>
+    <div class="row">
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-text">
+                      Bienvenido por favor escoja su rol
+                    </span>
+        </nav>
+    </div>
 
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['tecnicos/list']"> Técnicos </a>
-                </li>
+    <div class="row justify-content-md-center">
+        <h1>
+            Ingrese su rol
+        </h1>
 
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['administradores/list']"> Administradores </a>
-                </li>
-
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['actuaciones/list']"> Actuaciones </a>
-                </li>
-
-
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['incidencias/list']"> Incidencias </a>
-                </li>
-
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['equipos/list']"> Equipos de Cómputo </a>
-                </li>
-
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['calificaciones/list']"> Calificaciones </a>
-                </li>
-
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['prioridades/list']"> Prioridades </a>
-                </li>
-
-                <li>
-                    <li class="nav-item" routerLinkActive="active">
-                        <a class="nav-link"> Incidencias </a>
-                    </li>
-
-            </ul>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="card" style="width: 18rem;">
+            <img src="https://dl.dropboxusercontent.com/s/54z1weg2llct4ym/Administrador.png?dl=0" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
         </div>
-    </nav>
-    <br>
 
-    <router-outlet></router-outlet>
+        <div class="card" style="width: 18rem;">
+            <img src="https://dl.dropboxusercontent.com/s/zgff4han7iykvnd/T%C3%A9cnico.png?dl=0" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://dl.dropboxusercontent.com/s/o0xe8xkfl7qflbj/Empleado.png?dl=0" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+
+    </div>
+
 </div>
