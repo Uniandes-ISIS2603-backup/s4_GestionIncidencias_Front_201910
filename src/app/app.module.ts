@@ -22,14 +22,13 @@ import { ActuacionModule } from './modules/actuacion/actuacion.module';
 import {IncidenciaModule} from './modules/Incidencias/incidencia.module';
 import { LoginModule} from './modules/login/login.module';
 import { MenuComponent } from './app/modules/user/administrador/menu/menu.component'
-
-
-
+import { FooterComponent } from './modules/footer/footer/footer.component';
 @NgModule({
     declarations: [
         AppComponent,
         AdministradorComponent,
-        MenuComponent,            
+        MenuComponent,   
+        FooterComponent         
     ],
     imports: [
         HomeModule,
