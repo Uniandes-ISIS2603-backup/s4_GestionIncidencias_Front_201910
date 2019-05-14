@@ -1,54 +1,42 @@
-<p>
-    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Listar empleados
-  </a>
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-    Crear empleados
-  </button>
-</p>
-
-<div class="collapse" id="collapseExample">
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <table *ngIf="shows" class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Cedula</th>
-                            <th scope="col">usuario</th>
-                            <th scope="col">Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let empleado of empleados">
-                            <td>{{empleado.id}} </td>
-                            <td>{{empleado.name}}</td>
-                            <td> {{empleado.cedula}} </td>
-                            <td>{{empleado.usuario}}</td>
-                            <td>
-                                <button class="btn btn-primary" (click)="showHideEdit(empleado.id)"><span class="fa fa-pencil"></span></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-
-            <div class="col-6">
-
-                <div class="card-header" style="align-content: center">
-                    <div *ngIf="showEdit">
-                        <app-empleado-edit [empleado_edit_id]="empleado_edit_id" (cancel)="showEdit=!showEdit" (update)="updateEmpleado()"></app-empleado-edit>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+<div class="row justify-content-md-center">
+    <div class="col-8">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button type="button" class="btn btn-primary">Search</button>
+            </form>
+            <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/crearEmpleado']">Create  </button>
+        </nav>
     </div>
 </div>
 
-<div class="collapse" id="collapseExample2">
-    <app-empleado-create></app-empleado-create>
+
+
+<div class="row justify-content-md-center">
+    <div class="col-8">
+        <table *ngIf="shows" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cédula</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleado of empleados">
+                    <td>{{empleado.name}}</td>
+                    <td> {{empleado.cedula}} </td>
+                    <td>{{empleado.usuario}}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="showHideEdit(empleado.id)"><span class="fa fa-pencil"></span></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

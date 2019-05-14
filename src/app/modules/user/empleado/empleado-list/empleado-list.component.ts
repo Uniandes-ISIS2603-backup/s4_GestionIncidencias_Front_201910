@@ -4,6 +4,9 @@ import { EmpleadoService } from '../empleado.service';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 import { Empleado } from '../empleado';
+import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
+import { EmpleadoCreateComponent } from '../empleado-create/empleado-create.component';
+
 @Component({
   selector: 'app-empleado-list',
   templateUrl: './empleado-list.component.html',
@@ -19,7 +22,8 @@ export class EmpleadoListComponent implements OnInit {
     private empleadoService: EmpleadoService,
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
-    private toastrService: ToastrService) {}
+    private toastrService: ToastrService,
+    private dialog: MatDialog) {}
 
   /**      
     * List of empleados
@@ -90,5 +94,13 @@ export class EmpleadoListComponent implements OnInit {
   ngOnChanges() {    
     this.ngOnInit();
     this.getEmpleados();
+  }
+
+  onCreate(){
+    const dialogConfig= new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="60%";    
+    this.dialog.open(EmpleadoCreateComponent,dialogConfig);
   }
 }

@@ -1,8 +1,58 @@
-<div class="container-fluid" style="max-height: 100%">
-    <h5>Por favor ingrese su rol:</h5>
-    <div class="row" id="kunzel">
-        <img src="https://dl.dropboxusercontent.com/s/54z1weg2llct4ym/Administrador.png?dl=0" id="interno" class="img-fuid img-thumbnail hoverable" (click)="login()">
-        <img src="https://dl.dropboxusercontent.com/s/zgff4han7iykvnd/T%C3%A9cnico.png?dl=0" id="interno" class="img-fluid img-thumbnail hoverable" (click)="login()">
-        <img src="https://dl.dropboxusercontent.com/s/o0xe8xkfl7qflbj/Empleado.png?dl=0" id="interno" class="img-fluid img-thumbnail hoverable" (click)="login()">
+<body background="https://www.eltiempo.com/files/article_main/uploads/2017/11/13/5a0a68459c8b5.jpeg">
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="card" style="width: 18rem;">
+                <img src="https://uc383428b123a062d3fbc767b101.previews.dropboxusercontent.com/p/thumb/AAYvdRR8n7dY_hGPoLxxAK1aCzQSCPbsG5-3EG8bE6DrFO9jrfpl-3BYS41v_SaIM_LR6155QZuzsJqmlPvyr0Zs42Wb7exoskCJ_zaAJb4deTOmL70Fd-EK6sBykP28TBSYo5YdP2P1C7y3NbvAN5M8LmUjSCNO9bngpITU_-C_WkHaFNUd_bFiSI1PGWl5egEsd_0yiRu6tIHbEj-moTfPPromgIORcva7Ni95lg0f4LpYAfl-eB9WPdJW-MaR9t0xnqYi4iTWlAt-ngrRIIzDctGaiV2bGkGKBoC1g1n9nBZ9oh9F6YqHfhxQ5GzLONtxgLoXZiUvgKy2NvCBA1ItQJzhfeV9kOXe-r5cbPENUtA-q7Aofbivz7Sujm_8w2_qA1Px2s-g4V5j7xLMyDzL/p.png?fv_content=true&size_mode=5"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Tecnico</h5>
+                    <p class="card-text">Si eres un técnico ingresa aquí para ver tu perfil y tus incidencias</p>
+                    <a [routerLink]="['/menuAdministrador']" class="btn btn-primary">Soy un técnico</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://uce0e0785dbe6199509a1dab12fb.previews.dropboxusercontent.com/p/thumb/AAZd4rRsK13weZJxVetU2vUJhwUGirvFKbDkZ7YfBy4fen0a52ppcHyorg4fMb19raISQ69FYmBPX-s4fr_AGnTFMK6-kD38-wLp6EybzV1LOPUhSFPBjGm5yGCv676AkI45M20T7mq0Tap5gWqjoZjfu92XSDTu_aqOkwHLpXt4lnSOyzMJMnKe_tCpUCZrNp0nYHyp2JP4aa53ShV6V9X7oLIYH5hMCGuPG6FyW4ceDsoOTp3VfSb0atyCFhiggFuxIzlxYkeVfc7GM1OI71WYfkZ3pTDddFoPsuiYOVIjsUnOsVl0CfNUC_7jsf0SPnMxVoD0cUmmx-TB1Dl2rM4NPRPLv31nrYFjkQnsOPwX2w/p.png?size=1280x960&size_mode=3"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Empleado</h5>
+                    <p class="card-text">Si eres un empleado ingresa aquí para ver tu perfil y tus incidencias creadas</p>
+                    <a href="#" class="btn btn-primary">Soy empleado</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://uc56a934569ebd1b4d511c6d9932.previews.dropboxusercontent.com/p/thumb/AAZdMbBYTHa6JKKvmq5vh0hA5v8ISRUoyxvGFBWPABWAP3GWEqtisAKzT5SaBlEa16yBrq7X3u4iIOqzPU6lQq6mUwpwN3wZOJFil9dlHqBWS78eRTk391G-xmtlWuu1uxmEJGyi5ccNH0g3ET2EZ0IfqGgjPKWjTrNSbX5Sjy2CMSqJverGgM8Kf4cJ_fkryyM6VpW8G1WPDqMFV5yLRuGhlOgCIScOVty_CvBa1E2Dk2gzDSz3NPU053c7DmfSY89ox3Xw7LA6Jv4VHK2cC0A36-jLHA0gRzyipE5Rt2Xs6g2rzydZ36zzUN4OFY0_PYCClEYD-Fgf4WStFR3xRhekj-algy-eTCjim2FKRrI0SEEJJ-OYmzCiOBEezBA9q3WY4C1n1Z0-Ac3XaQNN3VYn/p.png?fv_content=true&size_mode=5"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Administrador </h5>
+                    <p class="card-text">Si eres un administrador aquí podrás gestionar las incidencias, los técnicos y los empleados de la aplicación</p>
+                    <a href="#" class="btn btn-primary">Soy administrador</a>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
-</div>
+
+
+
+</body>

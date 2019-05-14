@@ -14,13 +14,19 @@ import { EmpleadoEditComponent } from '../modules/user/empleado/empleado-edit/em
 import { AdministradorListComponent } from '../modules/user/administrador/administrador-list/administrador-list.component'
 import { PrioridadListComponent } from '../modules/prioridad/prioridad-list/prioridad-list.component';
 import {IncidenciaListComponent} from '../modules/Incidencias/incidencia-list/incidencia-list.component'
+import { MenuComponent } from '../modules/user/administrador/menu/menu.component'
 
 //Service
 
 import {AuthService} from "../modules/login/auth.service";
+import { EmpleadoCreateComponent } from '../modules/user/empleado/empleado-create/empleado-create.component';
 
 const routes: Routes = [
-
+     {path:'menuAdministrador',component: MenuComponent},
+     {path:'listarEmpleados', component:EmpleadoListComponent},
+     {path:'listarTecnicos', component:TecnicoListComponent},
+     {path:'listarIncidencias', component:IncidenciaListComponent},
+     {path:'crearEmpleado', component:EmpleadoCreateComponent},
      {
         path: 'auth',
         children: [
@@ -49,22 +55,7 @@ const routes: Routes = [
     {
         path: 'home',
         component: HomeComponent
-    },
-    {
-        path: 'empleados',
-        
-        children: [
-            {
-                path: 'list',
-                component: EmpleadoListComponent
-            },
-            {
-                path: ':id/edit',
-                component: EmpleadoEditComponent,     
-            }          
-               
-        ]
-    },
+    },    
     {
         path: 'equipos',
         
@@ -91,15 +82,7 @@ const routes: Routes = [
                 path: 'list',
                 component: calificacionListComponent
             }]
-    },
-    {
-        path: 'tecnicos',
-        
-        children: [
-            {
-                path: 'list',
-                component: TecnicoListComponent
-            }]},
+    },  
 
         {
         path: 'administradores',
@@ -120,16 +103,6 @@ const routes: Routes = [
                 component: ActuacionListComponent
             }]
     }, 
-    {
-        path: 'incidencias',
-        
-        children: [
-            {
-                path: 'list',
-                component: IncidenciaListComponent
-            }]
-    }, 
-    
       
    
      

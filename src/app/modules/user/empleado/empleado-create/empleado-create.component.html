@@ -1,51 +1,52 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
+<br>
+<br>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear un nuevo empleado</h2>
+        <br>
+        <form name="book" (ngSubmit)="f.form.valid && createEmpleado()" #f="ngForm" novalidate>
+
+            <div class="form-group">
+                <label for="empleadoName"><b>Name</b></label>
+                <input type="text" name="empleadoName" class="form-control" id="empleadoName" [(ngModel)]="empleado.name" #empleadoName="ngModel" required>
+                <div class="invalid-feedback">
+                    <div>The empleado's name is missing</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="empleadoUser"><b>User</b></label>
+                <input type="text" name="empleadoUser" class="form-control" id="empleadoUser" [(ngModel)]="empleado.usuario" #empleadoUser="ngModel" required>
+                <div class="invalid-feedback">
+                    <div>The empleado's user is missing</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="empleadoPassword"><b>Password</b></label>
+                <input type="password" name="empleadoPassword" class="form-control" id="empleadoPassword" [(ngModel)]="empleado.password" #empleadoPassword="ngModel" required>
+                <div class="invalid-feedback">
+                    <div>The empleado's user is missing</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="empleadoCedula"><b>Cedula</b></label>
+                <input type="text" name="empleadoCedula" class="form-control" id="empleadoCedula" [(ngModel)]="empleado.cedula" #empleadoPassword="ngModel" required>
+                <div class="invalid-feedback">
+                    <div>The empleado's cedula is missing</div>
+                </div>
+            </div>
+
             <br>
-            <h2 class="text-center">Crear un nuevo empleado</h2>
-            <br>
-            <form name="book" (ngSubmit)="f.form.valid && createEmpleado()" #f="ngForm" novalidate>
-
-                <div class="form-group">
-                    <label for="empleadoName"><b>Name</b></label>
-                    <input type="text" name="empleadoName" class="form-control" id="empleadoName" [(ngModel)]="empleado.name" #empleadoName="ngModel" required>
-                    <div class="invalid-feedback">
-                        <div>The empleado's name is missing</div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="empleadoUser"><b>User</b></label>
-                    <input type="text" name="empleadoUser" class="form-control" id="empleadoUser" [(ngModel)]="empleado.usuario" #empleadoUser="ngModel" required>
-                    <div class="invalid-feedback">
-                        <div>The empleado's user is missing</div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="empleadoPassword"><b>Password</b></label>
-                    <input type="password" name="empleadoPassword" class="form-control" id="empleadoPassword" [(ngModel)]="empleado.password" #empleadoPassword="ngModel" required>
-                    <div class="invalid-feedback">
-                        <div>The empleado's user is missing</div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="empleadoCedula"><b>Cedula</b></label>
-                    <input type="text" name="empleadoCedula" class="form-control" id="empleadoCedula" [(ngModel)]="empleado.cedula" #empleadoPassword="ngModel" required>
-                    <div class="invalid-feedback">
-                        <div>The empleado's cedula is missing</div>
-                    </div>
-                </div>
-
-                <br>
-                <div class="row form-inline justify-content-center align-self-center">
-                    <button type="submit" class="btn btn-primary">Create</button>
-                    <div class="divider"></div>
-                </div>
-            </form>
-            <br>
-        </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary ">Create</button>
+                <div class="divider"></div>
+                <button class="btn btn-danger" [routerLink]="['/listarEmpleados']">Cancel</button>
+            </div>
+        </form>
+        <br>
     </div>
 </div>

@@ -6,12 +6,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 
+
 import { AppRoutingModule } from '../../../app-routing/app-routing.module';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule } from '@angular/material';
 
 import { EmpleadoCreateComponent } from './empleado-create/empleado-create.component';
 import { EmpleadoDetailComponent } from './empleado-detail/empleado-detail.component';
 import { EmpleadoEditComponent } from './empleado-edit/empleado-edit.component';
 import { EmpleadoListComponent } from './empleado-list/empleado-list.component';
+
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -24,8 +29,21 @@ import { EmpleadoListComponent } from './empleado-list/empleado-list.component';
     NgbModule,
     ReactiveFormsModule,
     NgxPermissionsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule, 
+    MatIconModule,
+    MatGridListModule
+    
   ],
+  exports: [
+    MatDialogModule,
+    MatIconModule,
+    
+  ],
+  entryComponents: [
+    EmpleadoCreateComponent, EmpleadoDetailComponent, EmpleadoEditComponent, EmpleadoListComponent
+  ],
+  
   declarations: [EmpleadoCreateComponent, EmpleadoDetailComponent, EmpleadoEditComponent, EmpleadoListComponent]
 })
 export class EmpleadoModule { }
