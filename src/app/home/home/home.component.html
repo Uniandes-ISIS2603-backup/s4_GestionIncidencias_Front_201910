@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Tecnico</h5>
                     <p class="card-text">Si eres un técnico ingresa aquí para ver tu perfil y tus incidencias</p>
-                    <a [routerLink]="['/menuAdministrador']" class="btn btn-primary">Soy un técnico</a>
+                    <a class="btn btn-primary">Soy un técnico</a>
                 </div>
             </div>
 
@@ -36,7 +36,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Administrador </h5>
                     <p class="card-text">Si eres un administrador aquí podrás gestionar las incidencias, los técnicos y los empleados de la aplicación</p>
-                    <a href="#" class="btn btn-primary">Soy administrador</a>
+                    <a [routerLink]="['/menuAdministrador']" class="btn btn-primary" (click)="tipoUsuario='\administrador'">Soy administrador</a>
                 </div>
             </div>
 

@@ -1,25 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthService} from './auth.service';
-
-
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [LoginComponent]
 })
-export class LoginModule { 
-
-  constructor(private auth:AuthService){
-
-  }
-
-
-  login(){
-    this.auth.login();
-  }
-
-
-}
+export class LoginModule { }

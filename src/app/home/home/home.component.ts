@@ -8,7 +8,8 @@ import { AuthService} from '../../modules/login/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private auth:AuthService   ) { }
+  tipoUsuario:string;
+  constructor(private auth:AuthService  ) { }
 
   ngOnInit() {
   }
@@ -16,5 +17,9 @@ export class HomeComponent implements OnInit {
   private login(){
     this.auth.login();
   }
+
+  ngOnDestroy(): void {
+    console.log(this.tipoUsuario);
+  }  
 
 }

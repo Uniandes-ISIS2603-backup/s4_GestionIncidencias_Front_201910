@@ -16,7 +16,9 @@ import { EmpleadoDetailComponent } from './empleado-detail/empleado-detail.compo
 import { EmpleadoEditComponent } from './empleado-edit/empleado-edit.component';
 import { EmpleadoListComponent } from './empleado-list/empleado-list.component';
 
+
 import {MatGridListModule} from '@angular/material/grid-list';
+import { EmpleadoMenuComponent } from './empleado-menu/empleado-menu.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     AppRoutingModule,
     MatDialogModule, 
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    
+    
     
   ],
   exports: [
@@ -44,6 +48,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
     EmpleadoCreateComponent, EmpleadoDetailComponent, EmpleadoEditComponent, EmpleadoListComponent
   ],
   
-  declarations: [EmpleadoCreateComponent, EmpleadoDetailComponent, EmpleadoEditComponent, EmpleadoListComponent]
+  declarations: [EmpleadoCreateComponent, EmpleadoDetailComponent, EmpleadoEditComponent, EmpleadoListComponent, EmpleadoMenuComponent]
 })
 export class EmpleadoModule { }

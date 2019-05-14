@@ -18,8 +18,9 @@ import { MenuComponent } from '../modules/user/administrador/menu/menu.component
 
 //Service
 
-import {AuthService} from "../modules/login/auth.service";
+
 import { EmpleadoCreateComponent } from '../modules/user/empleado/empleado-create/empleado-create.component';
+import { LoginComponent } from '../modules/login/login/login.component';
 
 const routes: Routes = [
      {path:'menuAdministrador',component: MenuComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
      {path:'listarTecnicos', component:TecnicoListComponent},
      {path:'listarIncidencias', component:IncidenciaListComponent},
      {path:'crearEmpleado', component:EmpleadoCreateComponent},
+     {path:'login/:tipo', component:LoginComponent},
      {
         path: 'auth',
         children: [
