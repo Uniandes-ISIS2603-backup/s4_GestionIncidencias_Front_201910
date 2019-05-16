@@ -48,6 +48,16 @@ export class EmpleadoService {
       updateEmpleados(empleado): Observable<Empleado> {
        return this.http.put<Empleado>(API_URL + empleados + '/' + empleado.id, empleado);
    }
+  
+     /**
+      * Borra un empleado que este en la base de datos
+      * @param id el id del empleado a eliminar
+      */
+  
+     deleteEmpleado(id:number):Observable<Empleado>{       
+        return this.http.delete<Empleado>(API_URL + empleados + '/' + id);
+     }
+
 
    getEmpleado(empleadoId): Observable<Empleado> {
     console.log("Paso por el modulo correcto");

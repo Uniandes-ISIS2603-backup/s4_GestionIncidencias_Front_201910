@@ -22,6 +22,9 @@ import { MenuComponent } from '../modules/user/administrador/menu/menu.component
 import { EmpleadoCreateComponent } from '../modules/user/empleado/empleado-create/empleado-create.component';
 import { LoginComponent } from '../modules/login/login/login.component';
 import { ModulesGuard } from '../modules.guard';
+import { TecnicoCreateComponent } from '../modules/user/tecnico/tecnico-create/tecnico-create.component';
+
+
 
 const routes: Routes = [
      {path:'menuAdministrador',component: MenuComponent, canActivate:[ModulesGuard] },
@@ -30,7 +33,8 @@ const routes: Routes = [
      {path:'listarIncidencias', component:IncidenciaListComponent, canActivate:[ModulesGuard]},
      {path:'crearEmpleado', component:EmpleadoCreateComponent, canActivate:[ModulesGuard]},
      {path:'login/:tipo', component:LoginComponent},
-     {path:'editarEmpleado', component:EmpleadoEditComponent},
+     {path:'editarEmpleado/:id', component:EmpleadoEditComponent},
+     {path:'crearTecnico', component:TecnicoCreateComponent, canActivate:[ModulesGuard]},
      {
         path: 'auth',
         children: [

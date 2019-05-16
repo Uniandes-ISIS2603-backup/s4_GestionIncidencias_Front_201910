@@ -13,17 +13,17 @@ import { isNullOrUndefined } from 'util';
 export class LoginComponent implements OnInit {
 
   
-  tipoUsuario:string;
+  tipoUsuario:string;  
   user:User
   
   constructor(private router:Router, private activated: ActivatedRoute, private log:LoginServiceService) { 
     this.activated.params.subscribe(  params =>{    
       this.tipoUsuario=params['tipo'] ;
       console.log(this.tipoUsuario);
-    });
-
-  
+    });  
   }
+
+
 
   
   ngOnInit() {

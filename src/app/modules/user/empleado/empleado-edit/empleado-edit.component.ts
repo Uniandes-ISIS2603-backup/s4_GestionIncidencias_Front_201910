@@ -3,7 +3,8 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import { Empleado } from '../empleado';
 import { EmpleadoService } from '../empleado.service';
-
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-empleado-edit',
@@ -17,10 +18,23 @@ export class EmpleadoEditComponent implements OnInit {
     * @param EmpleadoService The empleado's service
     * @param toastrService The toastr to show messages to the user 
     */
+
+    id:number;
    constructor(
     private empleadoService: EmpleadoService,
-    private toastrService: ToastrService
-) {}
+    private toastrService: ToastrService,
+    private router: Router,
+    private activated: ActivatedRoute){
+      this.activated.params.subscribe(  params =>{    
+      this.id=params['id'] ;
+      console.log(this.id);
+      this.getEmpleado();
+    });
+    }
+
+
+
+
    /**
     * The id of the empleado that the user wants to edit
     * This is passed as a parameter by the parent component
@@ -44,6 +58,7 @@ export class EmpleadoEditComponent implements OnInit {
     */
   empleado: Empleado;
 
+
   showEdit:boolean;
 
    /**
@@ -51,7 +66,7 @@ export class EmpleadoEditComponent implements OnInit {
     */
 
    getEmpleado(): void {
-    this.empleadoService.getEmpleado(this.empleado_edit_id)
+    this.empleadoService.getEmpleado(this.id)
         .subscribe(empleado => {
             this.empleado = empleado;
         });
@@ -73,8 +88,8 @@ export class EmpleadoEditComponent implements OnInit {
    editEmpleado(): void {
      this.empleadoService.updateEmpleados(this.empleado)
         .subscribe(() => {
-            this.update.emit();    
-            
+            this.update.emit(); 
+            this.router.navigate(['/listarEmpleados']);        
             
         });
 }
@@ -83,7 +98,8 @@ export class EmpleadoEditComponent implements OnInit {
     * Informs the parent component that the user no longer wants to update the editorial
     */
    cancelEdition(): void {
-    this.cancel.emit();
+     this.router.navigate(['listarEmpleados']);
+    
 }
 
   

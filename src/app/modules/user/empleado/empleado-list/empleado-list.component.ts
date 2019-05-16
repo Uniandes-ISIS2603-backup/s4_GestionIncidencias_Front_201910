@@ -72,10 +72,15 @@ export class EmpleadoListComponent implements OnInit {
      /**
     * Shows or hides the create component
     */
-   showHideEdit(editorial_id: number): void {
-        this.router.navigate(['editarEmpleado']);
+   showHideEdit(empleado_id: number): void {
+        this.router.navigate(['editarEmpleado',empleado_id]);
     }
     
+    deleteEmpleado(id:number):void{
+      this.empleadoService.deleteEmpleado(id).subscribe(del=>{ window.location.reload();});      
+      
+    }
+
 
  
   /**
