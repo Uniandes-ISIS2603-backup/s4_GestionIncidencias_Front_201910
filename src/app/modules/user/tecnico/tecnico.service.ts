@@ -59,4 +59,8 @@ export class TecnicoService {
       return this.http.get<Tecnico>(API_URL + tecnicos + '/' + tecnicoId);
   }
 
+  deleteTecnico(id:number):Observable<Tecnico>{       
+    return this.http.delete<Tecnico>(API_URL + tecnicos + '/' + id);
+ }
+
 }

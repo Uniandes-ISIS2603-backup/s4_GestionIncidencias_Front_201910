@@ -43,7 +43,7 @@ export class EmpleadoCreateComponent implements OnInit {
         .subscribe((empleado) => {
             this.empleado = empleado;
             this.create.emit();        
-            this.router.navigate(['listarEmpleados']);                
+            this.router.navigate(['/listarEmpleados']);                
         });
     
     return this.empleado;    

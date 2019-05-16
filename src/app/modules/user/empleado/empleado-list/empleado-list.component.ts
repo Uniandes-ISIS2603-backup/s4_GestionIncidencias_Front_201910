@@ -77,12 +77,10 @@ export class EmpleadoListComponent implements OnInit {
     }
     
     deleteEmpleado(id:number):void{
-      this.empleadoService.deleteEmpleado(id).subscribe(del=>{ window.location.reload();});      
+      this.empleadoService.deleteEmpleado(id).subscribe(del=>{ this.getEmpleados()});      
       
     }
 
-
- 
   /**
     * This will initialize the component by retrieving the list of empleados from the service
     * This method will be called when the component is created

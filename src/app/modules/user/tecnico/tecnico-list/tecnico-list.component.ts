@@ -3,6 +3,7 @@ import { TecnicoService } from '../tecnico.service';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 import { Tecnico } from '../tecnico';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tecnico-list',
@@ -18,7 +19,8 @@ export class TecnicoListComponent implements OnInit {
     private tecnicoService: TecnicoService,
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
-    private toastrService: ToastrService) {}
+    private toastrService: ToastrService,
+    private router: Router) {}
 
   /**
     * List of tecnicos
@@ -69,14 +71,13 @@ export class TecnicoListComponent implements OnInit {
     * Shows or hides the create component
     */
    showHideEdit(tecnico_id: number): void {
-    if (!this.showEdit || (this.showEdit && tecnico_id != this.tecnico_edit_id)) {        
-        this.tecnico_edit_id = tecnico_id;
-        this.showEdit = !this.showEdit;
-    }
-    else {
-        this.showEdit = !this.showEdit;
-    }
+    this.router.navigate(['\editarTecnico',tecnico_id]);
 }
+
+
+  deleteTecnico(id:number):void{
+    this.tecnicoService.deleteTecnico(id).subscribe(del=>{ this.getTecnicos()});              
+  }
 
    /**
       * This will initialize the component by retrieving the list of tecnicos from the service
@@ -92,4 +93,6 @@ export class TecnicoListComponent implements OnInit {
         location.reload();
         this.ngOnInit();
       }
+
+
 }

@@ -23,6 +23,7 @@ import { EmpleadoCreateComponent } from '../modules/user/empleado/empleado-creat
 import { LoginComponent } from '../modules/login/login/login.component';
 import { ModulesGuard } from '../modules.guard';
 import { TecnicoCreateComponent } from '../modules/user/tecnico/tecnico-create/tecnico-create.component';
+import { TecnicoEditComponent } from '../modules/user/tecnico/tecnico-edit/tecnico-edit.component';
 
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
      {path:'login/:tipo', component:LoginComponent},
      {path:'editarEmpleado/:id', component:EmpleadoEditComponent},
      {path:'crearTecnico', component:TecnicoCreateComponent, canActivate:[ModulesGuard]},
+     {path:'editarTecnico/:id', component:TecnicoEditComponent},
      {
         path: 'auth',
         children: [

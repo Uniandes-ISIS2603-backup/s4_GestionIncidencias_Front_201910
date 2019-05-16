@@ -3,8 +3,8 @@ import { TecnicoService } from '../tecnico.service';
 
 import { ToastrService} from 'ngx-toastr';
 import { Tecnico } from '../tecnico';
-
-
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-tecnico-edit',
@@ -13,6 +13,8 @@ import { Tecnico } from '../tecnico';
 })
 export class TecnicoEditComponent implements OnInit {
 
+
+  id:number;
   /**
     * The component's constructor
     * @param tecnicoService The tecnico's service
@@ -20,8 +22,17 @@ export class TecnicoEditComponent implements OnInit {
     */
      constructor(
       private tecnicoService: TecnicoService,
-      private toastrService: ToastrService
-    ) {}
+      private toastrService: ToastrService,
+      private router: Router,
+      private activated: ActivatedRoute
+    ) {
+      this.activated.params.subscribe(  params =>{    
+        this.id=params['id'] ;
+        console.log(this.id);
+        this.getTecnico();
+      });
+
+    }
   
     /**
      * The tecnico to create
@@ -56,7 +67,7 @@ export class TecnicoEditComponent implements OnInit {
     * Retrieves the information of the tecnico
     */
    getTecnico(): void {
-    this.tecnicoService.getTecnico(this.tecnico_edit_id)
+    this.tecnicoService.getTecnico(this.id)
         .subscribe(tecnico => {
             this.tecnico = tecnico;
         });
@@ -67,6 +78,7 @@ export class TecnicoEditComponent implements OnInit {
      */
     cancelEdition(): void {
      this.cancel.emit();
+     this.router.navigate(['/listarTecnicos']);
   }
 
 

@@ -3,6 +3,7 @@ import {ToastrService} from 'ngx-toastr';
 
 import { Tecnico } from '../tecnico';
 import { TecnicoService} from '../tecnico.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tecnico-create',
@@ -13,7 +14,8 @@ import { TecnicoService} from '../tecnico.service'
 export class TecnicoCreateComponent implements OnInit {
   constructor(
     private tecnicoService: TecnicoService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router:Router
     ) {}
 
   /**
@@ -42,7 +44,7 @@ export class TecnicoCreateComponent implements OnInit {
           .subscribe((tecnico) => {
               this.tecnico = tecnico;
               this.create.emit();    
-              location.reload();          
+              this.router.navigate(['listarTecnicos']);                
           });
       return this.tecnico;    
     }

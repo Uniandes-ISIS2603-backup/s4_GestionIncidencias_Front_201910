@@ -19,8 +19,9 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router, private activated: ActivatedRoute, private log:LoginServiceService) { 
     this.activated.params.subscribe(  params =>{    
       this.tipoUsuario=params['tipo'] ;
-      console.log(this.tipoUsuario);
+      console.log(this.tipoUsuario);      
     });  
+    this.user= new User();
   }
 
 
