@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService} from '../../modules/login/auth.service';
+import { Router } from '@angular/router'
+
 
 @Component({
   selector: 'app-home',
@@ -9,17 +10,31 @@ import { AuthService} from '../../modules/login/auth.service';
 export class HomeComponent implements OnInit {
 
   tipoUsuario:string;
-  constructor(private auth:AuthService  ) { }
+  path:string;
+  constructor( private router: Router) { }
 
   ngOnInit() {
   }
 
-  private login(){
-    this.auth.login();
-  }
-
   ngOnDestroy(): void {
     console.log(this.tipoUsuario);
+
   }  
+
+  adminLogin():void{
+    this.tipoUsuario="\administradores";    
+    this.router.navigate(['/login',this.tipoUsuario]);
+  }
+  
+  tecnicoLogin():void{    
+    this.router.navigate(['/login','tecnicos']);
+  }
+  
+  empleadoLogin():void{
+    this.tipoUsuario="\empleados";
+    this.router.navigate(['/login',this.tipoUsuario]);
+  }
+
+ 
 
 }

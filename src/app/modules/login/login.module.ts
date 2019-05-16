@@ -2,10 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 
+
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgxPermissionsModule} from 'ngx-permissions';
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+    NgxPermissionsModule
+    
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent],
 })
 export class LoginModule { }

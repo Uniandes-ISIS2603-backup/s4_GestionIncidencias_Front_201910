@@ -1,13 +1,7 @@
 <body background="https://www.eltiempo.com/files/article_main/uploads/2017/11/13/5a0a68459c8b5.jpeg">
     <div class="container-fluid">
         <div class="row justify-content-md-center">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
+            <br><br><br><br><br><br>
         </div>
         <div class="row justify-content-md-center">
             <div class="card" style="width: 18rem;">
@@ -16,7 +10,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Tecnico</h5>
                     <p class="card-text">Si eres un técnico ingresa aquí para ver tu perfil y tus incidencias</p>
-                    <a class="btn btn-primary">Soy un técnico</a>
+                    <button (click)="tecnicoLogin()" type="button" class="btn btn-outline-primary btn-block">
+                            Soy un tecnico
+                    </button>
                 </div>
             </div>
 
@@ -26,7 +22,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Empleado</h5>
                     <p class="card-text">Si eres un empleado ingresa aquí para ver tu perfil y tus incidencias creadas</p>
-                    <a href="#" class="btn btn-primary">Soy empleado</a>
+                    <button (click)="empleadoLogin()" type="button" class="btn btn-outline-primary btn-block">
+                            Soy un empleado
+                    </button>
                 </div>
             </div>
 
@@ -36,23 +34,13 @@
                 <div class="card-body">
                     <h5 class="card-title">Administrador </h5>
                     <p class="card-text">Si eres un administrador aquí podrás gestionar las incidencias, los técnicos y los empleados de la aplicación</p>
-                    <a [routerLink]="['/menuAdministrador']" class="btn btn-primary" (click)="tipoUsuario='\administrador'">Soy administrador</a>
+                    <button (click)="adminLogin()" type="button" class="btn btn-outline-primary btn-block">
+                        Soy un administrador
+                    </button>
                 </div>
             </div>
 
         </div>
-        <br>
-        <br>
-        <br>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <br><br><br><br><br><br><br><br>
     </div>
-
-
-
 </body>

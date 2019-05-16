@@ -6,7 +6,7 @@ import {ToastrService} from 'ngx-toastr';
 import { Empleado } from '../empleado';
 import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
 import { EmpleadoCreateComponent } from '../empleado-create/empleado-create.component';
-
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-empleado-list',
   templateUrl: './empleado-list.component.html',
@@ -23,7 +23,8 @@ export class EmpleadoListComponent implements OnInit {
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService,
-    private dialog: MatDialog) {}
+    private dialog: MatDialog,
+    private router: Router) {}
 
   /**      
     * List of empleados
@@ -72,14 +73,10 @@ export class EmpleadoListComponent implements OnInit {
     * Shows or hides the create component
     */
    showHideEdit(editorial_id: number): void {
-    if (!this.showEdit || (this.showEdit && editorial_id != this.empleado_edit_id)) {        
-        this.empleado_edit_id = editorial_id;
-        this.showEdit = !this.showEdit;
+        this.router.navigate(['editarEmpleado']);
     }
-    else {
-        this.showEdit = !this.showEdit;
-    }
-}
+    
+
  
   /**
     * This will initialize the component by retrieving the list of empleados from the service

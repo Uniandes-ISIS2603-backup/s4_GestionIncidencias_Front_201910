@@ -55,8 +55,7 @@ export class TecnicoService {
     * @returns The list of books in real time
     */
    
-    getTecnico(tecnicoId): Observable<Tecnico> {
-      console.log("Paso por el modulo correcto");
+    getTecnico(tecnicoId): Observable<Tecnico> {     
       return this.http.get<Tecnico>(API_URL + tecnicos + '/' + tecnicoId);
   }
 

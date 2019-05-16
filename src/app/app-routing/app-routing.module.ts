@@ -21,14 +21,16 @@ import { MenuComponent } from '../modules/user/administrador/menu/menu.component
 
 import { EmpleadoCreateComponent } from '../modules/user/empleado/empleado-create/empleado-create.component';
 import { LoginComponent } from '../modules/login/login/login.component';
+import { ModulesGuard } from '../modules.guard';
 
 const routes: Routes = [
-     {path:'menuAdministrador',component: MenuComponent},
-     {path:'listarEmpleados', component:EmpleadoListComponent},
-     {path:'listarTecnicos', component:TecnicoListComponent},
-     {path:'listarIncidencias', component:IncidenciaListComponent},
-     {path:'crearEmpleado', component:EmpleadoCreateComponent},
+     {path:'menuAdministrador',component: MenuComponent, canActivate:[ModulesGuard] },
+     {path:'listarEmpleados', component:EmpleadoListComponent, canActivate:[ModulesGuard]},
+     {path:'listarTecnicos', component:TecnicoListComponent, canActivate:[ModulesGuard]},
+     {path:'listarIncidencias', component:IncidenciaListComponent, canActivate:[ModulesGuard]},
+     {path:'crearEmpleado', component:EmpleadoCreateComponent, canActivate:[ModulesGuard]},
      {path:'login/:tipo', component:LoginComponent},
+     {path:'editarEmpleado', component:EmpleadoEditComponent},
      {
         path: 'auth',
         children: [
@@ -119,11 +121,11 @@ const routes: Routes = [
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
+        RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}),        
     ],
     exports: [RouterModule],
     declarations: [],
-    providers:[AuthService]
+    providers:[]
 })
 export class AppRoutingModule {
 
