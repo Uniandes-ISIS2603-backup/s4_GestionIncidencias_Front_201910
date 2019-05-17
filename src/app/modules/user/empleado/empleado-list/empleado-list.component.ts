@@ -97,10 +97,6 @@ export class EmpleadoListComponent implements OnInit {
   }
 
   onCreate(){
-    const dialogConfig= new MatDialogConfig();
-    dialogConfig.disableClose=true;
-    dialogConfig.autoFocus=true;
-    dialogConfig.width="60%";    
-    this.dialog.open(EmpleadoCreateComponent,dialogConfig);
+  
   }
 }
