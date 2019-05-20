@@ -31,6 +31,16 @@ export class EmpleadoService {
      return this.http.get<Empleado[]>(API_URL + empleados);
      }
 
+
+     /**
+     * Retorna el empleado con el usuario dado por parámetro
+     * @param user el usuario
+     */
+
+    getEmpleadoByUser(user:string):Observable<Empleado>{
+      return this.http.get<Empleado>(API_URL+empleados+'/users/'+user);
+  }
+
     /**
     * Creates a new empleado
     * @param empleado The new empleado

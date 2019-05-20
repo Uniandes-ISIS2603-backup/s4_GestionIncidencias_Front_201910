@@ -30,7 +30,7 @@ export class LoginServiceService {
   }
 
   getLogin(user:String, password: string, tipo:string): Observable<User> {
-    return this.http.get<User>(API_URL + '/' + tipo +'/'+ user);    
+    return this.http.get<User>(API_URL + '/' + tipo +'/'+  'users' +user);    
   }
 
   isValidLogin(user:String, password: string, tipo:string): Observable<User> {

@@ -23,6 +23,10 @@ import {IncidenciaModule} from './modules/Incidencias/incidencia.module';
 import { LoginModule} from './modules/login/login.module';
 import { MenuComponent } from './app/modules/user/administrador/menu/menu.component'
 import { FooterComponent } from './modules/footer/footer/footer.component';
+import { Globals } from './globals';
+import { MenuEmpleadoModule } from './modules/user/empleado/menu-empleado/menu-empleado.module';
+
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -53,14 +57,17 @@ import { FooterComponent } from './modules/footer/footer/footer.component';
         PrioridadModule,
          ActuacionModule,
         IncidenciaModule,
-        LoginModule
+        LoginModule,
+        MenuEmpleadoModule
+      
     ],
     bootstrap: [AppComponent],
-    providers: [
+    providers: [Globals, 
         {
             provide: HTTP_INTERCEPTORS,
             useClass: HttpErrorInterceptor,
-            multi: true
+            multi: true,
+    
         }
     ]
     

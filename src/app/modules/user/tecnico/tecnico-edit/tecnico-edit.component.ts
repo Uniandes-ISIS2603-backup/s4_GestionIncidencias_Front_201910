@@ -88,7 +88,8 @@ export class TecnicoEditComponent implements OnInit {
    editTecnico(): void {     
     this.tecnicoService.updateTecnico(this.tecnico)
        .subscribe(() => {
-           this.update.emit();             
+           this.update.emit(); 
+           this.router.navigate(['/listarTecnicos']);            
            
            
        });

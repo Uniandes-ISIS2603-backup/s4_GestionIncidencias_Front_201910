@@ -8,5 +8,7 @@ export class Tecnico implements userInterface{
     usuario:string;
     password:string; 
 
+    
+
 
 }

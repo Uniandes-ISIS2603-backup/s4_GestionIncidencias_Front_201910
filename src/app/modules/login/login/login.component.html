@@ -11,7 +11,7 @@
                         <form name="login" (ngSubmit)="f.form.valid && onLogin()" #f="ngForm" novalidate>
                             <h1 class="h3 mb-3 font-weight-normal">Ingresar</h1>
                             <div class="form-group">
-                                <input type="text" id="usuario" name="usuario" class="form-control" #usuario="ngModel" [(ngModel)]="user.usuario" required>
+                                <input type="text" id="usuario" name="usuario" class="form-control" #usuario="ngModel" [(ngModel)]="user.usuario" placeholder="Usuario" required>
                                 <div class="invalid-feedback">
                                     <div>Falta el usuario</div>
                                 </div>
@@ -20,13 +20,13 @@
 
                             <div class="form-group">
 
-                                <input type="password" id="UserPassword" name="UserPassword" class="form-control" #UserPassword="ngModel" [(ngModel)]="user.password" required>
+                                <input type="password" id="UserPassword" name="UserPassword" class="form-control" #UserPassword="ngModel" [(ngModel)]="user.password" placeholder="Contraseña" required>
                                 <div class="invalid-feedback">
                                     <div>Falta la contraseña</div>
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-lg btn-primary btn-block">Ingresar</button>
+                            <button (click)="onLogin()" class="btn btn-lg btn-primary btn-block">Ingresar</button>
                             <button (click)="goBack()" class="btn btn-lg btn-outline-danger btn-block">
                                         Regresar
                                 </button>

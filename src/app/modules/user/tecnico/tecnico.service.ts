@@ -50,6 +50,17 @@ export class TecnicoService {
         return this.http.put<Tecnico>(API_URL + tecnicos + '/' + tecnico.id, tecnico);
     }
     
+    /**
+     * Retorna el técnico con el usuario dado por parámetro
+     * @param user el usuario
+     */
+
+    getTecnicoByUser(user:string):Observable<Tecnico>{
+        return this.http.get<Tecnico>(API_URL+tecnicos+'/users/'+user);
+    }
+  
+
+
    /**
     * Returns the Observable object containing the list of editorials retrieved from the API
     * @returns The list of books in real time

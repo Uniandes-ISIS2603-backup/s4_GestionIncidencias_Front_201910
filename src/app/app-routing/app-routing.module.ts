@@ -21,14 +21,20 @@ import { MenuComponent } from '../modules/user/administrador/menu/menu.component
 
 import { EmpleadoCreateComponent } from '../modules/user/empleado/empleado-create/empleado-create.component';
 import { LoginComponent } from '../modules/login/login/login.component';
-import { ModulesGuard } from '../modules.guard';
+
 import { TecnicoCreateComponent } from '../modules/user/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoEditComponent } from '../modules/user/tecnico/tecnico-edit/tecnico-edit.component';
+import { Globals } from '../globals';
+import { ModulesGuard } from '../modules.guard';
+
+import { TecnicoMenuComponent } from '../modules/user/tecnico/tecnico-menu/tecnico-menu.component';
+import { MenuEmpleadoComponent } from '../modules/user/empleado/menu-empleado/menu-empleado/menu-empleado.component';
 
 
+    
 
 const routes: Routes = [
-     {path:'menuAdministrador',component: MenuComponent, canActivate:[ModulesGuard] },
+     {path:'menuAdministrador/:id',component: MenuComponent, canActivate:[ModulesGuard] },
      {path:'listarEmpleados', component:EmpleadoListComponent, canActivate:[ModulesGuard]},
      {path:'listarTecnicos', component:TecnicoListComponent, canActivate:[ModulesGuard]},
      {path:'listarIncidencias', component:IncidenciaListComponent, canActivate:[ModulesGuard]},
@@ -37,6 +43,9 @@ const routes: Routes = [
      {path:'editarEmpleado/:id', component:EmpleadoEditComponent},
      {path:'crearTecnico', component:TecnicoCreateComponent, canActivate:[ModulesGuard]},
      {path:'editarTecnico/:id', component:TecnicoEditComponent},
+     {path:'menuEmpleado/:id', component:MenuEmpleadoComponent},
+     {path:'menuTecnico/:id', component:TecnicoMenuComponent},
+     
      {
         path: 'auth',
         children: [
@@ -134,5 +143,5 @@ const routes: Routes = [
     providers:[]
 })
 export class AppRoutingModule {
-
+s
 }
