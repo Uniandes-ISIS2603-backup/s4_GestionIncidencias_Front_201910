@@ -4,7 +4,7 @@ import {ToastrService} from 'ngx-toastr';
 import { Empleado } from '../empleado';
 import { EmpleadoService } from '../empleado.service';
 import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-empleado-edit',

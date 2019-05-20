@@ -35,8 +35,8 @@ import { MenuEmpleadoComponent } from '../modules/user/empleado/menu-empleado/me
 
 const routes: Routes = [
      {path:'menuAdministrador/:id',component: MenuComponent, canActivate:[ModulesGuard] },
-     {path:'listarEmpleados', component:EmpleadoListComponent, canActivate:[ModulesGuard]},
-     {path:'listarTecnicos', component:TecnicoListComponent, canActivate:[ModulesGuard]},
+     {path:'listarEmpleados/:id', component:EmpleadoListComponent, canActivate:[ModulesGuard]},
+     {path:'listarTecnicos/:id', component:TecnicoListComponent, canActivate:[ModulesGuard]},
      {path:'listarIncidencias', component:IncidenciaListComponent, canActivate:[ModulesGuard]},
      {path:'crearEmpleado', component:EmpleadoCreateComponent, canActivate:[ModulesGuard]},
      {path:'login/:tipo', component:LoginComponent},
@@ -50,7 +50,7 @@ const routes: Routes = [
         path: 'auth',
         children: [
             {
-                path: 'login',
+                path: 'login',    
                 component: AuthLoginComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {

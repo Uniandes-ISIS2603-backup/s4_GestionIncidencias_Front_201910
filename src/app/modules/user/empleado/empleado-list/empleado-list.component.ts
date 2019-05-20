@@ -7,12 +7,18 @@ import { Empleado } from '../empleado';
 import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
 import { EmpleadoCreateComponent } from '../empleado-create/empleado-create.component';
 import { Router } from '@angular/router'
+import { Globals } from '../../../../globals';
+
+
 @Component({
   selector: 'app-empleado-list',
   templateUrl: './empleado-list.component.html',
   styleUrls: ['./empleado-list.component.css']
 })
 export class EmpleadoListComponent implements OnInit {
+
+
+  id:number;
 
   /**
     * Constructor for the component
@@ -23,8 +29,16 @@ export class EmpleadoListComponent implements OnInit {
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService,
+    private global: Globals,
     private dialog: MatDialog,
-    private router: Router) {}
+    private router: Router,
+    private activated: ActivatedRoute) {
+      this.activated.params.subscribe(  params =>{    
+        this.id=params['id'] ;
+        console.log(this.id);      
+      
+      });
+    }
 
   /**      
     * List of empleados
@@ -81,6 +95,11 @@ export class EmpleadoListComponent implements OnInit {
       
     }
 
+
+    goBack():void{
+      this.router.navigate(['/menuAdministrador',this.id]);
+    }
+
   /**
     * This will initialize the component by retrieving the list of empleados from the service
     * This method will be called when the component is created
@@ -102,5 +121,6 @@ export class EmpleadoListComponent implements OnInit {
     dialogConfig.autoFocus=true;
     dialogConfig.width="60%";    
     this.dialog.open(EmpleadoCreateComponent,dialogConfig);
+    console.log(this.global.logInAdmi);
   }
 }  

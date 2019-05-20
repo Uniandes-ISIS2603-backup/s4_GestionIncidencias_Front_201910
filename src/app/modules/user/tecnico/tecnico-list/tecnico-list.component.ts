@@ -3,7 +3,8 @@ import { TecnicoService } from '../tecnico.service';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 import { Tecnico } from '../tecnico';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-tecnico-list',
@@ -20,7 +21,13 @@ export class TecnicoListComponent implements OnInit {
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService,
-    private router: Router) {}
+    private router: Router,
+    private activated: ActivatedRoute) {
+      this.activated.params.subscribe(  params =>{    
+        this.id=params['id'] ;
+        console.log(this.id);      
+      });
+    }
 
   /**
     * List of tecnicos
@@ -43,6 +50,8 @@ export class TecnicoListComponent implements OnInit {
     */
    tecnico_edit_id: number;
 
+   id:number;
+
 
     /**
      * Shoy the list of tecnicos
@@ -64,6 +73,10 @@ export class TecnicoListComponent implements OnInit {
     updateTecnico(): void {
       this.showEdit = false;
       location.reload();
+  }
+
+  goBack():void{
+    this.router.navigate(['/menuAdministrador',this.id]);
   }
 
 

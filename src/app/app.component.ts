@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { AuthService } from './auth/auth.service';
+import { Globals } from './globals';
 
 /**
  * The app component. This component is the base of s4_incidencias-Front
@@ -11,6 +12,9 @@ import { AuthService } from './auth/auth.service';
 })
 
 export class AppComponent implements OnInit {
+
+
+    logoutvar:boolean;
 
     /**
      * The title that appears on the NavBar and the web browser
@@ -28,7 +32,9 @@ export class AppComponent implements OnInit {
        /**
      * @ignore
      */
-    constructor(private authService: AuthService) { }
+    constructor(private authService: AuthService,private global:Globals) { 
+        this.logoutvar=this.global.logInAdmi;
+    }
 
     logout(): void {
         this.authService.logout()
