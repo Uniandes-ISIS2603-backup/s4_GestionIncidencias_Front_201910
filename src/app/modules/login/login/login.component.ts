@@ -50,8 +50,8 @@ export class LoginComponent implements OnInit {
           this.tecnico = tecnicos;
           if(!isNullOrUndefined(this.tecnico)){
                 if(this.tecnico.password==this.user.password){
-                  this.router.navigate(['/menuAdministrador',this.tecnico.id]);
                   this.global.setLogInAdmi(true);
+                  this.router.navigate(['/menuAdministrador',this.tecnico.id]);                  
                 }
           }
       });
@@ -62,8 +62,8 @@ export class LoginComponent implements OnInit {
         this.tecnico = tecnicos;
         if(!isNullOrUndefined(this.tecnico)){
               if(this.tecnico.password==this.user.password){
-                this.router.navigate(['/menuTecnico',this.tecnico.id]);
                 this.global.setLogInAdmi(true);
+                this.router.navigate(['/menuTecnico',this.tecnico.id]);                
               }
         }
     }); 
@@ -74,8 +74,8 @@ export class LoginComponent implements OnInit {
         this.empleado = empleado;
         if(!isNullOrUndefined(this.empleado)){
              if(this.empleado.password==this.user.password){
-               this.router.navigate(['/menuEmpleado',this.empleado.id]);
-               this.global.setLogInAdmi(true);
+              this.global.setLogInAdmi(true);
+               this.router.navigate(['/menuEmpleado',this.empleado.id]);               
              }
         }
      });

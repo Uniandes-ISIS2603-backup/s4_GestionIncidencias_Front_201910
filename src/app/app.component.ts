@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { Globals } from './globals';
+import { Router } from '@angular/router';
 
 /**
  * The app component. This component is the base of s4_incidencias-Front
@@ -32,13 +33,20 @@ export class AppComponent implements OnInit {
        /**
      * @ignore
      */
-    constructor(private authService: AuthService,private global:Globals) { 
+    constructor(private authService: AuthService,private global:Globals,private router:Router) { 
         this.logoutvar=this.global.logInAdmi;
     }
 
     logout(): void {
-        this.authService.logout()
+        this.global.setLogInAdmi(false);
+        this.router.navigate(['/home']);
     }
+    OnChanges(){
+        this.logoutvar=this.global.logInAdmi;
+        console.log(this.global.logInAdmi);
+    }
+
+
 
 }
 

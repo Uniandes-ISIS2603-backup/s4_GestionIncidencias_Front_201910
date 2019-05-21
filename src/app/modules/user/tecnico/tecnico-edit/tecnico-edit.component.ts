@@ -15,6 +15,7 @@ export class TecnicoEditComponent implements OnInit {
 
 
   id:number;
+  idAdmi:number;
   /**
     * The component's constructor
     * @param tecnicoService The tecnico's service
@@ -28,6 +29,7 @@ export class TecnicoEditComponent implements OnInit {
     ) {
       this.activated.params.subscribe(  params =>{    
         this.id=params['id'] ;
+        this.idAdmi=params['idAdmi'];
         console.log(this.id);
         this.getTecnico();
       });
@@ -78,7 +80,7 @@ export class TecnicoEditComponent implements OnInit {
      */
     cancelEdition(): void {
      this.cancel.emit();
-     this.router.navigate(['/listarTecnicos']);
+     this.router.navigate(['/listarTecnicos',this.idAdmi]);
   }
 
 
@@ -89,7 +91,7 @@ export class TecnicoEditComponent implements OnInit {
     this.tecnicoService.updateTecnico(this.tecnico)
        .subscribe(() => {
            this.update.emit(); 
-           this.router.navigate(['/listarTecnicos']);            
+           this.router.navigate(['/listarTecnicos',this.idAdmi]);            
            
            
        });
