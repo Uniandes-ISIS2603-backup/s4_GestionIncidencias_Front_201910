@@ -20,6 +20,7 @@ export class EmpleadoEditComponent implements OnInit {
     */
 
     id:number;
+    idAdmi:number;
    constructor(
     private empleadoService: EmpleadoService,
     private toastrService: ToastrService,
@@ -27,6 +28,7 @@ export class EmpleadoEditComponent implements OnInit {
     private activated: ActivatedRoute){
       this.activated.params.subscribe(  params =>{    
       this.id=params['id'] ;
+      this.idAdmi=params['idAmi'];
       console.log(this.id);
       this.getEmpleado();
     });
@@ -89,7 +91,7 @@ export class EmpleadoEditComponent implements OnInit {
      this.empleadoService.updateEmpleados(this.empleado)
         .subscribe(() => {
             this.update.emit(); 
-            this.router.navigate(['/listarEmpleados']);        
+            this.router.navigate(['/listarEmpleados',this.idAdmi]);        
             
         });
 }
@@ -98,7 +100,7 @@ export class EmpleadoEditComponent implements OnInit {
     * Informs the parent component that the user no longer wants to update the editorial
     */
    cancelEdition(): void {
-     this.router.navigate(['listarEmpleados']);
+     this.router.navigate(['listarEmpleados',this.idAdmi]);
     
 }
 

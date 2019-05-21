@@ -2,7 +2,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import {EmpleadoService} from '../empleado.service'
 import {Empleado} from '../empleado';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,11 +11,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./empleado-create.component.css']
 })
 export class EmpleadoCreateComponent implements OnInit {
+
+  id:number;
   constructor(
     private empleadoService: EmpleadoService,
     private toastrService: ToastrService,
-    private router:Router
-    ) {}
+    private router:Router,
+    private activated: ActivatedRoute
+    ) {this.activated.params.subscribe(  params =>{    
+      this.id=params['id'] ;
+      console.log(this.id);
+    });
+  }
+
 
   /**
    * The new empleado
@@ -43,7 +51,7 @@ export class EmpleadoCreateComponent implements OnInit {
         .subscribe((empleado) => {
             this.empleado = empleado;
             this.create.emit();        
-            this.router.navigate(['/listarEmpleados']);                
+            this.router.navigate(['/listarEmpleados',this.id]);                
         });
     
     return this.empleado;    
@@ -53,7 +61,7 @@ export class EmpleadoCreateComponent implements OnInit {
     * Informs the parent component that the user no longer wants to create an emplado
     */
    cancelCreation(): void {
-    this.cancel.emit();
+    this.router.navigate(['/listarEmpleados',this.id]);
   }
   
    /**
