@@ -46,6 +46,13 @@ export class equipoComputoCreateComponent implements OnInit {
       return this.equipoComputo;    
     }
 
+   /**
+    * 
+    */
+    deleteEquipoComputo(): void{
+
+    }
+
     /**
       * Informs the parent component that the user no longer wants to create an editorial
       */

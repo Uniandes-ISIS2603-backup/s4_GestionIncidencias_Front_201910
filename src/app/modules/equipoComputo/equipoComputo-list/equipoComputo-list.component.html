@@ -5,11 +5,13 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th scope="col">Id</th>
                         <th scope="col">Descripción</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let equipoComputo of equipoComputos">
+                        <td>{{equipoComputo.id}} </td>
                         <td>{{equipoComputo.descripcion}} </td>
                     </tr>
                 </tbody>
@@ -23,3 +25,5 @@
 <div class="container">
     <app-equipoComputo-create></app-equipoComputo-create>
 </div>
+<br>
+<br>

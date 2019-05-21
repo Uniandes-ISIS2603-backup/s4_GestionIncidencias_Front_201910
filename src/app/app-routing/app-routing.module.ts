@@ -38,6 +38,7 @@ const routes: Routes = [
      {path:'listarEmpleados/:id', component:EmpleadoListComponent, canActivate:[ModulesGuard]},
      {path:'listarTecnicos/:id', component:TecnicoListComponent, canActivate:[ModulesGuard]},
      {path:'listarIncidencias', component:IncidenciaListComponent, canActivate:[ModulesGuard]},
+     {path:'listarEquipos', component:equipoComputoListComponent, canActivate:[ModulesGuard]},
      {path:'crearEmpleado', component:EmpleadoCreateComponent, canActivate:[ModulesGuard]},
      {path:'login/:tipo', component:LoginComponent},
      {path:'editarEmpleado/:id', component:EmpleadoEditComponent},
