@@ -13,13 +13,13 @@ export class ModulesGuard implements CanActivate   {
 
   login:boolean=false;
 
-  constructor(private guards: Globals){
+  constructor(private global: Globals){
   }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      console.log("Guard variable "+this.guards.logInAdmi)
-    return true;
+      console.log("Guard variable "+this.global.logInAdmi)
+    return this.global.logInAdmi;
   }
   
 }

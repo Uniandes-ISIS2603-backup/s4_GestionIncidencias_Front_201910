@@ -66,7 +66,6 @@ export class TecnicoListComponent implements OnInit {
       this.tecnicoService.getTecnicos()
           .subscribe(tecnicos => {
               this.tecnicos = tecnicos;
-
           });
     }
 
@@ -84,9 +83,14 @@ export class TecnicoListComponent implements OnInit {
     * Shows or hides the create component
     */
    showHideEdit(tecnico_id: number): void {
-    this.router.navigate(['\editarTecnico',tecnico_id]);
+    this.router.navigate(['\editarTecnico',tecnico_id,this.id]);
 }
 
+
+
+  crearTecnico():void{
+    this.router.navigate(['/crearTecnico',this.id]);
+  }
 
   deleteTecnico(id:number):void{
     this.tecnicoService.deleteTecnico(id).subscribe(del=>{ this.getTecnicos()});              

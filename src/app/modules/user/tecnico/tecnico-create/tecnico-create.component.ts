@@ -3,7 +3,7 @@ import {ToastrService} from 'ngx-toastr';
 
 import { Tecnico } from '../tecnico';
 import { TecnicoService} from '../tecnico.service'
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tecnico-create',
@@ -12,11 +12,21 @@ import { Router } from '@angular/router';
 })
 
 export class TecnicoCreateComponent implements OnInit {
+
+  id:number;
   constructor(
     private tecnicoService: TecnicoService,
     private toastrService: ToastrService,
-    private router:Router
-    ) {}
+    private router:Router,
+    private activated:ActivatedRoute
+    ) {
+      this.activated.params.subscribe(  params =>{    
+        this.id=params['id'] ;
+        console.log(this.id);
+      });
+
+
+    }
 
   /**
    * The new tecnico
@@ -44,7 +54,7 @@ export class TecnicoCreateComponent implements OnInit {
           .subscribe((tecnico) => {
               this.tecnico = tecnico;
               this.create.emit();    
-              this.router.navigate(['listarTecnicos']);                
+              this.router.navigate(['/listarTecnicos',this.id]);                
           });
       return this.tecnico;    
     }
@@ -53,7 +63,7 @@ export class TecnicoCreateComponent implements OnInit {
       * Informs the parent component that the user no longer wants to create an tecnico
       */
      cancelCreation(): void {
-      this.cancel.emit();
+      this.router.navigate(['/listarTecnicos',this.id]);
     }
   
      /**

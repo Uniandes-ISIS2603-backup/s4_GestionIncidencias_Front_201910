@@ -6,7 +6,6 @@ export class Empleado implements userInterface{
     cedula:string;
     id:number;
     usuario:string;
-    password:string;
-
+    password:string;    
 
 }
