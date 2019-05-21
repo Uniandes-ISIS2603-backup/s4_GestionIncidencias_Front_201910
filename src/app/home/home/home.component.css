@@ -1,6 +1,11 @@
-body {
-    background-color: aquamarine;
-}
+body { 
+    background: url(https://fotos.subefotos.com/0e8f6a34a0e377cbf7d0f37b0180607fo.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
 
 #kunzel{
     height: 200px;
@@ -22,4 +27,8 @@ body {
 
 #interno:hover {
     box-shadow: 0 0 3px #515151;
+}
+
+h5 {
+    align:center;
 }
