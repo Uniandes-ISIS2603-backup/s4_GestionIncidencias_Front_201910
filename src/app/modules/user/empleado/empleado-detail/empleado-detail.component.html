@@ -1,3 +1,35 @@
-<p>
-  empleado-detail works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+        <br>
+    </div>
+    <div class="row justify-content-md-center">
+
+        <div class="col-6">
+            <br>
+            <h2 class="text-center">Mis datos</h2>
+            <br>
+            <ul class="list-group list-group-flush">
+                <label for="empleadoCedula"><b>Nombre</b></label>
+                <li class="list-group-item">{{empleado.name}}</li>
+                <label for="empleadoCedula"><b>Cédula</b></label>
+                <li class="list-group-item">{{empleado.cedula}}</li>
+                <label for="empleadoCedula"><b>Usuario</b></label>
+                <li class="list-group-item">{{empleado.usuario}}</li>
+            </ul>
+
+            <form name="empleado" (ngSubmit)="f.form.valid && editEmpleado()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="empleadoPassword"><b>Contraseña</b></label>
+                    <input type="password" name="empleadoPassword" class="form-control" id="empleadoPassword" [(ngModel)]="empleado.password" #empleadoUsuario="ngModel" required>
+
+                </div>
+            </form>
+
+
+            <div class=" row form-inline justify-content-center align-self-center ">
+                <button type="submit" (click)="editEmpleado()" class="btn btn-primary ">Actualizar mi contraseña</button>
+                <button class="btn btn-primary" (click)="goBack()">Regresar </button>
+            </div>
+        </div>
+    </div>
+</div>

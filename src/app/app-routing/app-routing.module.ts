@@ -29,6 +29,8 @@ import { ModulesGuard } from '../modules.guard';
 
 import { TecnicoMenuComponent } from '../modules/user/tecnico/tecnico-menu/tecnico-menu.component';
 import { MenuEmpleadoComponent } from '../modules/user/empleado/menu-empleado/menu-empleado/menu-empleado.component';
+import { EmpleadoDetailComponent } from '../modules/user/empleado/empleado-detail/empleado-detail.component';
+import { GuardEmpleadoGuard } from '../guard-empleado.guard';
 
 
     
@@ -44,8 +46,9 @@ const routes: Routes = [
      {path:'editarEmpleado/:id/:idAmi', component:EmpleadoEditComponent},
      {path:'crearTecnico/:id', component:TecnicoCreateComponent, canActivate:[ModulesGuard]},
      {path:'editarTecnico/:id/:idAdmi', component:TecnicoEditComponent},
-     {path:'menuEmpleado/:id', component:MenuEmpleadoComponent},
+     {path:'menuEmpleado/:id', component:MenuEmpleadoComponent,canActivate:[GuardEmpleadoGuard]},
      {path:'menuTecnico/:id', component:TecnicoMenuComponent},
+     {path: 'empleadoDetalle/:id',component: EmpleadoDetailComponent,canActivate:[GuardEmpleadoGuard]},
      
      {
         path: 'auth',

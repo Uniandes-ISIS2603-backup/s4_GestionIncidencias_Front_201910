@@ -1,3 +1,25 @@
-<p>
-  menu-empleado works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="row justify-content-md-center">
+
+        <div class="card" style="width: 18rem;background-color:#cccccc;">
+            <div class="card-body">
+                <a (click)="verPerfil()" class="card-link">Ver mi perfil <br></a>
+
+                <p class="card-text"> En esta sección puede administrar su perfil
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;background-color:#cccccc;">
+            <div class="card-body">
+                <a (click)="listarMisIncidencias()" class="card-link">Mis incidencias</a>
+                <p class="card-text">En esta sección puede ver y administrar sus incidencias</p>
+            </div>
+        </div>
+    </div>

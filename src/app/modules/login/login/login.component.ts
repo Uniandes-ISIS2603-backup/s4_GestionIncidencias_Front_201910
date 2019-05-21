@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
         this.empleado = empleado;
         if(!isNullOrUndefined(this.empleado)){
              if(this.empleado.password==this.user.password){
-              this.global.setLogInAdmi(true);
+              this.global.setLogInEmpleado(true);
                this.router.navigate(['/menuEmpleado',this.empleado.id]);               
              }
         }
