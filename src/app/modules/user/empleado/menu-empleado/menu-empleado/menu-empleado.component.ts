@@ -23,7 +23,7 @@ export class MenuEmpleadoComponent implements OnInit {
 
 
   verPerfil():void{
-    this.router.navigate(['empleadoDetalle',this.id]);
+    this.router.navigate(['/empleadoDetalle',this.id]);
 
   }
 

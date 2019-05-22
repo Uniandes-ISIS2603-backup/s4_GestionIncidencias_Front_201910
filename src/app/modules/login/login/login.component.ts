@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
         this.tecnico = tecnicos;
         if(!isNullOrUndefined(this.tecnico)){
               if(this.tecnico.password==this.user.password){
-                this.global.setLogInAdmi(true);
+                this.global.setLogInTecnico(true);
                 this.router.navigate(['/menuTecnico',this.tecnico.id]);                
               }
         }

@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
      * Variable que dice si un técnico esta logeado o no
      */
 
+     logOutVarTecnico:boolean;
     /**
      * The title that appears on the NavBar and the web browser
      */
@@ -60,7 +61,14 @@ export class AppComponent implements OnInit {
         console.log('empleado salio '+ this.global.logInEmpleado);
         this.router.navigate(['/home']);
     }
+
+    logoutTecnico():void{
+        this.global.setLogInTecnico(false);
+        console.log('tecnico salio '+ this.global.logInTecnico);
+        this.router.navigate(['/home']);
+    }
     OnChanges(){
+        this.logOutVarTecnico=this.global.logInTecnico;
         this.logoutvar=this.global.logInAdmi;
         this.logOutVarEmpleado=this.global.logInEmpleado;
         console.log(this.global.logInAdmi);

@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 export class Globals {  
     logInAdmi:boolean=false;
     logInEmpleado:boolean=false;
+    logInTecnico:boolean=false;
 
     setLogInAdmi(logIn:boolean):void{
         this.logInAdmi=logIn;
@@ -12,6 +13,10 @@ export class Globals {
 
     setLogInEmpleado(logIn:boolean):void{
         this.logInEmpleado=logIn;
+    }
+
+    setLogInTecnico(logIn:boolean):void{
+        this.logInTecnico=logIn;
     }
  
 

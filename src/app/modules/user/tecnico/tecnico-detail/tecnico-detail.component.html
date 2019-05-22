@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row">
+        <br>
+    </div>
+    <div class="row justify-content-md-center">
+
+        <div class="col-6">
+            <br>
+            <h2 class="text-center">Mis datos</h2>
+            <br>
+            <ul class="list-group list-group-flush">
+                <label for="empleadoCedula"><b>Nombre</b></label>
+                <li class="list-group-item">{{tecnico.name}}</li>
+                <label for="empleadoCedula"><b>Cédula</b></label>
+                <li class="list-group-item">{{tecnico.cedula}}</li>
+                <label for="empleadoCedula"><b>Usuario</b></label>
+                <li class="list-group-item">{{tecnico.usuario}}</li>
+            </ul>
+            <form name="empleado" (ngSubmit)="f.form.valid && editTecnico()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="empleadoPassword"><b>Contraseña</b></label>
+                    <input type="password" name="empleadoPassword" class="form-control" id="empleadoPassword" [(ngModel)]="tecnico.password" #empleadoUsuario="ngModel" required>
+
+                </div>
+            </form>
+
+            <div class=" row form-inline justify-content-center align-self-center ">
+                <button type="submit" (click)="editTecnico()" class="btn btn-primary ">Actualizar mi contraseña</button>
+                <button class="btn btn-primary" (click)="goBack()">Regresar </button>
+            </div>
+        </div>
+    </div>
+</div>

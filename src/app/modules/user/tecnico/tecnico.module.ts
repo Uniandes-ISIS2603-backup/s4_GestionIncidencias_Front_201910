@@ -10,6 +10,7 @@ import { TecnicoListComponent } from './tecnico-list/tecnico-list.component';
 import { TecnicoCreateComponent } from './tecnico-create/tecnico-create.component';
 import { TecnicoEditComponent } from './tecnico-edit/tecnico-edit.component';
 import { TecnicoMenuComponent } from './tecnico-menu/tecnico-menu.component';
+import { TecnicoDetailComponent } from './tecnico-detail/tecnico-detail.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,6 @@ import { TecnicoMenuComponent } from './tecnico-menu/tecnico-menu.component';
     NgxPermissionsModule,
     AppRoutingModule
   ],
-  declarations: [TecnicoListComponent, TecnicoCreateComponent, TecnicoEditComponent, TecnicoMenuComponent]
+  declarations: [TecnicoListComponent, TecnicoCreateComponent, TecnicoEditComponent, TecnicoMenuComponent, TecnicoDetailComponent]
 })
 export class TecnicoModule { }
