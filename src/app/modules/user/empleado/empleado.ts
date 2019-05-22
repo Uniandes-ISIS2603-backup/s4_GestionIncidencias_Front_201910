@@ -1,4 +1,5 @@
 import {userInterface} from '../User-interface';
+import { Incidencia } from '../../Incidencias/Incidencia';
 
 export class Empleado implements userInterface{
     
@@ -7,5 +8,6 @@ export class Empleado implements userInterface{
     id:number;
     usuario:string;
     password:string;    
+    incidencias:Incidencia[];
 
 }

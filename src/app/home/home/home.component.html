@@ -1,40 +1,39 @@
-<body>
-    <div class="container-fluid">
+<div class="container-fluid">
+
         <div class="row justify-content-md-center">
-            <br><br><br><br><br><br>
-        </div>
-        <div class="row justify-content-md-center">
-            <div class="card" style="width: 18rem;">
-                <h5 align="center" class="card-title">Tecnico</h5>
+            
+            <div class="card poca_opacidad" style="width: 18rem;">
+                <h5 align="center" class="card-title">Técnico</h5>
+            
                 <img src="https://fotos.subefotos.com/edb352e522c813d82f0478ff245f702fo.png"
-                    class="card-img-top" alt="...">
+                    class="card-img-top" alt="..." style="margin-top: 10px;">
                 <div class="card-body">
-                    <p class="card-text">Si eres un técnico ingresa aquí para ver tu perfil y tus incidencias</p>
-                    <button (click)="tecnicoLogin()" type="button" class="btn btn-outline-primary btn-block">
-                            Soy un tecnico
+                    <p class="card-text">Vea su perfil y las incidencias que le han sido asignadas históricamente. Adminístrelas de una manera sencilla, cómoda y eficaz.</p>
+                    <button (click)="tecnicoLogin()" type="button" class="btn btn-outline-primary btn-block" style="position: relative; top: 15px;">
+                            Soy un técnico
                     </button>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
+            <div class="card poca_opacidad" style="width: 18rem;">
                 <h5 align="center" class="card-title">Empleado</h5>
                 <img src="https://fotos.subefotos.com/48eccf3481166bb9148947377c034a4do.png"
                     class="card-img-top" alt="...">
                 <div class="card-body">
                     
-                    <p class="card-text">Si eres un empleado ingresa aquí para ver tu perfil y tus incidencias creadas</p>
-                    <button (click)="empleadoLogin()" type="button" class="btn btn-outline-primary btn-block">
+                    <p class="card-text">Consulte sus incidencias creadas o cree una nueva. Califique el servicio de los técnicos y reabra incidencias.</p>
+                    <button (click)="empleadoLogin()" type="button" class="btn btn-outline-primary btn-block" style="position: relative; top: 50px;">
                             Soy un empleado
                     </button>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
-                <h5 align="center" class="card-title">Administrador </h5>
+            <div class="card poca_opacidad" style="width: 18rem;">
+                <h5 align="center" class="card-title">Administrador</h5>
                 <img src="https://fotos.subefotos.com/a5026e12fb074d91ccd969c21ab480dfo.png"
                     class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Si eres un administrador, aquí podrás gestionar las incidencias, los técnicos y los empleados de la aplicación</p>
+                    <p class="card-text">Gestione incidencias, técnicos y empleados de la Universidad Oriental. Cree, consulte, actualice y elimine usuarios. Obtenga reportes de las incidencias.</p>
                     <button (click)="adminLogin()" type="button" class="btn btn-outline-primary btn-block">
                         Soy un administrador
                     </button>
@@ -42,6 +41,5 @@
             </div>
 
         </div>
-        <br><br><br><br><br><br><br><br>
-    </div>
-</body>
+
+</div>

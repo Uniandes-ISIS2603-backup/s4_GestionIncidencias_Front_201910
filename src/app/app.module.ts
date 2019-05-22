@@ -44,10 +44,10 @@ import { MenuEmpleadoModule } from './modules/user/empleado/menu-empleado/menu-e
         AuthModule,
         FormsModule,
         ToastrModule.forRoot({
-            timeOut: 10000,
-            positionClass: 'toast-bot tom-right',
-            preventDuplicates: true,
-        }),
+            timeOut: 5000,
+            positionClass: 'toast-top-right',
+            preventDuplicates:true
+          }),
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
         NgbModule,        

@@ -21,11 +21,11 @@ export class MenuComponent implements OnInit {
   }
 
   listarTecnicos():void{
-    this.router.navigate(['/listarTecnicos']);
+    this.router.navigate(['/listarTecnicos',this.id]);
   }
 
   listarEquipos():void{
-    this.router.navigate(['/listarEquipos']);
+    this.router.navigate(['/listarEquipos',this.id]);
   }
   
 

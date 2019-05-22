@@ -71,6 +71,7 @@ export class EmpleadoEditComponent implements OnInit {
     this.empleadoService.getEmpleado(this.id)
         .subscribe(empleado => {
             this.empleado = empleado;
+            console.log(empleado);
         });
   }
   

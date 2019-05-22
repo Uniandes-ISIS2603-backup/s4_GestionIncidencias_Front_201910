@@ -16,7 +16,13 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    NgxPermissionsModule
+    NgxPermissionsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+      preventDuplicates:false
+    })
     
   ],
   declarations: [LoginComponent],

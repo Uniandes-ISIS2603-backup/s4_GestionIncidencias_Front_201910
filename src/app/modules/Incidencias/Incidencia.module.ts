@@ -14,6 +14,8 @@ import {IncidenciaDetailComponent} from './incidencia-list-detail/incidencia-det
 import {IncidenciaCreateComponent} from  './incidencia-create/incidencia-create.component';
 
 import {IncidenciaEditComponent} from './incidencia-edit/incidencia-edit.component';
+import { IncidenciasEmpleadoComponent } from './incidencias-empleado/incidencias-empleado.component';
+
 
 
 @NgModule({
@@ -26,7 +28,7 @@ import {IncidenciaEditComponent} from './incidencia-edit/incidencia-edit.compone
         FormsModule,
         ActuacionModule
     ],
-    declarations: [IncidenciaListComponent,IncidenciaDetailComponent, IncidenciaCreateComponent, IncidenciaEditComponent],
+    declarations: [IncidenciaListComponent,IncidenciaDetailComponent, IncidenciaCreateComponent, IncidenciaEditComponent, IncidenciasEmpleadoComponent],
     providers: [IncidenciaService]
 })
 export class IncidenciaModule {}

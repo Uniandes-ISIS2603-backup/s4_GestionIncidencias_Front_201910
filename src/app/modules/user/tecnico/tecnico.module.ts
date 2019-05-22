@@ -12,6 +12,9 @@ import { TecnicoEditComponent } from './tecnico-edit/tecnico-edit.component';
 import { TecnicoMenuComponent } from './tecnico-menu/tecnico-menu.component';
 import { TecnicoDetailComponent } from './tecnico-detail/tecnico-detail.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +25,13 @@ import { TecnicoDetailComponent } from './tecnico-detail/tecnico-detail.componen
     NgbModule,
     ReactiveFormsModule,
     NgxPermissionsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+      preventDuplicates:false
+    })
   ],
   declarations: [TecnicoListComponent, TecnicoCreateComponent, TecnicoEditComponent, TecnicoMenuComponent, TecnicoDetailComponent]
 })

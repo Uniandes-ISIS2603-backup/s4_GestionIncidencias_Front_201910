@@ -27,6 +27,9 @@
                     <tr *ngFor="let equipoComputo of equipoComputos">
                         <td>{{equipoComputo.id}}</td>
                         <td>{{equipoComputo.descripcion}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteEquipo(equipoComputo.id)"><span class="fa fa-trash"></span></button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

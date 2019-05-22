@@ -22,7 +22,8 @@ export class TecnicoListComponent implements OnInit {
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService,
     private router: Router,
-    private activated: ActivatedRoute) {
+    private activated: ActivatedRoute,
+    private toastr:ToastrService) {
       this.activated.params.subscribe(  params =>{    
         this.id=params['id'] ;
         console.log(this.id);      
@@ -93,7 +94,9 @@ export class TecnicoListComponent implements OnInit {
   }
 
   deleteTecnico(id:number):void{
-    this.tecnicoService.deleteTecnico(id).subscribe(del=>{ this.getTecnicos()});              
+    this.tecnicoService.deleteTecnico(id).subscribe(del=>{ this.getTecnicos()
+    this.toastr.success('Se elimino al tecnico con éxito','Eliminar técnico')
+    });              
   }
 
    /**

@@ -74,14 +74,15 @@ export class equipoComputoListComponent implements OnInit {
     * Creates a new equipoComputo
     */
    crearEquipo():void{
-    this.router.navigate(['/crearEquipo']);
+    this.router.navigate(['/crearEquipo',this.id]);
   }
 
 
    goBack():void{
     this.router.navigate(['/menuAdministrador',this.id]);
   }
-     getequipoComputos(): void {
+
+   getequipoComputos(): void {
       this.equipoComputoService.getequipoComputos()
           .subscribe(equipoComputos => {
               this.equipoComputos = equipoComputos;
@@ -90,6 +91,11 @@ export class equipoComputoListComponent implements OnInit {
 
     updateequipoComputo(): void {
       this.showEdit = false;
+  }
+
+    deleteEquipo(id:number):void{
+    this.equipoComputoService.deleteEquipo(id).subscribe(del=>{ this.getequipoComputos()
+    });              
   }
 
    /**
