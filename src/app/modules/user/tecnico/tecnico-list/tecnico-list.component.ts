@@ -80,6 +80,11 @@ export class TecnicoListComponent implements OnInit {
   }
 
 
+  listarIncidencias(id:number):void{
+    this.router.navigate(['/listarIncidenciasTecnico',id,this.id]);
+  }
+
+
       /**
     * Shows or hides the create component
     */

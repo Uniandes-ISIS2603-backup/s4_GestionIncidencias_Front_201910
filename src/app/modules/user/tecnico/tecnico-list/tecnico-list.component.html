@@ -43,7 +43,7 @@
                         <button class="btn btn-primary" (click)="showHideEdit(tecnico.id)"><span class="fa fa-pencil"></span></button>
                     </td>
                     <td>
-                        <button class="btn btn-primary" [routerLink]="['/listarIncidencias']"><span class="fa fa-align-justify"></span></button>
+                        <button class="btn btn-primary" (click)="listarIncidencias(tecnico.id)"><span class="fa fa-align-justify"></span></button>
                     </td>
                 </tr>
             </tbody>
