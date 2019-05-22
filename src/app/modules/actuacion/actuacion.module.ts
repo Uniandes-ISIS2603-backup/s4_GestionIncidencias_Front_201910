@@ -12,6 +12,7 @@ import {ActuacionDetailComponent} from './actuacion-detail-list/actuacion-detail
 import {ActuacionCreateComponent} from  './actuacion-create/actuacion-create.component';
 import {ActuacionEditComponent} from './actuacion-edit/actuacion-edit.component';
 import {ActuacionService} from './actuacion.service';
+import { ActuacionIncidenciaComponent } from './actuacion-incidencia/actuacion-incidencia.component';
 
 @NgModule({
     imports: [
@@ -25,7 +26,7 @@ import {ActuacionService} from './actuacion.service';
         NgxPermissionsModule
     ],
     declarations: [
-       ActuacionListComponent,ActuacionDetailComponent, ActuacionCreateComponent,ActuacionEditComponent
+       ActuacionListComponent,ActuacionDetailComponent, ActuacionCreateComponent,ActuacionEditComponent, ActuacionIncidenciaComponent
     ],
     providers: [ActuacionService],
     exports: [ActuacionListComponent, ActuacionDetailComponent]

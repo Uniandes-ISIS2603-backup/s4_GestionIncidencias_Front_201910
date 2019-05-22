@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Empleado } from '../../user/empleado/empleado';
 import { EmpleadoService } from '../../user/empleado/empleado.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { Incidencia } from '../Incidencia';
+import { Tecnico } from '../../user/tecnico/tecnico';
+import { TecnicoService } from '../../user/tecnico/tecnico.service';
+
 
 @Component({
-  selector: 'app-incidencias-empleado',
-  templateUrl: './incidencias-empleado.component.html',
-  styleUrls: ['./incidencias-empleado.component.css']
+  selector: 'app-incidencias-tecnico',
+  templateUrl: './incidencias-tecnico.component.html',
+  styleUrls: ['./incidencias-tecnico.component.css']
 })
-export class IncidenciasEmpleadoComponent implements OnInit {
-   id:number;
+export class IncidenciasTecnicoComponent implements OnInit {
+  id:number;
   idAdmi:number;
 
-  empleado:Empleado;
+  tecnico:Tecnico;
   incidencias:Incidencia[];
-  constructor(private empleadoService:EmpleadoService,
+  constructor(private tecnicoService:TecnicoService,
     private router:Router,
     private activated:ActivatedRoute, 
     ) { 
@@ -23,24 +25,21 @@ export class IncidenciasEmpleadoComponent implements OnInit {
         this.id=params['id'] ;
         console.log('Id del empleado al cual se le verán las incidencas'+this.id);
         this.idAdmi=params['idAdmi'];        
-        this.getEmpleado();           
-        
+        this.getTecnico();                   
       });
     }
 
-
-    getEmpleado(): void {
-        this.empleadoService.getEmpleado(this.id)
+    getTecnico(): void {
+        this.tecnicoService.getTecnico(this.id)
             .subscribe(empleado => {
-                this.empleado = empleado;
-                this.incidencias=this.empleado.incidencias;
+                this.tecnico = empleado;
+                this.incidencias=this.tecnico.incidencias;
             });
       }
 
 
-
       goBack():void{
-        this.router.navigate(['/listarEmpleados',this.idAdmi]);
+        this.router.navigate(['/listarTecnicos',this.idAdmi]);
       }
   
 
