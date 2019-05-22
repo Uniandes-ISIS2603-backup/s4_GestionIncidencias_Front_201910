@@ -39,7 +39,7 @@ export class IncidenciasMenuEmpleadoComponent implements OnInit {
 
 
       goBack():void{
-        this.router.navigate(['/menuTecnico',this.id]);
+        this.router.navigate(['/menuEmpleado',this.id]);
       }
   
 
