@@ -10,7 +10,9 @@ import { TecnicoService } from '../../user/tecnico/tecnico.service';
 import { Tecnico } from '../../user/tecnico/tecnico';
 import { EmpleadoService } from '../../user/empleado/empleado.service';
 import { Empleado } from '../../user/empleado/empleado';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrService } from 'ngx-toastr';
+
+
 
 @Component({
   selector: 'app-login',
@@ -30,7 +32,8 @@ export class LoginComponent implements OnInit {
      private activated: ActivatedRoute, 
      private tecnicoService: TecnicoService, 
     private global: Globals,
-    private empleadoService: EmpleadoService)
+    private empleadoService: EmpleadoService,
+    private toastr:ToastrService)
    { 
     this.activated.params.subscribe(  params =>{    
       this.tipoUsuario=params['tipo'] ;
@@ -53,6 +56,9 @@ export class LoginComponent implements OnInit {
                 if(this.tecnico.password==this.user.password){
                   this.global.setLogInAdmi(true);
                   this.router.navigate(['/menuAdministrador',this.tecnico.id]);                  
+                }
+                else{                  
+                  this.toastr.error('La contraseña ingresada no es válida','Contraseña invalida');
                 }
           }
       });
