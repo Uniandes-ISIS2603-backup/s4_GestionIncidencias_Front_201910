@@ -13,5 +13,4 @@ descripcion : string;
  */
 tipo: string;
 
-
 }

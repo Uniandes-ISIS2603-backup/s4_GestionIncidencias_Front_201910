@@ -2,7 +2,8 @@ import { Tecnico } from "../user/tecnico/tecnico";
 import { Empleado } from "../user/empleado/empleado";
 import { calificacion } from "../calificacion/calificacion";
 import { equipoComputo } from '../equipoComputo/equipoComputo';
-import { Actuacion } from '../actuacion/actuacion';
+import { Actuacion } from "../actuacion/actuacion";
+
 
 export class Incidencia{
 
@@ -48,5 +49,5 @@ equipoComputo:equipoComputo;
 /**
  * Actuaciones que se le ha hecho a la incidenca
  */
-actuaciones:Actuacion[];
+actuaciones: Actuacion[];
 }

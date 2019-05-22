@@ -1,5 +1,6 @@
 import {Incidencia} from "./Incidencia";
-import {Actuacion} from "../actuacion/actuacion";
+import {ActuacionR} from "./ActuacionR";
+
 
 export class IncidenciaDetail extends Incidencia{
 
@@ -10,7 +11,7 @@ constructor(){
 /**
  * La lista de actuaciones de la incidencia
  */
-actuaciones: Actuacion[];
+actuaciones: ActuacionR[];
 
 }
-
+ 
