@@ -1,10 +1,14 @@
-body { 
+
+.container-fluid {
+    height: 100vh;
     background: url(https://fotos.subefotos.com/0e8f6a34a0e377cbf7d0f37b0180607fo.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   }
+
+ 
 
   .poca_opacidad
   {
