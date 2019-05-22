@@ -5,6 +5,12 @@ body {
     -o-background-size: cover;
     background-size: cover;
   }
+
+  .poca_opacidad
+  {
+      background-color: rgba(255, 255, 255, 0.726);
+      margin-left: 20px;
+  }
   
 
 #kunzel{
@@ -30,5 +36,24 @@ body {
 }
 
 h5 {
-    align:center;
+    margin-top: 5px;
+    font-size: 30px;
+}
+
+.btn-block{
+    background-color: rgb(66, 149, 243);
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    border-color: rgba(255, 255, 255, 0);
+}
+
+.btn-block:hover{
+    background-color: black;
+}
+
+.card-text{
+    text-align: justify;
+    font-weight: 430;
+    font-size: 17px;
 }
