@@ -1,12 +1,12 @@
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Gestion de incidencias </a>
+    <a class="navbar-brand" [routerLink]="['home']"> <img src="" alt=""> Gestión de Incidencias</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="OnChanges()">
           <span class="navbar-toggler-icon"></span>
         </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['home']">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['home']">Inicio<span class="sr-only">(current)</span></a>
                 <a class="nav-link" *ngIf="logoutvar" (click)="logout()">Salir <span class="sr-only ">(current)</span></a>
                 <a class="nav-link" *ngIf="logOutVarEmpleado" (click)="logoutEmpleado()">Salir <span class="sr-only ">(current)</span></a>
                 <a class="nav-link" *ngIf="logOutVarTecnico" (click)="logoutTecnico()">Salir <span class="sr-only ">(current)</span></a>
