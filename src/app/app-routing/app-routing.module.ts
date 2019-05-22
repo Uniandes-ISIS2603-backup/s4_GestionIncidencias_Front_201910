@@ -35,7 +35,7 @@ import { IncidenciasEmpleadoComponent } from '../modules/Incidencias/incidencias
 import { IncidenciasTecnicoComponent } from '../modules/Incidencias/incidencias-tecnico/incidencias-tecnico.component';
 import { IncidenciasMenuTecnicoComponent } from '../modules/Incidencias/incidencias-menu-tecnico/incidencias-menu-tecnico.component';
 import { IncidenciasMenuEmpleadoComponent } from '../modules/Incidencias/incidencias-menu-empleado/incidencias-menu-empleado.component';
-    
+import { equipoComputoEditComponent } from '../modules/equipoComputo/equipoComputo-edit/equipoComputo-edit.component';    
 
 const routes: Routes = [
      {path:'menuAdministrador/:id',component: MenuComponent, canActivate:[ModulesGuard] },
@@ -50,6 +50,7 @@ const routes: Routes = [
      {path:'editarEmpleado/:id/:idAmi', component:EmpleadoEditComponent},
      {path:'crearTecnico/:id', component:TecnicoCreateComponent, canActivate:[ModulesGuard]},
      {path:'editarTecnico/:id/:idAdmi', component:TecnicoEditComponent},
+     {path:'editarEquipo/:id/:idAdmi', component:equipoComputoEditComponent},
      {path:'menuEmpleado/:id', component:MenuEmpleadoComponent,canActivate:[GuardEmpleadoGuard]},
      {path:'menuTecnico/:id', component:TecnicoMenuComponent,canActivate:[GuardTecnicoGuard]},
      {path:'empleadoDetalle/:id',component: EmpleadoDetailComponent,canActivate:[GuardEmpleadoGuard]},
