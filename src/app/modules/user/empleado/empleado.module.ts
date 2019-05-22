@@ -5,8 +5,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
-
-
 import { AppRoutingModule } from '../../../app-routing/app-routing.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule } from '@angular/material';
@@ -15,10 +13,9 @@ import { EmpleadoCreateComponent } from './empleado-create/empleado-create.compo
 import { EmpleadoDetailComponent } from './empleado-detail/empleado-detail.component';
 import { EmpleadoEditComponent } from './empleado-edit/empleado-edit.component';
 import { EmpleadoListComponent } from './empleado-list/empleado-list.component';
-
-
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -31,10 +28,15 @@ import {MatGridListModule} from '@angular/material/grid-list';
     NgbModule,
     ReactiveFormsModule,
     NgxPermissionsModule,
-    AppRoutingModule,
-    MatDialogModule, 
+    AppRoutingModule,    
     MatIconModule,
     MatGridListModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+      preventDuplicates:false
+    })
     
     
     

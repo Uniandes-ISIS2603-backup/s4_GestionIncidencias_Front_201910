@@ -2,7 +2,7 @@ import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { EmpleadoService } from '../empleado.service';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
-import {ToastrService} from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { Empleado } from '../empleado';
 import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
 import { EmpleadoCreateComponent } from '../empleado-create/empleado-create.component';
@@ -32,7 +32,8 @@ export class EmpleadoListComponent implements OnInit {
     private global: Globals,
     private dialog: MatDialog,
     private router: Router,
-    private activated: ActivatedRoute) {
+    private activated: ActivatedRoute,
+    private toastr: ToastrService) {
       this.activated.params.subscribe(  params =>{    
         this.id=params['id'] ;
         console.log(this.id);      
@@ -91,7 +92,11 @@ export class EmpleadoListComponent implements OnInit {
     }
     
     deleteEmpleado(id:number):void{
-      this.empleadoService.deleteEmpleado(id).subscribe(del=>{ this.getEmpleados()});      
+      this.empleadoService.deleteEmpleado(id).subscribe(del=>{ this.getEmpleados()
+        this.toastr.success('El empleado se elimino','Borrar empleado');
+
+      }
+      );      
       
     }
 

@@ -74,6 +74,9 @@ export class LoginComponent implements OnInit {
                 console.log(this.global.logInTecnico);
                 this.router.navigate(['/menuTecnico',this.tecnico.id]);                
               }
+              else{                  
+                this.toastr.error('La contraseña ingresada no es válida','Contraseña invalida');
+              }
         }
     }); 
 
@@ -86,6 +89,9 @@ export class LoginComponent implements OnInit {
               this.global.setLogInEmpleado(true);              
                this.router.navigate(['/menuEmpleado',this.empleado.id]);               
              }
+             else{                  
+              this.toastr.error('La contraseña ingresada no es válida','Contraseña invalida');
+            }
         }
      });
  
