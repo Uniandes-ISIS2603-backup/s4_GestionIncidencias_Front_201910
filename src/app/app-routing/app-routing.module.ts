@@ -33,6 +33,8 @@ import { GuardTecnicoGuard } from '../guard-tecnico.guard';
 import { equipoComputoCreateComponent } from '../modules/equipoComputo/equipoComputo-create/equipoComputo-create.component';
 import { IncidenciasEmpleadoComponent } from '../modules/Incidencias/incidencias-empleado/incidencias-empleado.component';
 import { IncidenciasTecnicoComponent } from '../modules/Incidencias/incidencias-tecnico/incidencias-tecnico.component';
+import { IncidenciasMenuTecnicoComponent } from '../modules/Incidencias/incidencias-menu-tecnico/incidencias-menu-tecnico.component';
+import { IncidenciasMenuEmpleadoComponent } from '../modules/Incidencias/incidencias-menu-empleado/incidencias-menu-empleado.component';
     
 
 const routes: Routes = [
@@ -54,6 +56,8 @@ const routes: Routes = [
      {path:'detalleTecnico/:id',component: TecnicoDetailComponent,canActivate:[GuardTecnicoGuard]},
      {path:'listarIncidenciaEmpleado/:id/:idAdmi', component: IncidenciasEmpleadoComponent,canActivate:[ModulesGuard]},
      {path:'listarIncidenciasTecnico/:id/:idAdmi', component:IncidenciasTecnicoComponent, canActivate:[ModulesGuard]},     
+     {path:'listarIncidenciasMenuTecnico/:id', component:IncidenciasMenuTecnicoComponent,canActivate:[GuardTecnicoGuard]},
+     {path:'listarIncidenciasMenuEmpleado/:id', component:IncidenciasMenuEmpleadoComponent,canActivate:[GuardEmpleadoGuard]},
      
     {
         path: 'home',

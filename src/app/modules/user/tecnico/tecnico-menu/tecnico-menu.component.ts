@@ -28,7 +28,7 @@ export class TecnicoMenuComponent implements OnInit {
   }
 
   listarMisIncidencias():void{
-
+    this.router.navigate(['/listarIncidenciasMenuTecnico',this.id])  
   }
 
 }

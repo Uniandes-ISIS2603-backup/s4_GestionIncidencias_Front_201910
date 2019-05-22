@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Globals } from '../../../../../globals';
 
 @Component({
   selector: 'app-menu-empleado',
@@ -11,7 +12,8 @@ export class MenuEmpleadoComponent implements OnInit {
    * Id del empleado que esta logeado
    */
   id:number;
-  constructor(private router:Router,private activated:ActivatedRoute) {    
+  constructor(private router:Router,private activated:ActivatedRoute,
+    private globals:Globals) {    
     this.activated.params.subscribe(  params =>{    
       this.id=params['id'] ;      
       console.log(this.id);      
@@ -28,7 +30,7 @@ export class MenuEmpleadoComponent implements OnInit {
   }
 
   listarMisIncidencias():void{
-    
+    this.router.navigate(['\listarIncidenciasMenuEmpleado',this.id]);    
   }
 
 }

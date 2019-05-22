@@ -17,6 +17,7 @@ import {IncidenciaEditComponent} from './incidencia-edit/incidencia-edit.compone
 import { IncidenciasEmpleadoComponent } from './incidencias-empleado/incidencias-empleado.component';
 import { IncidenciasTecnicoComponent } from '../Incidencias/incidencias-tecnico/incidencias-tecnico.component';
 import { IncidenciasMenuTecnicoComponent } from '../Incidencias/incidencias-menu-tecnico/incidencias-menu-tecnico.component';
+import { IncidenciasMenuEmpleadoComponent } from '../Incidencias/incidencias-menu-empleado/incidencias-menu-empleado.component';
 
 
 
@@ -30,7 +31,7 @@ import { IncidenciasMenuTecnicoComponent } from '../Incidencias/incidencias-menu
         FormsModule,
         ActuacionModule
     ],
-    declarations: [IncidenciaListComponent,IncidenciaDetailComponent, IncidenciaCreateComponent, IncidenciaEditComponent, IncidenciasEmpleadoComponent, IncidenciasTecnicoComponent, IncidenciasMenuTecnicoComponent],
+    declarations: [IncidenciaListComponent,IncidenciaDetailComponent, IncidenciaCreateComponent, IncidenciaEditComponent, IncidenciasEmpleadoComponent, IncidenciasTecnicoComponent, IncidenciasMenuTecnicoComponent, IncidenciasMenuEmpleadoComponent],
     providers: [IncidenciaService]
 })
 export class IncidenciaModule {}
