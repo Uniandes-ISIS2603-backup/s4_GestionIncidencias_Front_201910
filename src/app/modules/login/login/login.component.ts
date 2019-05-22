@@ -10,6 +10,7 @@ import { TecnicoService } from '../../user/tecnico/tecnico.service';
 import { Tecnico } from '../../user/tecnico/tecnico';
 import { EmpleadoService } from '../../user/empleado/empleado.service';
 import { Empleado } from '../../user/empleado/empleado';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-login',
@@ -58,11 +59,13 @@ export class LoginComponent implements OnInit {
         
      } 
      else if(this.tipoUsuario=="tecnicos"){
+      
       this.tecnicoService.getTecnicoByUser(this.user.usuario).subscribe(tecnicos => {
         this.tecnico = tecnicos;
         if(!isNullOrUndefined(this.tecnico)){
               if(this.tecnico.password==this.user.password){
                 this.global.setLogInTecnico(true);
+                console.log(this.global.logInTecnico);
                 this.router.navigate(['/menuTecnico',this.tecnico.id]);                
               }
         }
