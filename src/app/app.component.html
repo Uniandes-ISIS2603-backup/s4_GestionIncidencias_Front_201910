@@ -8,6 +8,7 @@
             <li class="nav-item active">
                 <a class="nav-link" [routerLink]="['home']">Inicio <span class="sr-only">(current)</span></a>
                 <a class="nav-link" *ngIf="logoutvar" (click)="logout()">Salir <span class="sr-only ">(current)</span></a>
+                <a class="nav-link" *ngIf="logOutVarEmpleado" (click)="logoutEmpleado()">Salir <span class="sr-only ">(current)</span></a>
             </li>
         </ul>
     </div>
