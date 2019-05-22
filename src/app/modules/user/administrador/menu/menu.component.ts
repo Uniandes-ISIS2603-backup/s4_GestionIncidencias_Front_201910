@@ -21,7 +21,6 @@ export class MenuComponent implements OnInit {
     });
    }
 
-
    getTecnico(): void {
     this.tecnicoService.getTecnico(this.id)
         .subscribe(tecnico => {
@@ -46,4 +45,8 @@ export class MenuComponent implements OnInit {
     this.getTecnico();
   }
 
+  verPerfil():void{
+    console.log('Va a mostrar detalle');
+    this.router.navigate(['/detalleTecnico',this.id]);    
+  }
 }

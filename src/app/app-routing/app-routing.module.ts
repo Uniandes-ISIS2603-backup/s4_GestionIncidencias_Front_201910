@@ -55,6 +55,7 @@ const routes: Routes = [
      {path:'menuTecnico/:id', component:TecnicoMenuComponent,canActivate:[GuardTecnicoGuard]},
      {path:'empleadoDetalle/:id',component: EmpleadoDetailComponent,canActivate:[GuardEmpleadoGuard]},
      {path:'detalleTecnico/:id',component: TecnicoDetailComponent,canActivate:[GuardTecnicoGuard]},
+     {path:'detalleAdmin/:id',component: TecnicoDetailComponent,canActivate:[GuardTecnicoGuard]},
      {path:'listarIncidenciaEmpleado/:id/:idAdmi', component: IncidenciasEmpleadoComponent,canActivate:[ModulesGuard]},
      {path:'listarIncidenciasTecnico/:id/:idAdmi', component:IncidenciasTecnicoComponent, canActivate:[ModulesGuard]},     
      {path:'listarIncidenciasMenuTecnico/:id', component:IncidenciasMenuTecnicoComponent,canActivate:[GuardTecnicoGuard]},

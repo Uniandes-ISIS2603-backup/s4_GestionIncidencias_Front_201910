@@ -1,0 +1,16 @@
+#carta_menu {
+    width: 18rem;
+    background-color: #ccc;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+#carta_titulo {
+    font-weight: bold;
+    color: black;
+}
+
+#carta_titulo:hover {
+    color: rgb(66,149,243);
+    cursor: pointer;
+}
