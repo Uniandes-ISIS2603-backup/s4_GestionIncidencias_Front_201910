@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ViewContainerRef, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { equipoComputoService } from '../equipoComputo.service';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
@@ -19,8 +19,17 @@ export class equipoComputoListComponent implements OnInit {
     private equipoComputoService: equipoComputoService,
     private modalDialogService: ModalDialogService,
     private viewRef: ViewContainerRef,
-    private toastrService: ToastrService) {}
+    private toastrService: ToastrService,
+    private router: Router,
+    private activated: ActivatedRoute) {
+      this.activated.params.subscribe(  params =>{    
+        this.id=params['id'] ;
+        console.log(this.id);      
+      });
+    }
 
+    id:number;
+    equipoComputo:equipoComputo;
   /**
     * List of equipoComputos
     */
@@ -52,7 +61,28 @@ export class equipoComputoListComponent implements OnInit {
     /**
     * Asks the service to update the list of equipoComputos
     */
-     getequipoComputos(): void {
+   @Output() cancel = new EventEmitter();
+
+   /**
+   * The output which tells the parent component
+   * that the user created a new editorial
+   */
+   @Output() create = new EventEmitter();
+
+
+   /**
+    * Creates a new equipoComputo
+    */
+   crearEquipo():void{
+    this.router.navigate(['/crearEquipo',this.id]);
+  }
+
+
+   goBack():void{
+    this.router.navigate(['/menuAdministrador',this.id]);
+  }
+
+   getequipoComputos(): void {
       this.equipoComputoService.getequipoComputos()
           .subscribe(equipoComputos => {
               this.equipoComputos = equipoComputos;
@@ -61,6 +91,11 @@ export class equipoComputoListComponent implements OnInit {
 
     updateequipoComputo(): void {
       this.showEdit = false;
+  }
+
+    deleteEquipo(id:number):void{
+    this.equipoComputoService.deleteEquipo(id).subscribe(del=>{ this.getequipoComputos()
+    });              
   }
 
    /**

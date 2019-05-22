@@ -15,6 +15,7 @@ import {IncidenciaCreateComponent} from  './incidencia-create/incidencia-create.
 
 import {IncidenciaEditComponent} from './incidencia-edit/incidencia-edit.component';
 import { IncidenciasEmpleadoComponent } from './incidencias-empleado/incidencias-empleado.component';
+import { IncidenciasTecnicoComponent } from '../Incidencias/incidencias-tecnico/incidencias-tecnico.component';
 
 
 
@@ -28,7 +29,7 @@ import { IncidenciasEmpleadoComponent } from './incidencias-empleado/incidencias
         FormsModule,
         ActuacionModule
     ],
-    declarations: [IncidenciaListComponent,IncidenciaDetailComponent, IncidenciaCreateComponent, IncidenciaEditComponent, IncidenciasEmpleadoComponent],
+    declarations: [IncidenciaListComponent,IncidenciaDetailComponent, IncidenciaCreateComponent, IncidenciaEditComponent, IncidenciasEmpleadoComponent, IncidenciasTecnicoComponent],
     providers: [IncidenciaService]
 })
 export class IncidenciaModule {}

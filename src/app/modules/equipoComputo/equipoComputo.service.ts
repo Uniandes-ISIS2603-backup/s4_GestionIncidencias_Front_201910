@@ -15,6 +15,7 @@ const equipoComputos = '/equipos';
 */
 
 export class equipoComputoService {
+
   /**
     * Constructor of the service
     * @param http The HttpClient - This is necessary in order to perform requests
@@ -59,5 +60,9 @@ export class equipoComputoService {
       console.log("Paso por el modulo correcto");
       return this.http.get<equipoComputo>(API_URL + equipoComputos + '/' + equipoComputoId);
   }
+
+  deleteEquipo(id:number):Observable<equipoComputo>{       
+    return this.http.delete<equipoComputo>(API_URL + equipoComputos + '/' + id);
+ }
 
 }

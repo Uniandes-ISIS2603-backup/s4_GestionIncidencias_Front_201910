@@ -33,18 +33,20 @@ import { EmpleadoDetailComponent } from '../modules/user/empleado/empleado-detai
 import { GuardEmpleadoGuard } from '../guard-empleado.guard';
 import { TecnicoDetailComponent } from '../modules/user/tecnico/tecnico-detail/tecnico-detail.component';
 import { GuardTecnicoGuard } from '../guard-tecnico.guard';
+import { equipoComputoCreateComponent } from '../modules/equipoComputo/equipoComputo-create/equipoComputo-create.component';
 import { IncidenciasEmpleadoComponent } from '../modules/Incidencias/incidencias-empleado/incidencias-empleado.component';
-
-
+import { IncidenciasTecnicoComponent } from '../modules/Incidencias/incidencias-tecnico/incidencias-tecnico.component';
     
 
 const routes: Routes = [
      {path:'menuAdministrador/:id',component: MenuComponent, canActivate:[ModulesGuard] },
      {path:'listarEmpleados/:id', component:EmpleadoListComponent, canActivate:[ModulesGuard]},
      {path:'listarTecnicos/:id', component:TecnicoListComponent, canActivate:[ModulesGuard]},
+     {path:'listarTecnicos', component:TecnicoListComponent, canActivate:[ModulesGuard]},
      {path:'listarIncidencias', component:IncidenciaListComponent, canActivate:[ModulesGuard]},
-     {path:'listarEquipos', component:equipoComputoListComponent, canActivate:[ModulesGuard]},
+     {path:'listarEquipos/:id', component:equipoComputoListComponent, canActivate:[ModulesGuard]},
      {path:'crearEmpleado/:id', component:EmpleadoCreateComponent, canActivate:[ModulesGuard]},
+     {path:'crearEquipo/:id', component:equipoComputoCreateComponent},
      {path:'login/:tipo', component:LoginComponent},
      {path:'editarEmpleado/:id/:idAmi', component:EmpleadoEditComponent},
      {path:'crearTecnico/:id', component:TecnicoCreateComponent, canActivate:[ModulesGuard]},
@@ -53,33 +55,9 @@ const routes: Routes = [
      {path:'menuTecnico/:id', component:TecnicoMenuComponent,canActivate:[GuardTecnicoGuard]},
      {path:'empleadoDetalle/:id',component: EmpleadoDetailComponent,canActivate:[GuardEmpleadoGuard]},
      {path:'detalleTecnico/:id',component: TecnicoDetailComponent,canActivate:[GuardTecnicoGuard]},
-     {path: 'listarIncidenciaEmpleado/:id/:idAdmi', component: IncidenciasEmpleadoComponent,canActivate:[ModulesGuard]},
+     {path:'listarIncidenciaEmpleado/:id/:idAdmi', component: IncidenciasEmpleadoComponent,canActivate:[ModulesGuard]},
+     {path:'listarIncidenciasTecnico/:id/:idAdmi', component:IncidenciasTecnicoComponent, canActivate:[ModulesGuard]},     
      
-     {
-        path: 'auth',
-        children: [
-            {
-                path: 'login',    
-                component: AuthLoginComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
-            },
-            {
-                path: ':sign-up',
-                component: AuthSignUpComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['GUEST']
-                    }
-                }
-            }
-        ]
-    },
     {
         path: 'home',
         component: HomeComponent

@@ -1,66 +1,29 @@
-<p>
-    <button class="btn btn-primary" style="background-color:black;border: black" type="button" data-toggle="collapse" data-target="#collapseCreate" aria-expanded="false" aria-controls="collapseCreate">
-          Crear equipo
-        </button>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDelete" aria-expanded="false" aria-controls="collapseDelete">
-                Borrar equipo
-              </button>
-</p>
-<div class="collapse" id="collapseCreate">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-8">
-                <br>
-                <h2 class="text-center">Crear un nuevo equipo de Computo</h2>
-                <br>
-                <form name="book" (ngSubmit)="createequipoComputo()" #f="ngForm" novalidate>
-
-
-                    <div class="form-group">
-                        <label for="equipoComputoUser"><b>Descripción</b></label>
-                        <input type="text" name="equipoComputoDescripcion" class="form-control" id="equipoComputoDescripcion" [(ngModel)]="equipoComputo.descripcion" #equipoComputoDescripcion="ngModel" required>
-                        <div class="invalid-feedback">
-                            <div>Falta la descripción del equipo</div>
-                        </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <br>
+            <h2 class="text-center">Crear un nuevo equipo</h2>
+            <br>
+            <form name="book" (ngSubmit)="f.form.valid && createEquipo()" #f="ngForm" novalidate>
+                
+                <div class="form-group">
+                    <label for="equipoComputo.descripcion"><b>Descripción</b></label>
+                    <input type="text" name="equipoComputoDescripcion" class="form-control" id="equipoComputoDescripcion" [(ngModel)]="equipo.descripcion" #equipoComputoDescripcion="ngModel" required>
+                    <div class="invalid-feedback">
+                        <div>Falta la descripción del equipo</div>
                     </div>
+                </div>
 
-                   
-                    <br>
-                    <div class="row form-inline justify-content-center align-self-center">
-                        <button type="submit" class="btn btn-primary">Crear</button>
-                    </div>
-                </form>
                 <br>
-            </div>
+                
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary ">Crear</button>
+                    <div class="divider"></div>
+                    <button class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
+                </div>
+            </form>
+            <br>
         </div>
     </div>
 </div>
-<div class="collapse" id="collapseDelete">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-8">
-                    <br>
-                    <h2 class="text-center">Eliminar un equipo</h2>
-                    <br>
-                    <form name="book" (ngSubmit)="deleteEquipoComputo()" #f="ngForm" novalidate>
-    
-    
-                        <div class="form-group">
-                            <label for="equipoComputoUser"><b>Id del equipo a eliminar</b></label>
-                            <input type="text" name="equipoComputoId" class="form-control" id="equipoComputoId" [(ngModel)]="equipoComputo.id" #equipoComputoId="ngModel" required>
-                            <div class="invalid-feedback">
-                                <div>Falta el id del equipo</div>
-                            </div>
-                        </div>
-    
-                       
-                        <br>
-                        <div class="row form-inline justify-content-center align-self-center">
-                            <button type="submit" class="btn btn-primary">Eliminar el equipo</button>
-                        </div>
-                    </form>
-                    <br>
-                </div>
-            </div>
-        </div>
-    </div>
