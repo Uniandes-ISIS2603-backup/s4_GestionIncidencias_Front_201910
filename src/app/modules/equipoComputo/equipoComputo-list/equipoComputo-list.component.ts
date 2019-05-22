@@ -93,6 +93,9 @@ export class equipoComputoListComponent implements OnInit {
       this.showEdit = false;
   }
 
+  showHideEdit(equipo_id: number): void {
+    this.router.navigate(['\editarEquipo',equipo_id,this.id]);
+}
     deleteEquipo(id:number):void{
     this.equipoComputoService.deleteEquipo(id).subscribe(del=>{ this.getequipoComputos()
     });              

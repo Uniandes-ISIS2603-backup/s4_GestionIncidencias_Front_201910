@@ -36,6 +36,7 @@ import { GuardTecnicoGuard } from '../guard-tecnico.guard';
 import { equipoComputoCreateComponent } from '../modules/equipoComputo/equipoComputo-create/equipoComputo-create.component';
 import { IncidenciasEmpleadoComponent } from '../modules/Incidencias/incidencias-empleado/incidencias-empleado.component';
 import { IncidenciasTecnicoComponent } from '../modules/Incidencias/incidencias-tecnico/incidencias-tecnico.component';
+import { equipoComputoEditComponent } from '../modules/equipoComputo/equipoComputo-edit/equipoComputo-edit.component';
     
 
 const routes: Routes = [
@@ -51,6 +52,7 @@ const routes: Routes = [
      {path:'editarEmpleado/:id/:idAmi', component:EmpleadoEditComponent},
      {path:'crearTecnico/:id', component:TecnicoCreateComponent, canActivate:[ModulesGuard]},
      {path:'editarTecnico/:id/:idAdmi', component:TecnicoEditComponent},
+     {path:'editarEquipo/:id/:idAdmi', component:equipoComputoEditComponent},
      {path:'menuEmpleado/:id', component:MenuEmpleadoComponent,canActivate:[GuardEmpleadoGuard]},
      {path:'menuTecnico/:id', component:TecnicoMenuComponent,canActivate:[GuardTecnicoGuard]},
      {path:'empleadoDetalle/:id',component: EmpleadoDetailComponent,canActivate:[GuardEmpleadoGuard]},

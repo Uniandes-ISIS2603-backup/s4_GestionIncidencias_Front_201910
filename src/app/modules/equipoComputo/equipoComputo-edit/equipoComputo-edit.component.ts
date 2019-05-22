@@ -3,8 +3,8 @@ import { equipoComputoService } from '../equipoComputo.service';
 
 import { ToastrService} from 'ngx-toastr';
 import { equipoComputo } from '../equipoComputo';
-
-
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-equipoComputo-edit',
@@ -13,18 +13,27 @@ import { equipoComputo } from '../equipoComputo';
 })
 export class equipoComputoEditComponent implements OnInit {
 
-  /**
-    * The component's constructor
-    * @param equipoComputoService The equipoComputo's service
-    * @param toastrService The toastr to show messages to the user 
-    */
+
+  id:number;
+  idAdmi:number;
+
      constructor(
-      private equipoComputoService: equipoComputoService,
-      private toastrService: ToastrService
-    ) {}
+      private equipoService:equipoComputoService,
+      private toastrService: ToastrService,
+      private router: Router,
+      private activated: ActivatedRoute
+    ) {
+      this.activated.params.subscribe(  params =>{    
+        this.id=params['id'] ;
+        this.idAdmi=params['idAdmi'];
+        console.log(this.id);
+        this.getEquipoComputo();
+      });
+
+    }
   
     /**
-     * The equipoComputo to create
+     * The tecnico to create
      */
   
     equipoComputo: equipoComputo;
@@ -32,20 +41,20 @@ export class equipoComputoEditComponent implements OnInit {
     
 
     /**
-    * The id of the equipoComputo that the user wants to edit
+    * The id of the tecnico that the user wants to edit
     * This is passed as a parameter by the parent component
     */
    @Input() equipoComputo_edit_id: number;
 
    /**
    * The output which tells the parent component
-   * that the user no longer wants to create an equipoComputo
+   * that the user no longer wants to create an tecnico
    */
    @Output() cancel = new EventEmitter();
 
    /**
    * The output which tells the parent component
-   * that the user updated a new equipoComputo
+   * that the user updated a new tecnico
    */
    @Output() update = new EventEmitter();
   
@@ -53,30 +62,32 @@ export class equipoComputoEditComponent implements OnInit {
 
 
     /**
-    * Retrieves the information of the equipoComputo
+    * Retrieves the information of the tecnico
     */
-   getequipoComputo(): void {
-    this.equipoComputoService.getequipoComputo(this.equipoComputo_edit_id)
+   getEquipoComputo(): void {
+    this.equipoService.getequipoComputo(this.id)
         .subscribe(equipoComputo => {
             this.equipoComputo = equipoComputo;
         });
   }
 
   /**    
-     * Informs the parent component that the user no longer wants to update the equipoComputo
+     * Informs the parent component that the user no longer wants to update the tecnico
      */
     cancelEdition(): void {
      this.cancel.emit();
+     this.router.navigate(['/listarEquipos',this.idAdmi]);
   }
 
 
     /**
-    * Updates the equipoComputo's information
+    * Updates the tecnico's information
     */
-   editequipoComputo(): void {     
-    this.equipoComputoService.updateequipoComputo(this.equipoComputo)
+   editEquipoComputo(): void {     
+    this.equipoService.updateequipoComputo(this.equipoComputo)
        .subscribe(() => {
-           this.update.emit();             
+           this.update.emit(); 
+           this.router.navigate(['/listarEquipos',this.idAdmi]);            
            
            
        });
@@ -98,11 +109,11 @@ showHideEdit(equipoComputo_edit_id: number): void {
 
     ngOnInit() {
       this.equipoComputo= new equipoComputo();
-      this.getequipoComputo();
+      this.getEquipoComputo();
     }
 
       /**
-    * The function which is called every time the user chooses to edit a different equipoComputo
+    * The function which is called every time the user chooses to edit a different tecnico
     */
    ngOnChanges() {
     this.ngOnInit();
