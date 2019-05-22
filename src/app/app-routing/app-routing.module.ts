@@ -33,6 +33,7 @@ import { EmpleadoDetailComponent } from '../modules/user/empleado/empleado-detai
 import { GuardEmpleadoGuard } from '../guard-empleado.guard';
 import { TecnicoDetailComponent } from '../modules/user/tecnico/tecnico-detail/tecnico-detail.component';
 import { GuardTecnicoGuard } from '../guard-tecnico.guard';
+import { IncidenciasEmpleadoComponent } from '../modules/Incidencias/incidencias-empleado/incidencias-empleado.component';
 
 
     
@@ -52,6 +53,7 @@ const routes: Routes = [
      {path:'menuTecnico/:id', component:TecnicoMenuComponent,canActivate:[GuardTecnicoGuard]},
      {path:'empleadoDetalle/:id',component: EmpleadoDetailComponent,canActivate:[GuardEmpleadoGuard]},
      {path:'detalleTecnico/:id',component: TecnicoDetailComponent,canActivate:[GuardTecnicoGuard]},
+     {path: 'listarIncidenciaEmpleado/:id/:idAdmi', component: IncidenciasEmpleadoComponent,canActivate:[ModulesGuard]},
      
      {
         path: 'auth',

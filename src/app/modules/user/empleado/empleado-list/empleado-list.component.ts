@@ -110,6 +110,11 @@ export class EmpleadoListComponent implements OnInit {
       this.router.navigate(['/menuAdministrador',this.id]);
     }
 
+
+    listarIncidencias(id:number):void{
+      this.router.navigate(['/listarIncidenciaEmpleado',id,this.id]);
+    }
+
   /**
     * This will initialize the component by retrieving the list of empleados from the service
     * This method will be called when the component is created

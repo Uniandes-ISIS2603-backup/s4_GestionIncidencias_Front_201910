@@ -1,0 +1,45 @@
+<div class="row justify-content-md-center">
+    <div class="col-8">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                <button type="button" class="btn btn-primary">Busar</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" (click)="goBack()">Regresar</button>
+            </form>
+        </nav>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Descipción</th>
+                    <th scope="col">Calificacion</th>
+                    <th scope="col">Equipo Computo</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col"> Actuaciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let incidencia of incidencias">
+                    <td>{{incidencia.id}}</td>
+                    <td>{{incidencia.descripcion}}</td>
+                    <td>{{incidencia.calificacion.numeroEst}} </td>
+                    <td>{{incidencia.equipoComputo.descripcion}}</td>
+                    <td>{{incidencia.estado}}</td>
+                    <td>{{incidencia.fecha}}</td>
+
+                    <td>
+                        <button class="btn btn-primary" [routerLink]="['/listarIncidencias']"><span class="fa fa-align-justify"></span></button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
