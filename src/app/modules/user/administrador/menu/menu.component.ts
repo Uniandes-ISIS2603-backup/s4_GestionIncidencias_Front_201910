@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../../user';
+import { TecnicoService } from '../../tecnico/tecnico.service';
+import { Tecnico } from '../../tecnico/tecnico';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -7,14 +11,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
   id:number;
+  tecnico:Tecnico;
   constructor(private activated: ActivatedRoute,
-    private router: Router) {
-
+    private router: Router,
+    private tecnicoService: TecnicoService) {
     this.activated.params.subscribe(  params =>{    
       this.id=params['id'] ;
-      console.log(this.id);      
+      this.getTecnico;    
     });
    }
+
+
+   getTecnico(): void {
+    this.tecnicoService.getTecnico(this.id)
+        .subscribe(tecnico => {
+            this.tecnico = tecnico;
+        });
+  }
 
   listarEmpleados():void{
     this.router.navigate(['/listarEmpleados',this.id]);
