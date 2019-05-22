@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
   }
 
   listarTecnicos():void{
-    this.router.navigate(['/listarTecnicos',this.id]);
+    this.router.navigate(['/listarTecnicos']);
   }
 
   listarEquipos():void{

@@ -33,6 +33,7 @@ import { EmpleadoDetailComponent } from '../modules/user/empleado/empleado-detai
 import { GuardEmpleadoGuard } from '../guard-empleado.guard';
 import { TecnicoDetailComponent } from '../modules/user/tecnico/tecnico-detail/tecnico-detail.component';
 import { GuardTecnicoGuard } from '../guard-tecnico.guard';
+import { equipoComputoCreateComponent } from '../modules/equipoComputo/equipoComputo-create/equipoComputo-create.component';
 
 
     
@@ -41,9 +42,11 @@ const routes: Routes = [
      {path:'menuAdministrador/:id',component: MenuComponent, canActivate:[ModulesGuard] },
      {path:'listarEmpleados/:id', component:EmpleadoListComponent, canActivate:[ModulesGuard]},
      {path:'listarTecnicos/:id', component:TecnicoListComponent, canActivate:[ModulesGuard]},
+     {path:'listarTecnicos', component:TecnicoListComponent, canActivate:[ModulesGuard]},
      {path:'listarIncidencias', component:IncidenciaListComponent, canActivate:[ModulesGuard]},
      {path:'listarEquipos', component:equipoComputoListComponent, canActivate:[ModulesGuard]},
      {path:'crearEmpleado/:id', component:EmpleadoCreateComponent, canActivate:[ModulesGuard]},
+     {path:'crearEquipo', component:equipoComputoCreateComponent},
      {path:'login/:tipo', component:LoginComponent},
      {path:'editarEmpleado/:id/:idAmi', component:EmpleadoEditComponent},
      {path:'crearTecnico/:id', component:TecnicoCreateComponent, canActivate:[ModulesGuard]},
