@@ -1,10 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {NgxPermissionsGuard} from 'ngx-permissions';
 import {ActuacionListComponent} from '../modules/actuacion/actuacion-list/actuacion-list.component'
-import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
-import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { HomeComponent } from '../home/home/home.component';
 import { EmpleadoListComponent } from '../modules/user/empleado/empleado-list/empleado-list.component'
 import { TecnicoListComponent } from '../modules/user/tecnico/tecnico-list/tecnico-list.component';
@@ -13,7 +10,7 @@ import { calificacionListComponent } from '../modules/calificacion/calificacion-
 import { EmpleadoEditComponent } from '../modules/user/empleado/empleado-edit/empleado-edit.component';
 import { AdministradorListComponent } from '../modules/user/administrador/administrador-list/administrador-list.component'
 import { PrioridadListComponent } from '../modules/prioridad/prioridad-list/prioridad-list.component';
-import {IncidenciaListComponent} from '../modules/Incidencias/incidencia-list/incidencia-list.component'
+import { IncidenciaListComponent  } from '../modules/Incidencias/incidencia-list/incidencia-list.component'
 import { MenuComponent } from '../modules/user/administrador/menu/menu.component'
 
 //Service

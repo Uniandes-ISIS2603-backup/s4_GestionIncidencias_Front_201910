@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
     private tecnicoService: TecnicoService) {
     this.activated.params.subscribe(  params =>{    
       this.id=params['id'] ;
-      this.getTecnico;    
+      this.getTecnico();    
     });
    }
 
@@ -43,6 +43,7 @@ export class MenuComponent implements OnInit {
   
 
   ngOnInit() {
+    this.getTecnico();
   }
 
 }
