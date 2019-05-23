@@ -8,7 +8,7 @@ import { TecnicoListComponent } from '../modules/user/tecnico/tecnico-list/tecni
 import { equipoComputoListComponent } from '../modules/equipoComputo/equipoComputo-list/equipoComputo-list.component';
 import { calificacionListComponent } from '../modules/calificacion/calificacion-list/calificacion-list.component';
 import { EmpleadoEditComponent } from '../modules/user/empleado/empleado-edit/empleado-edit.component';
-import { AdministradorListComponent } from '../modules/user/administrador/administrador-list/administrador-list.component'
+
 import { PrioridadListComponent } from '../modules/prioridad/prioridad-list/prioridad-list.component';
 import { IncidenciaListComponent  } from '../modules/Incidencias/incidencia-list/incidencia-list.component'
 import { MenuComponent } from '../modules/user/administrador/menu/menu.component'
@@ -102,15 +102,6 @@ const routes: Routes = [
             }]
     },  
 
-        {
-        path: 'administradores',
-        component:AdministradorListComponent,
-        children: [
-            {
-                path: 'list',
-                component: AdministradorListComponent
-            }]
-    }, 
      
         {
         path: 'actuaciones',
