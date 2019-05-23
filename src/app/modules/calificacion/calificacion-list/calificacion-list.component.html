@@ -6,13 +6,13 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Incidencia</th>
                         <th scope="col">Puntaje</th>
                         <th scope="col">Descripción</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let calificacion of calificacions">
+                        <td>{{calificacion.id}}</td>
                         <td>{{calificacion.numeroEst}} </td>
                         <td>{{calificacion.descripcion}} </td>
                     </tr>
