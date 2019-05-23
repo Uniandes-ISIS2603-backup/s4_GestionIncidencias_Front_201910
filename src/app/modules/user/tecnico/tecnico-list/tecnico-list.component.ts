@@ -11,14 +11,24 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './tecnico-list.component.html',
   styleUrls: ['./tecnico-list.component.css']
 })
+/**
+ * COmponente que se encarga de listar los técnicos
+ * @author VALERIE Parra Cortés
+ */
 export class TecnicoListComponent implements OnInit {
-   /**
-    * Constructor for the component
-    * @param tecnicoService The author's services provider
-    */
+   
+/**
+ * Constructor del compontente TecnicoListComponet
+ * @param tecnicoService el servicio del técnico a mostrar  
+ * @param toastrService El servicio para mostrar los mensajes al usuario
+ * @param router el router para cambiar de componentes
+ * @param activated permite obtener el parametro
+ * @param toastr permite mostrar mensajes de error
+ * 
+ */
+
    constructor(
-    private tecnicoService: TecnicoService,
-    private modalDialogService: ModalDialogService,
+    private tecnicoService: TecnicoService, 
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService,
     private router: Router,
@@ -31,38 +41,41 @@ export class TecnicoListComponent implements OnInit {
     }
 
   /**
-    * List of tecnicos
+    * Lista de técnicos
     */
 
    tecnicos:Tecnico[];
 
   /**
-    * Shows or hides the create component
+    * Variable que dice si se crea o no el create
     */
    showCreate: boolean;
 
    /**
-    * Shows or hides the edit component.
+    * Muestra el editar del tecnico
     */
    showEdit: boolean;
 
    /**
-    * The id of the tecnico being edited.
+    * Muestra el id del técnico a editar
     */
    tecnico_edit_id: number;
 
+   /**
+    * id del técnico que invoco el componente
+    */
    id:number;
 
 
     /**
-     * Shoy the list of tecnicos
+     * Dice si se mueestra
      */
 
     shows: boolean=true;
 
     /**
-    * Asks the service to update the list of tecnicos
-    */
+     * Obtener la lista del técnicos dle servicio
+     */
      getTecnicos(): void {
       this.tecnicoService.getTecnicos()
           .subscribe(tecnicos => {
@@ -70,33 +83,54 @@ export class TecnicoListComponent implements OnInit {
           });
     }
 
+    /**
+     * Actualiza los técnicos
+     */
+
     updateTecnico(): void {
       this.showEdit = false;
       location.reload();
   }
 
+
+  /**
+   * Vuelve al componente que lo invoco
+   */
+
   goBack():void{
     this.router.navigate(['/menuAdministrador',this.id]);
   }
 
+  /**
+   * Navega al componente de lista incidencias
+   * @param id del admi que lo invoco
+   */
 
   listarIncidencias(id:number):void{
     this.router.navigate(['/listarIncidenciasTecnico',id,this.id]);
   }
+  
+  /**
+   * Muestra el componente crear
+   * @param tecnico_id el id del componente
+   */
 
-
-      /**
-    * Shows or hides the create component
-    */
    showHideEdit(tecnico_id: number): void {
     this.router.navigate(['\editarTecnico',tecnico_id,this.id]);
 }
 
-
+  /**
+   * Navega al componente de crear técnico
+   */
 
   crearTecnico():void{
     this.router.navigate(['/crearTecnico',this.id]);
   }
+
+  /**
+   * Borra el técnico que el usuario seleccionó
+   * @param id del técnico que el usuario selecciono
+   */
 
   deleteTecnico(id:number):void{
     this.tecnicoService.deleteTecnico(id).subscribe(del=>{ this.getTecnicos()
@@ -104,9 +138,8 @@ export class TecnicoListComponent implements OnInit {
     });              
   }
 
-   /**
-      * This will initialize the component by retrieving the list of tecnicos from the service
-      * This method will be called when the component is created
+   /**      
+      * TInicializa el componente
       */
        ngOnInit() {
         this.showCreate = false;
@@ -118,6 +151,4 @@ export class TecnicoListComponent implements OnInit {
         location.reload();
         this.ngOnInit();
       }
-
-
 }

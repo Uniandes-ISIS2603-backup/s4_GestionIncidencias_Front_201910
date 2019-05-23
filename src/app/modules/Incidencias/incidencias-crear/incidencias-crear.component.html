@@ -1,0 +1,64 @@
+<br>
+<br>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear una nueva incidencia</h2>
+        <br>
+        <form name="book" (ngSubmit)="f.form.valid && createIncidencia()" #f="ngForm" novalidate>
+
+            <div class="form-group">
+                <label for="incidenciaDescripcion"><b>Fecha</b></label>
+                <input type="date" name="incidenciaFecha" class="form-control" id="incidenciaFecha" [(ngModel)]="incidencia.fecha" #incidenciaFecha="ngModel" required>
+                <div class="invalid-feedback">
+                    <div>Falata fecha del empleado</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="incidenciaPrioridad"><b>Prioridad</b></label>
+                <input type="text" name="incidenciaPrioridad" class="form-control" id="incidenciaPrioridad" [(ngModel)]="incidencia.prioridad" #incidenciaPrioridad="ngModel" required>
+                <div class="invalid-feedback">
+                    <div>The incidencias's prioridad is missing</div>
+                </div>
+            </div>
+              
+           
+
+            <div class="form-group">
+                <label for="incidenciaDescripcion"><b>Descripcion</b></label>
+                <input type="text" name="incidenciaDescripcion" class="form-control" id="incidenciaDescripcion" [(ngModel)]="incidencia.descripcion" #incidenciaDescripcion="ngModel" required>
+                <div class="invalid-feedback">
+                    <div>The empleado's descripcion is missing</div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="incidenciaEstado"><b>Estado</b></label>
+                <input type="text" name="incidenciaEstado" class="form-control" id="incidenciaEstado" [(ngModel)]="incidencia.password" #incidenciaEstado="ngModel" required>
+                
+            </div>
+
+            <div class="form-group">
+                <label for="idEquipoComputo"><b>EquipoComputo</b></label>
+                <input type="text" name="idEquipoComputo" class="form-control" id="idEquipoComputo" [(ngModel)]="idEquipoComputo" #idEquipoComputoa="ngModel" required>
+                
+            </div>
+
+    
+           
+        </form>
+
+            <br>
+
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary "  (click)="createIncidencia()">Create</button>
+                <div class="divider"></div>
+                <button class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        
+        <br>
+    </div>
+</div>

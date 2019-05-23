@@ -11,9 +11,9 @@ import {AppRoutingModule} from '../../app-routing/app-routing.module';
 
 import {ActuacionModule} from '../actuacion/actuacion.module';
 import {IncidenciaDetailComponent} from './incidencia-list-detail/incidencia-detail.component';
-import {IncidenciaCreateComponent} from  './incidencia-create/incidencia-create.component';
 
-import {IncidenciaEditComponent} from './incidencia-edit/incidencia-edit.component';
+
+
 import { IncidenciasEmpleadoComponent } from './incidencias-empleado/incidencias-empleado.component';
 import { IncidenciasTecnicoComponent } from '../Incidencias/incidencias-tecnico/incidencias-tecnico.component';
 import { IncidenciasMenuTecnicoComponent } from '../Incidencias/incidencias-menu-tecnico/incidencias-menu-tecnico.component';
@@ -31,7 +31,7 @@ import { IncidenciasMenuEmpleadoComponent } from '../Incidencias/incidencias-men
         FormsModule,
         ActuacionModule
     ],
-    declarations: [IncidenciaListComponent,IncidenciaDetailComponent, IncidenciaCreateComponent, IncidenciaEditComponent, IncidenciasEmpleadoComponent, IncidenciasTecnicoComponent, IncidenciasMenuTecnicoComponent, IncidenciasMenuEmpleadoComponent],
+    declarations: [IncidenciaListComponent,IncidenciaDetailComponent, IncidenciasEmpleadoComponent, IncidenciasTecnicoComponent, IncidenciasMenuTecnicoComponent, IncidenciasMenuEmpleadoComponent],
     providers: [IncidenciaService]
 })
 export class IncidenciaModule {}

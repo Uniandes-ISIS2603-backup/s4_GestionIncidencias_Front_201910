@@ -19,20 +19,26 @@ import { calificacionModule } from './modules/calificacion/calificacion.module';
 import { AdministradorComponent } from './modules/user/administrador/administrador.component';
 import { PrioridadModule } from './modules/prioridad/prioridad.module';
 import { ActuacionModule } from './modules/actuacion/actuacion.module';
-import {IncidenciaModule} from './modules/Incidencias/incidencia.module';
+
+import { HttpModule } from '@angular/http';
+
+
 import { LoginModule} from './modules/login/login.module';
 import { MenuComponent } from './app/modules/user/administrador/menu/menu.component'
 import { FooterComponent } from './modules/footer/footer/footer.component';
 import { Globals } from './globals';
 import { MenuEmpleadoModule } from './modules/user/empleado/menu-empleado/menu-empleado.module';
-
+import { IncidenciaModule } from './modules/Incidencias/incidencia.module';
+import { IncidenciasComponent } from './modules/incidencias/incidencias-crear/incidencias-crear.component';
+import {IncidenciaService} from './modules/incidencias/incidencia.service';
 
 @NgModule({
     declarations: [
         AppComponent,
         AdministradorComponent,
         MenuComponent,   
-        FooterComponent         
+        FooterComponent,
+        IncidenciasComponent       
     ],
     imports: [
         HomeModule,
@@ -58,11 +64,14 @@ import { MenuEmpleadoModule } from './modules/user/empleado/menu-empleado/menu-e
          ActuacionModule,
         IncidenciaModule,
         LoginModule,
-        MenuEmpleadoModule
+        MenuEmpleadoModule,
+        HttpModule,
+        
+       
       
     ],
     bootstrap: [AppComponent],
-    providers: [Globals, 
+    providers: [Globals, IncidenciaService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: HttpErrorInterceptor,

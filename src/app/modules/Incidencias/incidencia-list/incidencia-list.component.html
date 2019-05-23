@@ -1,39 +1,57 @@
-      <div class="container">
-              <div class="row">
-                  <div class="col-md-12">
-          
-                      <table *ngIf="shows" class="table">
-                          <thead class = "thead-dark">
-                              <tr>
-                                  <th scope="col">Id</th>
-                                  <th scope="col">Fecha</th>
-                                  <th scope="col">Prioridad</th>
-                                  <th scope="col">Descripcion</th>
-                                  <th scope="col">Estado</th>
-                                  <th scope="col">Tecnico</th>
-                                  <th scope="col">Empleado</th>
-                                  <th scope="col">Calificacion</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr *ngFor="let c of actuaciones">
-                                  <td>{{c.id}} </td>
-                                  <td>{{c.name}}</td>
-                                  <td> {{c.cedula}} </td>
-                                  <td>{{c.usuario}}</td>
-                              </tr>
-                          </tbody>
-                      </table>
-                      <button (click)=" shows = !shows  " class="btn btn-outline-primary btn-block">
-                  Mostrar/Ocultar
-                  </button>
-                  </div>
-              </div>
-          </div>
-          <br>
-          <br>
-          <div class="container">
-          <app-incidencia-create></app-incidencia-create>   
-          <app-incidencia-edit></app-incidencia-edit>   
-          </div>
-            
+ <div class="row justify-content-md-center">
+            <div class="col-8">
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="search">
+                        <button type="button" class="btn btn-primary">Buscar</button>
+                        <div class="divider"></div>
+                        <button class="btn btn-outline-success my-2 my-sm-0" (click)="goBack()">Regresar  </button>
+                    </form>
+    
+        
+                </nav>
+            </div>
+        </div>
+        
+        
+        
+        <div class="row justify-content-md-center">
+            <div class="col-8">
+                <table *ngIf="shows" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Prioridad</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Tecnico</th>
+                            <th scope="col">Empleado</th>
+                            <th scope="col">Calificacion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let c of incidencias">
+                            <td>{{c.id}} </td>
+                            <td>{{c.fecha}}</td>
+                            <td> {{c.prioridad}} </td>
+                            <td>{{c.descripcion}}</td>
+                            <td>{{c.estado}}</td>
+                            <td>{{c.tecnico}}</td>
+                            <td>{{c.empleado}}</td>
+                            <td>{{c.calificacion}}</td>
+                             <td>
+                                 <button class="btn btn-danger" (click)="deleteIncidencia(c.id)"><span class="fa fa-trash"></span></button>
+                            </td>
+        
+                            <td>
+                                <button class="btn btn-primary" (click)="showHideEdit(c.id)"><span class="fa fa-pencil"></span></button>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary" (click)="listarIncidencias(c.id)"><span class="fa fa-align-justify"></span></button>
+                            </td>n
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>      

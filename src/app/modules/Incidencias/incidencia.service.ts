@@ -16,7 +16,9 @@ const actuaciones:string = '/actuaciones';
 /**
 * El servicio relacionado con  las Incidencias
 */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class IncidenciaService {
 
   /**
@@ -39,9 +41,14 @@ export class IncidenciaService {
 * @returns The book with its new id if it was created, false if it wasn't
 */
 
-createIncidencia(incidencia): Observable<IncidenciaDetail> {
-    return this.http.post<IncidenciaDetail>(API_URL + incidencias, incidencia);
+
+createIncidencia(a : Incidencia): Observable<Incidencia> {
+  console.log(a);
+    return this.http.post<Incidencia>(API_URL + incidencias, a);
 }
+
+
+
 getIncIdenciaDetail(IncidenciasId): Observable<IncidenciaDetail> {
   return this.http.get<IncidenciaDetail>(API_URL + incidencias + '/' + IncidenciasId);
 }

@@ -10,6 +10,7 @@ import { equipoComputoListComponent } from './equipoComputo-list/equipoComputo-l
 import { equipoComputoCreateComponent } from './equipoComputo-create/equipoComputo-create.component';
 import { equipoComputoEditComponent } from './equipoComputo-edit/equipoComputo-edit.component';
 
+
 @NgModule({
   imports: [
     CommonModule,

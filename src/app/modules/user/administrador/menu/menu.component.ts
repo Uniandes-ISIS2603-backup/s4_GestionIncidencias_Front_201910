@@ -40,6 +40,11 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/listarEquipos',this.id]);
   }
   
+  
+  listarIncidencias():void{
+    this.router.navigate(['/listarIncidencias',this.id]);
+  }
+  
 
   ngOnInit() {
     this.getTecnico();

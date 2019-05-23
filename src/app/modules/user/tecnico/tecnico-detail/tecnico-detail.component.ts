@@ -28,7 +28,7 @@ export class TecnicoDetailComponent implements OnInit {
   }
 
   /**
-     *  Recupera la información del empleado
+     *  Recupera la información del técnco
     */
    getTecnico(): void {
     this.tecnicoService.getTecnico(this.id)

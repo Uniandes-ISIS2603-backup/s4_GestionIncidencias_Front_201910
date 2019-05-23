@@ -8,7 +8,7 @@ import { TecnicoListComponent } from '../modules/user/tecnico/tecnico-list/tecni
 import { equipoComputoListComponent } from '../modules/equipoComputo/equipoComputo-list/equipoComputo-list.component';
 import { calificacionListComponent } from '../modules/calificacion/calificacion-list/calificacion-list.component';
 import { EmpleadoEditComponent } from '../modules/user/empleado/empleado-edit/empleado-edit.component';
-import { AdministradorListComponent } from '../modules/user/administrador/administrador-list/administrador-list.component'
+
 import { PrioridadListComponent } from '../modules/prioridad/prioridad-list/prioridad-list.component';
 import { IncidenciaListComponent  } from '../modules/Incidencias/incidencia-list/incidencia-list.component'
 import { MenuComponent } from '../modules/user/administrador/menu/menu.component'
@@ -18,6 +18,9 @@ import { MenuComponent } from '../modules/user/administrador/menu/menu.component
 
 import { EmpleadoCreateComponent } from '../modules/user/empleado/empleado-create/empleado-create.component';
 import { LoginComponent } from '../modules/login/login/login.component';
+
+
+import { IncidenciasComponent } from "../modules/incidencias/incidencias-crear/incidencias-crear.component";
 
 import { TecnicoCreateComponent } from '../modules/user/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoEditComponent } from '../modules/user/tecnico/tecnico-edit/tecnico-edit.component';
@@ -42,13 +45,21 @@ const routes: Routes = [
      {path:'listarEmpleados/:id', component:EmpleadoListComponent, canActivate:[ModulesGuard]},
      {path:'listarTecnicos/:id', component:TecnicoListComponent, canActivate:[ModulesGuard]},
      {path:'listarTecnicos', component:TecnicoListComponent, canActivate:[ModulesGuard]},
-     {path:'listarIncidencias', component:IncidenciaListComponent, canActivate:[ModulesGuard]},
+     {path:'listarIncidencias/:id', component:  IncidenciaListComponent, canActivate:[ModulesGuard]},
      {path:'listarEquipos/:id', component:equipoComputoListComponent, canActivate:[ModulesGuard]},
      {path:'crearEmpleado/:id', component:EmpleadoCreateComponent, canActivate:[ModulesGuard]},
+     {path:'crearIncidencia/:id', component:IncidenciasComponent},
+
+     //Aca esta el error
      {path:'crearEquipo/:id', component:equipoComputoCreateComponent},
+    
+     {path:'crearIncidencia/:id', component:IncidenciasComponent, canActivate:[GuardEmpleadoGuard]},
+
+     {path:'ListarIncidencias/:id', component:IncidenciaListComponent},
+
      {path:'login/:tipo', component:LoginComponent},
      {path:'editarEmpleado/:id/:idAmi', component:EmpleadoEditComponent},
-     {path:'crearTecnico/:id', component:TecnicoCreateComponent, canActivate:[ModulesGuard]},
+     {path:'crearTecnico/:id', component:TecnicoCreateComponent, canActivate:[GuardTecnicoGuard]},
      {path:'editarTecnico/:id/:idAdmi', component:TecnicoEditComponent},
      {path:'editarEquipo/:id/:idAdmi', component:equipoComputoEditComponent},
      {path:'menuEmpleado/:id', component:MenuEmpleadoComponent,canActivate:[GuardEmpleadoGuard]},
@@ -93,15 +104,6 @@ const routes: Routes = [
             }]
     },  
 
-        {
-        path: 'administradores',
-        component:AdministradorListComponent,
-        children: [
-            {
-                path: 'list',
-                component: AdministradorListComponent
-            }]
-    }, 
      
         {
         path: 'actuaciones',

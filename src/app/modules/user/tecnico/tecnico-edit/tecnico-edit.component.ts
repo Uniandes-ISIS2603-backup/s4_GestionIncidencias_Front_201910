@@ -11,16 +11,27 @@ import { ActivatedRoute } from '@angular/router'
   templateUrl: './tecnico-edit.component.html',
   styleUrls: ['./tecnico-edit.component.css']
 })
+
+/**
+ * Componente encargado de la edición de un técnico
+ */
 export class TecnicoEditComponent implements OnInit {
-
-
-  id:number;
-  idAdmi:number;
   /**
-    * The component's constructor
-    * @param tecnicoService The tecnico's service
-    * @param toastrService The toastr to show messages to the user 
-    */
+   * id del tecnico que se editara
+   */
+  id:number;
+  /**
+   * Id del administrador que esta editando al técnico
+   */
+  idAdmi:number;
+  
+  /**
+   * Construye el componente y le inyecta los servicios necesarios
+   * @param tecnicoService el servicio del técnico 
+   * @param toastrService el servicio para mostrar los msn de error, exito y información
+   * @param router el router para navegar etre componentes
+   * @param activated permite obtener los parametros de la ruta
+   */
      constructor(
       private tecnicoService: TecnicoService,
       private toastrService: ToastrService,
@@ -37,36 +48,24 @@ export class TecnicoEditComponent implements OnInit {
     }
   
     /**
-     * The tecnico to create
+     *  Técnico a crear
      */
   
     tecnico: Tecnico;
+    /**
+     * Variable booleana que indica si se muestra o no el edit
+     */
     showEdit:boolean;
     
 
     /**
-    * The id of the tecnico that the user wants to edit
-    * This is passed as a parameter by the parent component
+    * El id del técnico que se editara    
     */
+   
    @Input() tecnico_edit_id: number;
 
-   /**
-   * The output which tells the parent component
-   * that the user no longer wants to create an tecnico
-   */
-   @Output() cancel = new EventEmitter();
-
-   /**
-   * The output which tells the parent component
-   * that the user updated a new tecnico
-   */
-   @Output() update = new EventEmitter();
-  
-
-
-
     /**
-    * Retrieves the information of the tecnico
+    * Recibe la información del técnico
     */
    getTecnico(): void {
     this.tecnicoService.getTecnico(this.id)
@@ -76,26 +75,31 @@ export class TecnicoEditComponent implements OnInit {
   }
 
   /**    
-     * Informs the parent component that the user no longer wants to update the tecnico
+     * Cancelala edición del técnico y se devuelve al componente que lo invoco
      */
     cancelEdition(): void {
-     this.cancel.emit();
+     
      this.router.navigate(['/listarTecnicos',this.idAdmi]);
   }
 
-
-    /**
-    * Updates the tecnico's information
-    */
+  /**
+   * Actualiza el técnico con la información
+   */
+    
    editTecnico(): void {     
     this.tecnicoService.updateTecnico(this.tecnico)
        .subscribe(() => {
-           this.update.emit(); 
+           
            this.router.navigate(['/listarTecnicos',this.idAdmi]);            
            
            
        });
 }
+
+/**
+ * Muestra el edit de técnico
+ * @param tecnico_edit_id id del técnico del que se mostrará el edit
+ */
 
 showHideEdit(tecnico_edit_id: number): void {
   if (!this.showEdit || (this.showEdit && (tecnico_edit_id != this.tecnico_edit_id))) {
@@ -108,19 +112,19 @@ showHideEdit(tecnico_edit_id: number): void {
 }
 
     /**
-    * The function which initializes the component
+    * Función que inicializa el componente
     */
 
     ngOnInit() {
       this.tecnico= new Tecnico();
       this.getTecnico();
     }
-
-      /**
-    * The function which is called every time the user chooses to edit a different tecnico
-    */
+  /**
+   * Función que se ejecuta cada vez que el tecnico sufre cambios
+   */
+       
    ngOnChanges() {
     this.ngOnInit();
-}
+  }
 
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewContainerRef} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {Router,ActivatedRoute} from '@angular/router';
 import {Incidencia} from '../Incidencia';
 import {IncidenciaService} from '../Incidencia.service';
 
@@ -10,62 +10,120 @@ import {IncidenciaService} from '../Incidencia.service';
 /**
 * The component for the list of editorials in the BookStore
 */
+
+
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+import {ToastrService} from 'ngx-toastr';
+
+
+
+
+
 @Component({
-    selector: 'app-Incidencia',
-    templateUrl: './incidencia-list.component.html',
-    styleUrls: ['./incidencia-list.component.css']
+  selector: 'app-incidencia-list',
+  templateUrl: './incidencia-list.component.html',
+  styleUrls: ['./incidencia-list.component.css']
 })
 export class IncidenciaListComponent implements OnInit {
-
-    /**
+   /**
     * Constructor for the component
-    * @param incidenciaService proveedor de servicios
+    * @param tecnicoService The author's services provider
     */
-    constructor(
-        private incidenciaService: IncidenciaService,
-        private route: ActivatedRoute) {}
+   constructor(
+    private incidenciaService: IncidenciaService,
+    private modalDialogService: ModalDialogService,
+    private viewRef: ViewContainerRef,
+    private toastrService: ToastrService,
+    private router: Router,
+    private activated: ActivatedRoute,
+    private toastr:ToastrService) {
+      this.activated.params.subscribe(  params =>{    
+        this.id=params['id'] ;
+        console.log(this.id);      
+      });
+    }
 
-
-    /**
-    * The list of editorials which belong to the BookStore
+  /**
+    * List of incidencias
     */
-   incidencias: Incidencia[];
+
+   incidencias:Incidencia[];
+
+  /**
+    * Shows or hides the create component
+    */
+   showCreate: boolean;
 
    /**
-    * atributo  que representa las decisiones de carga de informacion
+    * Shows or hides the edit component.
     */
-   allIncidencias: string = 'no';
-    
+   showEdit: boolean;
+
+   /**
+    * The id of the tecnico being edited.
+    */
+   tecnico_edit_id: number;
+
+   id:number;
+
 
     /**
-    * Actualiza la lista de incidencias
-    */
-    getIncidencias(): void {
-        this.incidenciaService.getIncidencias()
-            .subscribe(inc => {
-                this.incidencias = inc;
-            });
-    }
+     * Shoy the list of tecnicos
+     */
+
+    shows: boolean=true;
 
     /**
-    * The method which initializes the component
+    * Asks the service to update the list of tecnicos
     */
-   ngOnInit() {
-    this.route.queryParams
-        .filter(params => params.allbooks)
-        .subscribe(params => {
-            console.log(params);
-
-            this.allIncidencias = params.allbooks;
-            console.log(this.allIncidencias);
-        });
-    if (this.allIncidencias == 'yes') {
-        console.log("allbooks");
-
-        this.getIncidencias();
+     getIncidencias(): void {
+       console.log('Va a ver incidencias');
+      this.incidenciaService.getIncidencias()
+          .subscribe(incidencias => {
+              this.incidencias = incidencias;
+          });
     }
+
+    updateIncidencia(): void {
+      this.showEdit = false;
+      location.reload();
+  }
+
+  goBack():void {
+    this.router.navigate(['/menuAdministrador',this.id]);
+  }
+
+
+
+      /**
+    * Shows or hides the create component
+    */
+   showHideEdit(tecnico_id: number): void {
+    this.router.navigate(['\editarIncidencia',tecnico_id,this.id]);
 }
- 
-    
-    
+
+
+  deleteIncidencia(id:number):void{
+    this.incidenciaService.deleteIncidencia(id).subscribe(del=>{ this.getIncidencias()
+    this.toastr.success('Se eliminó la incidencia con éxito','Eliminar incidencia')
+    });              
+  }
+
+  
+   /**
+      * This will initialize the component by retrieving the list of incidencias from the service
+      * This method will be called when the component is created
+      */
+       ngOnInit() {
+        this.showCreate = false;
+        this.showEdit = false;
+        this.getIncidencias();
+      }
+      ngOnChanges() {
+        console.log("Entering in changes");
+        location.reload();
+        this.ngOnInit();
+      }
+
+
 }

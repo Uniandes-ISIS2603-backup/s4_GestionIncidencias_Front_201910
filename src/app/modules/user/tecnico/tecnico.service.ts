@@ -11,20 +11,20 @@ const tecnicos = '/tecnicos';
 
 
 /**
-* The service provider for everything related to tecnicos
+* Servicio que provee todo lo relacionado con los técnicos
 */
 
 export class TecnicoService {
   /**
     * Constructor of the service
-    * @param http The HttpClient - This is necessary in order to perform requests
+    * @param http The HttpClient para comunicarse con el back
     */
   constructor(private http: HttpClient) { }
 
 
   /**
-    * Returns the Observable object containing the list of tecnicos retrieved from the API
-    * @returns The list of tecnio in real time
+    * Retorna una lista de Observables de Tecnicos que se van a listar
+    * @returns Listar real de técnicos en la base de datos
     */
 
   getTecnicos(): Observable<Tecnico[]> {
@@ -32,9 +32,9 @@ export class TecnicoService {
     }
 
     /**
-    * Creates a new tecnico
-    * @param tecnico The new tenico
-    * @returns The tecnicos with its new id if it was created, false if it wasn't
+    * Crea un nuevo técnico
+    * @param tecnico El nuevo técnico a crear
+    * @returns El técnico con su nuevo id si fue creado.
     */
 
     createTecnico(tecnico): Observable<Tecnico> {
@@ -42,9 +42,9 @@ export class TecnicoService {
     }
 
     /**
-        * Updates a tecnico
-        * @param Tecnico The updated tecnico
-        * @returns The updated tecnico
+        * Actualiza un técnico
+        * @param Tecnico El técnico a actualizar 
+        * @returns El técnico actualizado
         */
     updateTecnico(tecnico): Observable<Tecnico> {
         return this.http.put<Tecnico>(API_URL + tecnicos + '/' + tecnico.id, tecnico);
@@ -62,14 +62,19 @@ export class TecnicoService {
 
 
    /**
-    * Returns the Observable object containing the list of editorials retrieved from the API
-    * @returns The list of books in real time
+    * Método que permite obtener un técnico de la base de datos de un id dado por parametro
+    * @param tecnicoId id del técnico
+    * @returns el técnico consultado si existe, 404 not found si no existe
     */
    
-    getTecnico(tecnicoId): Observable<Tecnico> {     
+    getTecnico(tecnicoId:number): Observable<Tecnico> {     
       return this.http.get<Tecnico>(API_URL + tecnicos + '/' + tecnicoId);
   }
 
+  /**
+   * Borra un técnico de la base de datos de un id dado por parámetro
+   * @param id  del técnico a eliminar
+   */
   deleteTecnico(id:number):Observable<Tecnico>{       
     return this.http.delete<Tecnico>(API_URL + tecnicos + '/' + id);
  }
