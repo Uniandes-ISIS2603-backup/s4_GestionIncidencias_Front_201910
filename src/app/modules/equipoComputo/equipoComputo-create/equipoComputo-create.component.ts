@@ -11,9 +11,26 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./equipoComputo-create.component.css']
 })
 
+/**
+ * Componente que muestra  el equipo computo
+ */
+
 export class equipoComputoCreateComponent implements OnInit {
 
+  /**
+   * El id del empleado que lo invoco
+    */
   id:number;
+
+  /**
+   * Construye un componente create
+   * @param equipoService servicio del equipo
+   * @param toastrService servicio para mostrar los mensajes
+   * @param router permite navegar entre componentes
+   * @param activated permite obtener los parametros
+   */
+
+
   constructor(
     private equipoService: equipoComputoService,
     private toastrService: ToastrService,
@@ -29,21 +46,9 @@ export class equipoComputoCreateComponent implements OnInit {
     }
 
   /**
-   * The new tecnico
+   * El nuevo equipo computo
    */
     equipo:equipoComputo;
-
-    /**
-    * The output which tells the parent component
-    * that the user no longer wants to create a tecnico
-    */
-   @Output() cancel = new EventEmitter();
-
-   /**
-   * The output which tells the parent component
-   * that the user created a new tecnico
-   */
-   @Output() create = new EventEmitter();
 
 
    /**
@@ -53,21 +58,21 @@ export class equipoComputoCreateComponent implements OnInit {
       this.equipoService.createequipoComputo(this.equipo)
           .subscribe((equipo) => {
               this.equipo = equipo;
-              this.create.emit();    
+              
               this.router.navigate(['/listarEquipos',this.id]);                
           });
       return this.equipo;    
     }
 
     /**
-      * Informs the parent component that the user no longer wants to create an tecnico
+      * Cancela la creación y vuelve al componente que lo invoco
       */
      cancelCreation(): void {
       this.router.navigate(['/listarEquipos',this.id]);
     }
   
      /**
-      * This function will initialize the component
+      * Función que inicializa el componente
       */
 
     ngOnInit() {

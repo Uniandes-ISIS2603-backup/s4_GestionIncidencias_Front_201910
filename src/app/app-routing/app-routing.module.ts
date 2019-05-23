@@ -59,7 +59,7 @@ const routes: Routes = [
 
      {path:'login/:tipo', component:LoginComponent},
      {path:'editarEmpleado/:id/:idAmi', component:EmpleadoEditComponent},
-     {path:'crearTecnico/:id', component:TecnicoCreateComponent, canActivate:[GuardTecnicoGuard]},
+     {path:'crearTecnico/:id', component:TecnicoCreateComponent, canActivate:[ModulesGuard]},
      {path:'editarTecnico/:id/:idAdmi', component:TecnicoEditComponent},
      {path:'editarEquipo/:id/:idAdmi', component:equipoComputoEditComponent},
      {path:'menuEmpleado/:id', component:MenuEmpleadoComponent,canActivate:[GuardEmpleadoGuard]},

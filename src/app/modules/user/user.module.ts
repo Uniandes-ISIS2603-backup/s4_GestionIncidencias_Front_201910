@@ -9,7 +9,7 @@ import {NgxPermissionsModule} from 'ngx-permissions';
 import { EmpleadoModule } from './empleado/empleado.module';
 import { TecnicoModule } from './tecnico/tecnico.module';
 
-import { AdministradorDetailComponent } from './administrador/administrador-detail/administrador-detail.component';
+
 
 import { MenuComponent } from './administrador/menu/menu.component';
 
@@ -32,6 +32,6 @@ import { MenuComponent } from './administrador/menu/menu.component';
   exports:[
      
   ],
-  declarations: [AdministradorDetailComponent, MenuComponent]
+  declarations: [MenuComponent]
 })
 export class UserModule { }

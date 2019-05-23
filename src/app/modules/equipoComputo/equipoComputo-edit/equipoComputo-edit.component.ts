@@ -11,10 +11,21 @@ import { ActivatedRoute } from '@angular/router'
   templateUrl: './equipoComputo-edit.component.html',
   styleUrls: ['./equipoComputo-edit.component.css']
 })
+
+/**
+ * Crea un editar equipo computo
+ */
 export class equipoComputoEditComponent implements OnInit {
 
-
+  /**
+   * Id del equipo que se esta creando
+   */
   id:number;
+
+
+  /**
+   * iid del admi que esta editando
+   */
   idAdmi:number;
 
      constructor(
@@ -33,10 +44,13 @@ export class equipoComputoEditComponent implements OnInit {
     }
   
     /**
-     * The tecnico to create
+     * El equipo computo a crear
      */
   
     equipoComputo: equipoComputo;
+    /**
+     * Muestra el editar
+     */
     showEdit:boolean;
     
 
@@ -46,21 +60,7 @@ export class equipoComputoEditComponent implements OnInit {
     */
    @Input() equipoComputo_edit_id: number;
 
-   /**
-   * The output which tells the parent component
-   * that the user no longer wants to create an tecnico
-   */
-   @Output() cancel = new EventEmitter();
-
-   /**
-   * The output which tells the parent component
-   * that the user updated a new tecnico
-   */
-   @Output() update = new EventEmitter();
-  
-
-
-
+   
     /**
     * Retrieves the information of the tecnico
     */
@@ -72,26 +72,31 @@ export class equipoComputoEditComponent implements OnInit {
   }
 
   /**    
-     * Informs the parent component that the user no longer wants to update the tecnico
+     * Cancela la edición y vuelve al componete que lo invoco
      */
     cancelEdition(): void {
-     this.cancel.emit();
+     
      this.router.navigate(['/listarEquipos',this.idAdmi]);
   }
 
 
     /**
-    * Updates the tecnico's information
+    * Actualiza la información del equipo computo
     */
    editEquipoComputo(): void {     
     this.equipoService.updateequipoComputo(this.equipoComputo)
        .subscribe(() => {
-           this.update.emit(); 
+           
            this.router.navigate(['/listarEquipos',this.idAdmi]);            
            
            
        });
 }
+
+/**
+ * Muestra el editar   
+ * @param equipoComputo_edit_id 
+ */
 
 showHideEdit(equipoComputo_edit_id: number): void {
   if (!this.showEdit || (this.showEdit && (equipoComputo_edit_id != this.equipoComputo_edit_id))) {
