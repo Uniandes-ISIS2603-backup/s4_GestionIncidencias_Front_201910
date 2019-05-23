@@ -19,6 +19,12 @@ export class EmpleadoDetailComponent implements OnInit {
   empleado: Empleado;
  
 
+  /**
+   * constructor del empleado 
+   * @param empleadoService atributo que entra como parametro del empleadoService
+   * @param activated atributo que entra como parametro de activated
+   * @param router atributo que entra como parametro del router
+   */
   constructor(private empleadoService: EmpleadoService,
     private activated: ActivatedRoute,
     private router: Router) {
@@ -39,6 +45,9 @@ export class EmpleadoDetailComponent implements OnInit {
           });
     }
 
+    /**
+     * Metodo que edita la informacion del empleado
+     */
     editEmpleado(): void {
       console.log('La nueva cedula del empleado es'+this.empleado.password);
       this.empleadoService.updateEmpleados(this.empleado)
@@ -48,11 +57,16 @@ export class EmpleadoDetailComponent implements OnInit {
          });        
  }
 
+ /**
+  * metodo que vuelve al menu anterior de empleado
+  */
    goBack():void{
       this.router.navigate(['/menuEmpleado',this.empleado.id]);                     
   }
 
-  
+  /**
+   * ngOnInit de lo que podamos llegar a necesitar
+   */
   ngOnInit() {
   }
 

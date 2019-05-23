@@ -10,6 +10,9 @@ import {NgxPermissionsModule} from 'ngx-permissions';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+/**
+ * imports de los modulos necesarios para la ejecución
+ */
 @NgModule({
   imports: [
     CommonModule,

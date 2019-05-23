@@ -11,8 +11,18 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./empleado-create.component.css']
 })
 export class EmpleadoCreateComponent implements OnInit {
-
+/**
+ * cariable con el id del empleado 
+ */
   id:number;
+
+  /**
+   * Constructor del servicio de empleado.
+   * @param empleadoService servicio del empleado 
+   * @param toastrService toastService
+   * @param router Router
+   * @param activated Activated
+   */
   constructor(
     private empleadoService: EmpleadoService,
     private toastrService: ToastrService,

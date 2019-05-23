@@ -13,14 +13,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EmpleadoEditComponent implements OnInit {
   
-  /**
-    * The component's constructor
-    * @param EmpleadoService The empleado's service
-    * @param toastrService The toastr to show messages to the user 
-    */
-
+  
+    /**
+     * atributo que almacena el id del empleado
+     */
     id:number;
+
+    /**
+     * atributo que almacena el id del admin
+     */
     idAdmi:number;
+
+    /**
+     * Metodo constructor del empleado
+     * @param EmpleadoService el servicio del empleado
+     * @param toastrService el toastr muestra el mensaje del usuario
+     * @param router touter del servicio
+     * @param activated activated
+     */
    constructor(
     private empleadoService: EmpleadoService,
     private toastrService: ToastrService,
@@ -38,35 +48,37 @@ export class EmpleadoEditComponent implements OnInit {
 
 
    /**
-    * The id of the empleado that the user wants to edit
-    * This is passed as a parameter by the parent component
+    * El id del empleado que el ususario va a modificar
+    * este es pasado como un parametro por el omponente padre
     */
    @Input() empleado_edit_id: number;
 
    /**
-   * The output which tells the parent component
-   * that the user no longer wants to create an empleado
+   * el output el cual es llamado por el componente padre
+   * el usuario no necesita crear el empleado
    */
    @Output() cancel = new EventEmitter();
 
    /**
-   * The output which tells the parent component
-   * that the user updated a new empleado
+   * el output el cual es llamado por el componente padre
+   * que el usuario actualiza un nuevo empleado
    */
    @Output() update = new EventEmitter();
 
    /**
-    * The empleado to edit 
+    * el empleado a editar
     */
   empleado: Empleado;
 
 
+  /**
+   * edicion del empleado
+   */
   showEdit:boolean;
 
    /**
-    * Retrieves the information of the empleado
+    * metodo que recupera la informacion del empleado
     */
-
    getEmpleado(): void {
     this.empleadoService.getEmpleado(this.id)
         .subscribe(empleado => {
@@ -76,7 +88,7 @@ export class EmpleadoEditComponent implements OnInit {
   }
   
    /**
-    * The function which initializes the component
+    * la funcion que inicializa el componente
     */  
 
   ngOnInit() {
@@ -86,7 +98,7 @@ export class EmpleadoEditComponent implements OnInit {
 
 
 /**
-    * Updates the editorial's information
+    * actializacion del empleado
     */
    editEmpleado(): void {
      this.empleadoService.updateEmpleados(this.empleado)
@@ -98,7 +110,7 @@ export class EmpleadoEditComponent implements OnInit {
 }
 
 /**    
-    * Informs the parent component that the user no longer wants to update the editorial
+    * informe del componente padre que el usuario no necesita actualizar en el empleado
     */
    cancelEdition(): void {
      this.router.navigate(['listarEmpleados',this.idAdmi]);
@@ -106,7 +118,10 @@ export class EmpleadoEditComponent implements OnInit {
 }
 
   
-
+/**
+ * Muestra/ oculta la informacion del empleado a editar.
+ * @param empleado_edit_id atributo que representa el numero id del empleado
+ */
 showHideEdit(empleado_edit_id: number): void {
   if (!this.showEdit || (this.showEdit && empleado_edit_id != this.empleado_edit_id)) {
       this.showEdit = true;
@@ -117,7 +132,7 @@ showHideEdit(empleado_edit_id: number): void {
   }
 }
    /**
-    * The function which is called every time the user chooses to edit a different editorial
+    * funcion con la cual es llamada todo el tiempo que el usuario escoge editar un empleado distinto.
     */
    ngOnChanges() {
     this.ngOnInit();

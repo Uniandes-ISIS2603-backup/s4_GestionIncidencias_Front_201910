@@ -12,6 +12,13 @@ export class MenuEmpleadoComponent implements OnInit {
    * Id del empleado que esta logeado
    */
   id:number;
+  
+  /**
+   * constructor del menu de empleado
+   * @param router reuter del menu empleado
+   * @param activated activated del menu empleado
+   * @param globals globals del menu empleado
+   */
   constructor(private router:Router,private activated:ActivatedRoute,
     private globals:Globals) {    
     this.activated.params.subscribe(  params =>{    
@@ -20,6 +27,9 @@ export class MenuEmpleadoComponent implements OnInit {
     });
    }
 
+   /**
+    * ngOnInit de lo que podamos necesitar mas adelante
+    */
   ngOnInit() {
   }
 

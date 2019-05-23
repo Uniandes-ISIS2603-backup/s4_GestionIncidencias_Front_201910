@@ -27,6 +27,9 @@ export class LoginComponent implements OnInit {
   tecnico: Tecnico;
   empleado: Empleado;
   
+  /**
+   * Crea la conexion para iniciar la sesion del usuario
+   */
   constructor(private router:Router, 
     private guard: ModulesGuard,
      private activated: ActivatedRoute, 
@@ -48,6 +51,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * OnLogin para los tipos de usuarios
+   */
   onLogin(): void {    
      if(this.tipoUsuario=="administradores"){
         this.tecnicoService.getTecnicoByUser(this.user.usuario).subscribe(tecnicos => {
@@ -99,6 +105,9 @@ export class LoginComponent implements OnInit {
   }
 
 
+  /**
+   * Vonver a la ventana anterior.
+   */
   goBack():void{
     this.router.navigate(['/home']);
   }
