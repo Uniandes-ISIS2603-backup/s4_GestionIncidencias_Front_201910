@@ -12,7 +12,7 @@ const tecnicos = '/tecnicos';
 
 
 /**
-* The service provider for everything related to tecnicos
+* Servicio que provee todo lo relacionado con los técnicos
 */
 
 export class TecnicoService {
