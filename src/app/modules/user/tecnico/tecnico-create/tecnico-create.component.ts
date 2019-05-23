@@ -10,12 +10,24 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './tecnico-create.component.html',
   styleUrls: ['./tecnico-create.component.css']
 })
-
+/**
+ * Componente encargado de la creación del técnico
+ * @author Valerie Parra Cortés
+ */
 export class TecnicoCreateComponent implements OnInit {
 
+  /**
+   * Indica el id del administrador que llamo al componente
+   */
   id:number;
 
-  
+  /**
+   * Constructor del componente, se encarga de injectar las cosas necesarias
+   * @param tecnicoService El servicio del técnico que maneja las peticiones HTTP 
+   * @param toastrService  El servicio que permite enviar los msn de error, información y éxito
+   * @param router Permite navegar entre componentes
+   * @param activated Permite obtener los parametros de la ruta
+   */
   constructor(
     private tecnicoService: TecnicoService,
     private toastrService: ToastrService,
@@ -26,50 +38,35 @@ export class TecnicoCreateComponent implements OnInit {
         this.id=params['id'] ;
         console.log(this.id);
       });
-
-
     }
 
   /**
-   * The new tecnico
+   * El nuevo técnico
    */
     tecnico:Tecnico;
-
-    /**
-    * The output which tells the parent component
-    * that the user no longer wants to create a tecnico
-    */
-   @Output() cancel = new EventEmitter();
-
+    
    /**
-   * The output which tells the parent component
-   * that the user created a new tecnico
-   */
-   @Output() create = new EventEmitter();
-
-
-   /**
-    * Creates a new tecnico
+    * Crea un nuevo técnico
     */
      createTecnico(): Tecnico {
       this.tecnicoService.createTecnico(this.tecnico)
           .subscribe((tecnico) => {
               this.tecnico = tecnico;
-              this.create.emit();    
+              
               this.router.navigate(['/listarTecnicos',this.id]);                
           });
       return this.tecnico;    
     }
 
     /**
-      * Informs the parent component that the user no longer wants to create an tecnico
+      * Cancela la navegación y devuelve al componente anterior 
       */
      cancelCreation(): void {
       this.router.navigate(['/listarTecnicos',this.id]);
     }
   
      /**
-      * This function will initialize the component
+      * Esta función inicializa el componten
       */
 
     ngOnInit() {

@@ -16,37 +16,37 @@
 
 <div class="row justify-content-md-center">
     <div class="col-8">
-        <table *ngIf="shows" class="table">
-            <thead>
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Cédula</th>
-                    <th scope="col">Usuario</th>
-                    <th scope="col">Opciones</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+        <table id="myTable" class="table">
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let tecnico of tecnicos">
-                    <td>{{tecnico.id}}</td>
-                    <td>{{tecnico.name}}</td>
-                    <td> {{tecnico.cedula}} </td>
-                    <td>{{tecnico.usuario}}</td>
-                     <td>
-                        <button class="btn btn-danger" (click)="deleteTecnico(tecnico.id)"><span class="fa fa-trash"></span></button>
-                    </td>
+            <tr>
+                <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(1)')">id</th>
+                <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(2)')">Nombre</th>
+                <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(3)')">Cédula</th>
+                <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(4)')">Usuario</th>
+                <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(5)')">Opciones</th>
+                <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(6)')"></th>
+                <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child(7)')"></th>
 
-                    <td>
-                        <button class="btn btn-primary" (click)="showHideEdit(tecnico.id)"><span class="fa fa-pencil"></span></button>
-                    </td>
-                    <td>
-                        <button class="btn btn-primary" (click)="listarIncidencias(tecnico.id)"><span class="fa fa-align-justify"></span></button>
-                    </td>
-                </tr>
-            </tbody>
+            </tr>
+
+
+            <tr class="item" *ngFor="let tecnico of tecnicos">
+                <td>{{tecnico.id}}</td>
+                <td>{{tecnico.name}}</td>
+                <td> {{tecnico.cedula}} </td>
+                <td>{{tecnico.usuario}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteTecnico(tecnico.id)"><span class="fa fa-trash"></span></button>
+                </td>
+
+                <td>
+                    <button class="btn btn-primary" (click)="showHideEdit(tecnico.id)"><span class="fa fa-pencil"></span></button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="listarIncidencias(tecnico.id)"><span class="fa fa-align-justify"></span></button>
+                </td>
+            </tr>
+
         </table>
     </div>
 </div>
