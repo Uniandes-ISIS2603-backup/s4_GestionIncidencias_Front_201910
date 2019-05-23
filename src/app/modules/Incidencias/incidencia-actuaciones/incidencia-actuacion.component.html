@@ -13,15 +13,6 @@
         </nav>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="row justify-content-md-center">
     <div class="col-8">
         <table *ngIf="shows" class="table">
@@ -42,9 +33,6 @@
                     <td>{{actuacion.fecha}}</td>
                     <td> {{actuacion.descripcion}} </td>
                     <td>{{empleado.tipo}}</td>
-                    <td>
-                        <button class="btn btn-danger" (click)="deleteEmpleado(actuacion.id)"><span class="fa fa-trash"></span></button>
-                    </td>
                 </tr>
             </tbody>
         </table>

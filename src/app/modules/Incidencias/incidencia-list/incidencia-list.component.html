@@ -16,11 +16,16 @@
                               </tr>
                           </thead>
                           <tbody>
-                              <tr *ngFor="let c of actuaciones">
+                              <tr *ngFor="let c of incidencias">
                                   <td>{{c.id}} </td>
-                                  <td>{{c.name}}</td>
-                                  <td> {{c.cedula}} </td>
-                                  <td>{{c.usuario}}</td>
+                                  <td>{{c.fecha}}</td>
+                                  <td> {{c.prioridad}} </td>
+                                  <td>{{c.descripcion}}</td>
+                                  <td>{{c.estado}}</td>
+                                  <td>{{c.tecnico}}</td>
+                                  <td>{{c.empleado}}</td>
+                                  <td>{{c.calificacion}}</td>
+
                               </tr>
                           </tbody>
                       </table>
@@ -33,7 +38,6 @@
           <br>
           <br>
           <div class="container">
-          <app-incidencia-create></app-incidencia-create>   
-          <app-incidencia-edit></app-incidencia-edit>   
+       
           </div>
             

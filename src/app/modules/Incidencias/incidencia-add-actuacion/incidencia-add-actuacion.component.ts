@@ -14,9 +14,7 @@ import { Incidencia } from '../Incidencia';
 export class IncidenciaAddReviewComponent implements OnInit, OnChanges {
 
    /**
-    * 
-    * @param incidenciaService 
-    * @param toastrService 
+    *  Para regresar a la pagina anterior
     */
     id:number;
 
@@ -32,7 +30,7 @@ export class IncidenciaAddReviewComponent implements OnInit, OnChanges {
     }
 
     /**
-    * The book's id
+    * The Incidencia id
     */
     @Input() incidencia: Incidencia;
 
@@ -54,25 +52,21 @@ export class IncidenciaAddReviewComponent implements OnInit, OnChanges {
     * This function posts a review
     * @param reviewForm The form of the review
     */
-    postActuacion(reviewForm: NgForm): ActuacionR {
+    postActuacion(): ActuacionR {
         this.actuacion.incidencia = this.incidencia;
         this.incidenciaService.createActuacion(this.incidencia.id,this.actuacion)
             .subscribe(() => {
-                reviewForm.resetForm();
+                
                 this.updateReviews.emit();
                 this.toastrService.success("The actuacion was successfully created", 'Actuacion added');
-            }, err => {
-                this.toastrService.error(err, 'Error');
-                this.router.navigate(['/listarEmpleados',this.id]);   
+                this.router.navigate(['/listarEmpleados',this.id]);    
             });
+
         return this.actuacion;
     }
-   
-   
-   
-   
 
 
+   
     /**
     * The function which initializes the component.
     */
@@ -94,6 +88,6 @@ export class IncidenciaAddReviewComponent implements OnInit, OnChanges {
     * Informs the parent component that the user no longer wants to create an tecnico
     */
    cancelCreation(): void {
-    this.router.navigate(['/listarTecnicos',this.id]);
+    this.router.navigate(['/listarActuaciones',this.id]);
   }
 }

@@ -5,6 +5,8 @@ import { Tecnico } from '../../user/tecnico/tecnico';
 import { TecnicoService } from '../../user/tecnico/tecnico.service';
 import { Empleado } from '../../user/empleado/empleado';
 import { EmpleadoService } from '../../user/empleado/empleado.service';
+import { IncidenciaService } from '../incidencia.service';
+
 
 @Component({
   selector: 'app-incidencias-menu-empleado',
@@ -18,7 +20,9 @@ export class IncidenciasMenuEmpleadoComponent implements OnInit {
 
   empleado:Empleado;
   incidencias:Incidencia[];
+
   constructor(private empleadoService:EmpleadoService,
+    private incidenciaService : IncidenciaService,
     private router:Router,
     private activated:ActivatedRoute, 
     ) { 
@@ -41,7 +45,13 @@ export class IncidenciasMenuEmpleadoComponent implements OnInit {
       goBack():void{
         this.router.navigate(['/menuEmpleado',this.id]);
       }
-  
+
+      
+   crearIncidencia():void{
+    this.router.navigate(['/crearIncidencia',this.id]); 
+   }
+
+   
 
   ngOnInit() {
   }

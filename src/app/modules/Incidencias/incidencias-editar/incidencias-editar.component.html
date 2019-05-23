@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div class="row">
+        <br><br><br>
+    </div>
+    <div class="row justify-content-md-center">
+
+        <div class="col-6">
+            <br>
+            <h2 class="text-center">Editar una Incidencia</h2>
+            <br>
+            <form name="empleado" (ngSubmit)="f.form.valid && editIncidencia()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="fechaIncidencia"><b>Fecha</b></label>
+                    <input type="date" name="fechaIncidencia" class="form-control" id="fechaIncidencia" [(ngModel)]="incidencia.fecha" #fechaIncidencia="ngModel"  required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="incidenciaPrioridad"><b>Prioridad</b></label>
+                    <input type="text" name="incidenciaPrioridad" class="form-control" id="incidenciaPrioridad" [(ngModel)]="incidencia.prioridad" #incidenciaPrioridad="ngModel" required>
+                </div>
+                <div class="form-group">
+                    <label for="incidenciaDescripcion"><b>Descripcion</b></label>z
+                    <input type="text" name="incidenciaDescripcion" class="form-control" id="incidenciaDescripcion" [(ngModel)]="incidencia.descripcion" #incidenciaDescripcion="ngModel" required>
+                </div>
+                <div class="form-group">
+                    <label for="incidenciaEstado"><b>Estado</b></label>
+                    <input type="text" name="incidenciaEstado" class="form-control" id="incidenciaEstado" [(ngModel)]="incidencia.estado" #incidenciaEstado="ngModel" required>
+                </div>
+            </form>
+
+            <div class="form-group">
+                <label for="incidenciaTecnico"><b>Tecnico</b></label>
+                <select class="custom-select" name="incidenciaTecnico" id="incidenciaTecnico" [(ngModel)]="incidencia.tecnico.id"
+                    #incidenciaTecnico="ngModel" [ngClass]="{ 'is-invalid': f.submitted && incidenciaTecnico.invalid }"
+                    required>
+                    <option [value]="tecnico.id" *ngFor="let tecnico of tecnicos">{{tecnico.name}}</option>
+                </select>
+                <div class="invalid-feedback">
+                    <div>The incidencias's tecnico is missing</div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="incidenciaEmpleado"><b>Empleado</b></label>
+                <select class="custom-select" name="incidenciaEmpleado" id="incidenciaEmpleado" [(ngModel)]="incidencia.empleado.id"
+                    #incidenciaTecnico="ngModel" [ngClass]="{ 'is-invalid': f.submitted && incidenciaEmpleado.invalid }"
+                    required>
+                    <option [value]="empleado.id" *ngFor="let empleado of empleados">{{empleado.name}}</option>
+                </select>
+                <div class="invalid-feedback">
+                    <div>The incidencias's empleado is missing</div>
+                </div>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="incidenciaEquipo"><b>Equipo Computo</b></label>
+                <select class="custom-select" name="incidenciaEquipo" id="incidenciaEquipo" [(ngModel)]="incidencia.equipoComputo.id"
+                    #incidenciaTecnico="ngModel" [ngClass]="{ 'is-invalid': f.submitted && incidenciaEquipo.invalid }"
+                    required>
+                    <option [value]="equipoComputo.id" *ngFor="let equipo of equipos">{{equipo.id}}</option>
+                </select>
+                <div class="invalid-feedback">
+                    <div>The incidencias's equipo computo is missing</div>
+                </div>
+            </div>
+
+
+            <div class=" row form-inline justify-content-center align-self-center ">
+                <button type="submit " class="btn btn-primary " (click)="editEmpleado() ">Edit</button>
+                <div class="divider "></div>
+                <button type="button " class="btn btn-danger " (click)="cancelEdition() ">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

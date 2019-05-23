@@ -3,6 +3,7 @@ import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Tecnico } from './tecnico';
 import {Observable} from 'rxjs';
+
 const API_URL = environment.apiURL;
 const tecnicos = '/tecnicos';
 @Injectable({
