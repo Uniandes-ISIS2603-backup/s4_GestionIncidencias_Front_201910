@@ -77,48 +77,39 @@ export class IncidenciaListComponent implements OnInit {
     * Asks the service to update the list of tecnicos
     */
      getIncidencias(): void {
+       console.log('Va a ver incidencias');
       this.incidenciaService.getIncidencias()
           .subscribe(incidencias => {
               this.incidencias = incidencias;
           });
     }
 
-    updateTecnico(): void {
+    updateIncidencia(): void {
       this.showEdit = false;
       location.reload();
   }
 
-  goBack():void{
+  goBack():void {
     this.router.navigate(['/menuAdministrador',this.id]);
   }
 
-
-
-  //////////////////////////////////////////Falta terminar
-  listarIncidencias(id:number):void{
-    this.router.navigate(['/listarIncidenciasTecnico',id,this.id]);
-  }
 
 
       /**
     * Shows or hides the create component
     */
    showHideEdit(tecnico_id: number): void {
-    this.router.navigate(['\editarTecnico',tecnico_id,this.id]);
+    this.router.navigate(['\editarIncidencia',tecnico_id,this.id]);
 }
 
 
-//....................Mirar el  path............................
-  crearIncidencia():void{
-    this.router.navigate(['/crearIncidencia',this.id]);
-  }
-
-  deleteTecnico(id:number):void{
+  deleteIncidencia(id:number):void{
     this.incidenciaService.deleteIncidencia(id).subscribe(del=>{ this.getIncidencias()
     this.toastr.success('Se eliminó la incidencia con éxito','Eliminar incidencia')
     });              
   }
 
+  
    /**
       * This will initialize the component by retrieving the list of incidencias from the service
       * This method will be called when the component is created

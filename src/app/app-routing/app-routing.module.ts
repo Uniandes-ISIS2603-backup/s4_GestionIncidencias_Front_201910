@@ -45,7 +45,7 @@ const routes: Routes = [
      {path:'listarEmpleados/:id', component:EmpleadoListComponent, canActivate:[ModulesGuard]},
      {path:'listarTecnicos/:id', component:TecnicoListComponent, canActivate:[ModulesGuard]},
      {path:'listarTecnicos', component:TecnicoListComponent, canActivate:[ModulesGuard]},
-     {path:'listarIncidencias', component:  IncidenciaListComponent, canActivate:[ModulesGuard]},
+     {path:'listarIncidencias/:id', component:  IncidenciaListComponent, canActivate:[ModulesGuard]},
      {path:'listarEquipos/:id', component:equipoComputoListComponent, canActivate:[ModulesGuard]},
      {path:'crearEmpleado/:id', component:EmpleadoCreateComponent, canActivate:[ModulesGuard]},
      {path:'crearIncidencia/:id', component:IncidenciasComponent},
@@ -54,6 +54,8 @@ const routes: Routes = [
      {path:'crearEquipo/:id', component:equipoComputoCreateComponent},
     
      {path:'crearIncidencia/:id', component:IncidenciasComponent, canActivate:[GuardEmpleadoGuard]},
+
+     {path:'ListarIncidencias/:id', component:IncidenciaListComponent},
 
      {path:'login/:tipo', component:LoginComponent},
      {path:'editarEmpleado/:id/:idAmi', component:EmpleadoEditComponent},
