@@ -4,12 +4,18 @@ import {ToastrService} from 'ngx-toastr';
 import { calificacion } from '../calificacion';
 import { calificacionService} from '../calificacion.service'
 
+/**
+ * Componente que representa la creacion de una calificacion
+ */
 @Component({
   selector: 'app-calificacion-create',
   templateUrl: './calificacion-create.component.html',
   styleUrls: ['./calificacion-create.component.css']
 })
 
+/**
+ * Metodo constructor
+ */
 export class calificacionCreateComponent implements OnInit {
   constructor(
     private editorialService: calificacionService,
@@ -17,7 +23,7 @@ export class calificacionCreateComponent implements OnInit {
     ) {}
 
   /**
-   * The new calificacion
+   * La calificacion nueva
    */
     calificacion:calificacion;
 
@@ -35,7 +41,7 @@ export class calificacionCreateComponent implements OnInit {
 
 
    /**
-    * Creates a new calificacion
+    * Crea una nueva calificacion
     */
      createcalificacion(): calificacion {
       this.editorialService.createcalificacion(this.calificacion)
@@ -47,16 +53,16 @@ export class calificacionCreateComponent implements OnInit {
     }
 
     /**
-      * Informs the parent component that the user no longer wants to create an editorial
-      */
+    * Le indica al componente padre que el usuario
+    * no quiere crear una calificacion
+    */
      cancelCreation(): void {
       this.cancel.emit();
     }
   
-     /**
-      * This function will initialize the component
+    /**
+      * Esta funcion inicializa el componente
       */
-
     ngOnInit() {
       this.calificacion= new calificacion();
     }

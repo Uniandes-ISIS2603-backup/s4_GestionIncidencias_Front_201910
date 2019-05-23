@@ -6,7 +6,9 @@ import { ToastrService} from 'ngx-toastr';
 import { calificacion } from '../calificacion';
 
 
-
+/**
+ * Componente que representa una edicion de una calificacion
+ */
 @Component({
   selector: 'app-calificacion-edit',
   templateUrl: './calificacion-edit.component.html',
@@ -14,10 +16,10 @@ import { calificacion } from '../calificacion';
 })
 export class calificacionEditComponent implements OnInit {
 
-  /**
-    * The component's constructor
-    * @param calificacionService The editorial's service
-    * @param toastrService The toastr to show messages to the user 
+ /**
+    * El constructor del componente
+    * @param calificacionService El servicio de la califdicacion
+    * @param toastrService El 'toastr' que le muestra mensajes al usuario 
     */
      constructor(
       private calificacionService: calificacionService,
@@ -25,50 +27,48 @@ export class calificacionEditComponent implements OnInit {
     ) {}
   
     /**
-     * The calificacion to create
+     * La calificacion a crear
      */
-  
     calificacion: calificacion;
 
-    /**
-    * The id of the calificacion that the user wants to edit
-    * This is passed as a parameter by the parent component
+   /**
+    * El id de la calificacion la cual el usuario desea modificar
+    * Esto es enviado como un parametro por el padre
     */
    @Input() calificacion_id: number;
 
    /**
-   * The output which tells the parent component
-   * that the user no longer wants to create an calificacion
+   * Le indica al componente padre que el usuario
+   * no quiere crear una calificacion
    */
    @Output() cancel = new EventEmitter();
 
    /**
-   * The output which tells the parent component
-   * that the user updated a new calificacion
+   * Le indica al componente padre que el usuario
+   * desea actualizar una calificacion
    */
    @Output() update = new EventEmitter();
   
     /**
-    * Retrieves the information of the calificacion
+    * Recupera la informacion de la calificacion
     */
    getcalificacion(): void {
     this.calificacionService.getcalificacion(this.calificacion_id)
         .subscribe(calificacion => {
             this.calificacion = calificacion;
         });
-}
+    }
 
     /**
-    * The function which initializes the component
+    * Inicializa al componente
     */
-
     ngOnInit() {
       this.calificacion= new calificacion();
       this.getcalificacion();
     }
 
-      /**
-    * The function which is called every time the user chooses to edit a different calificacion
+    /**
+    * Se llama cuando el usuario quiere editar otra calificacion
     */
    ngOnChanges() {
     this.ngOnInit();

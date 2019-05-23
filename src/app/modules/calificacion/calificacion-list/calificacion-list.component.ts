@@ -5,15 +5,18 @@ import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 import { calificacion } from '../calificacion';
 
+/**
+ * Componente que lista las calificaciones
+ */
 @Component({
   selector: 'app-calificacion-list',
   templateUrl: './calificacion-list.component.html',
   styleUrls: ['./calificacion-list.component.css']
 })
 export class calificacionListComponent implements OnInit {
-   /**
-    * Constructor for the component
-    * @param calificacionService The author's services provider
+  /**
+    * Constructor del componente
+    * @param calificacionService El servicio proveedor de la calificacion
     */
    constructor(
     private calificacionService: calificacionService,
@@ -22,10 +25,9 @@ export class calificacionListComponent implements OnInit {
     private toastrService: ToastrService) {}
 
   /**
-    * List of calificacions
-    */
-
-   calificacions:calificacion[];
+  * Lista de calificaciones
+  */
+  calificacions:calificacion[];
 
   /**
     * Shows or hides the create component
@@ -43,14 +45,13 @@ export class calificacionListComponent implements OnInit {
    calificacion_edit_id: number;
 
 
-    /**
-     * Shoy the list of calificacions
-     */
-
+  /**
+    * Muestra u oculta el componente creado
+    */
     shows: boolean=false;
 
-    /**
-    * Asks the service to update the list of calificacions
+   /**
+    * El id de la calificacion a ser editada
     */
      getcalificacions(): void {
       this.calificacionService.getcalificacions()
@@ -64,8 +65,8 @@ export class calificacionListComponent implements OnInit {
   }
 
    /**
-      * This will initialize the component by retrieving the list of empleados from the service
-      * This method will be called when the component is created
+      * Inicializa el componente recuperando la lista de empleados del servicio
+      * Este metodo se llama cuando se crea el componente
       */
        ngOnInit() {
         this.showCreate = false;
