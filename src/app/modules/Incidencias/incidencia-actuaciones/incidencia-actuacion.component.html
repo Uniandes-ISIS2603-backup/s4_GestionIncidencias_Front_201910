@@ -1,0 +1,52 @@
+<div class="row justify-content-md-center">
+    <div class="col-8">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="search">
+                <button type="button" class="btn btn-primary">Buscar</button>
+                <div class="divider"></div>
+                <button class="btn btn-outline-success my-2 my-sm-0" (click)="goBack()">Regresar  </button>
+            </form>
+
+            <button class="btn btn-outline-success my-2 my-sm-0" (click)="crearEmpleado()">Crear  </button>
+
+        </nav>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row justify-content-md-center">
+    <div class="col-8">
+        <table *ngIf="shows" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let actuacion of incidenciaActuaciones">
+                    <td>{{actuacion.id}}</td>
+                    <td>{{actuacion.fecha}}</td>
+                    <td> {{actuacion.descripcion}} </td>
+                    <td>{{empleado.tipo}}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteEmpleado(actuacion.id)"><span class="fa fa-trash"></span></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

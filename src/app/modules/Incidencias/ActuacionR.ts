@@ -1,4 +1,11 @@
+import { Incidencia } from "./Incidencia";
 export class ActuacionR {
+  
+    incidencia : Incidencia;
+    /**
+     * Id de la actuacion
+     */
+    id:number
     /**
      * Atributo  que representa la fecha de una incidencia
      */
@@ -11,4 +18,8 @@ export class ActuacionR {
      * Atributo  que representa la desripcion de una actuacion
      */
     tipo: string;
+    /**
+    * 
+    */
+ 
 }

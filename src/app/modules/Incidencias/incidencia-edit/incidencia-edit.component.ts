@@ -46,7 +46,7 @@ export class IncidenciaEditComponent implements OnInit {
     * Le hace retriev a la informacion de la incidencia
     */
     getIncidencia(): void {
-        this.IncidenciaService.getIncidenciaDetail(this.incidencia_id)
+        this.IncidenciaService.getIncIdenciaDetail(this.incidencia_id)
             .subscribe(inc => {
                 this.incidencia = inc;
             });
@@ -56,7 +56,7 @@ export class IncidenciaEditComponent implements OnInit {
     * Updates the editorial's information
     */
     editIncidencia(): void {
-        this.IncidenciaService.updateBook(this.incidencia)
+        this.IncidenciaService.updateIncidencia(this.incidencia)
             .subscribe(() => {
                 this.update.emit();
                 this.toastrService.success("La informacion de la incidencia ha sido actualizada", "Incidencia edition");

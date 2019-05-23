@@ -14,6 +14,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class TecnicoCreateComponent implements OnInit {
 
   id:number;
+
+  
   constructor(
     private tecnicoService: TecnicoService,
     private toastrService: ToastrService,

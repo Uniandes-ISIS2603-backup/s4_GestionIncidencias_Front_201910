@@ -42,19 +42,19 @@ export class IncidenciaService {
 createIncidencia(incidencia): Observable<IncidenciaDetail> {
     return this.http.post<IncidenciaDetail>(API_URL + incidencias, incidencia);
 }
-getIncidenciaDetail(IncidenciasId): Observable<IncidenciaDetail> {
+getIncIdenciaDetail(IncidenciasId): Observable<IncidenciaDetail> {
   return this.http.get<IncidenciaDetail>(API_URL + incidencias + '/' + IncidenciasId);
 }
 
-createReview(bookId, actuacion : ActuacionR): Observable<ActuacionR> {
+createActuacion(bookId, actuacion : ActuacionR): Observable<ActuacionR> {
   return this.http.post<ActuacionR>(API_URL + incidencias + '/' + bookId + actuaciones, actuacion);
 }
 
-updateBook(incidencia : Incidencia): Observable<IncidenciaDetail> {
+updateIncidencia(incidencia : Incidencia): Observable<IncidenciaDetail> {
   return this.http.put<IncidenciaDetail>(API_URL + incidencias + '/' + incidencia.id, incidencia);
 }
 
-deleteBook(IncidenciasId): Observable<IncidenciaDetail> {
+deleteIncidencia(IncidenciasId): Observable<IncidenciaDetail> {
   return this.http.delete<IncidenciaDetail>(API_URL + incidencias + '/' + IncidenciasId);
 }
 

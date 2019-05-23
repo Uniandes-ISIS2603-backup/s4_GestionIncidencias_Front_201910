@@ -32,7 +32,7 @@ export class IncidenciaDetailComponent implements OnInit {
   */
   getActuacionDetail(): void {
 
-    this.actuacionService.getIncidenciaDetail(this.incidecnia_id)
+    this.actuacionService.getIncIdenciaDetail(this.incidecnia_id)
       .subscribe(o => {
         this.incidenciaDetail = o
       });
