@@ -6,13 +6,14 @@ import { TecnicoService } from '../../user/tecnico/tecnico.service';
 
 
 @Component({
-  selector: 'app-incidencias-tecnico',
-  templateUrl: './incidencias-tecnico.component.html',
-  styleUrls: ['./incidencias-tecnico.component.css']
+  selector: 'app-incidencias-menu-tecnico',
+  templateUrl: './incidencias-menu-tecnico.component.html',
+  styleUrls: ['./incidencias-menu-tecnico.component.css']
 })
-export class IncidenciasTecnicoComponent implements OnInit {
+export class IncidenciasMenuTecnicoComponent implements OnInit {
+
   id:number;
-  idAdmi:number;
+  
 
   tecnico:Tecnico;
   incidencias:Incidencia[];
@@ -22,8 +23,7 @@ export class IncidenciasTecnicoComponent implements OnInit {
     ) { 
       this.activated.params.subscribe(  params =>{    
         this.id=params['id'] ;
-        console.log('Id del empleado al cual se le verán las incidencas'+this.id);
-        this.idAdmi=params['idAdmi'];        
+        console.log('Id del empleado al cual se le verán las incidencas'+this.id);           
         this.getTecnico();                   
       });
     }
@@ -38,7 +38,7 @@ export class IncidenciasTecnicoComponent implements OnInit {
 
 
       goBack():void{
-        this.router.navigate(['/menuTecnico',this.idAdmi]);
+        this.router.navigate(['/menuTecnico',this.id]);
       }
   
 

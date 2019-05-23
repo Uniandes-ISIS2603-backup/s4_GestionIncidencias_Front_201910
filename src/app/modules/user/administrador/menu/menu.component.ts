@@ -17,10 +17,9 @@ export class MenuComponent implements OnInit {
     private tecnicoService: TecnicoService) {
     this.activated.params.subscribe(  params =>{    
       this.id=params['id'] ;
-      this.getTecnico;    
+      this.getTecnico();    
     });
    }
-
 
    getTecnico(): void {
     this.tecnicoService.getTecnico(this.id)
@@ -43,6 +42,11 @@ export class MenuComponent implements OnInit {
   
 
   ngOnInit() {
+    this.getTecnico();
   }
 
+  verPerfil():void{
+    console.log('Va a mostrar detalle');
+    this.router.navigate(['/detalleTecnico',this.id]);    
+  }
 }

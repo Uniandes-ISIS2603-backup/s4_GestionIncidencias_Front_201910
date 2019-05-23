@@ -94,10 +94,8 @@ export class EmpleadoListComponent implements OnInit {
     deleteEmpleado(id:number):void{
       this.empleadoService.deleteEmpleado(id).subscribe(del=>{ this.getEmpleados()
         this.toastr.success('El empleado se elimino','Borrar empleado');
-
       }
-      );      
-      
+      );            
     }
 
 

@@ -1,10 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {NgxPermissionsGuard} from 'ngx-permissions';
 import {ActuacionListComponent} from '../modules/actuacion/actuacion-list/actuacion-list.component'
-import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
-import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { HomeComponent } from '../home/home/home.component';
 import { EmpleadoListComponent } from '../modules/user/empleado/empleado-list/empleado-list.component'
 import { TecnicoListComponent } from '../modules/user/tecnico/tecnico-list/tecnico-list.component';
@@ -13,7 +10,7 @@ import { calificacionListComponent } from '../modules/calificacion/calificacion-
 import { EmpleadoEditComponent } from '../modules/user/empleado/empleado-edit/empleado-edit.component';
 import { AdministradorListComponent } from '../modules/user/administrador/administrador-list/administrador-list.component'
 import { PrioridadListComponent } from '../modules/prioridad/prioridad-list/prioridad-list.component';
-import {IncidenciaListComponent} from '../modules/Incidencias/incidencia-list/incidencia-list.component'
+import { IncidenciaListComponent  } from '../modules/Incidencias/incidencia-list/incidencia-list.component'
 import { MenuComponent } from '../modules/user/administrador/menu/menu.component'
 
 //Service
@@ -36,8 +33,9 @@ import { GuardTecnicoGuard } from '../guard-tecnico.guard';
 import { equipoComputoCreateComponent } from '../modules/equipoComputo/equipoComputo-create/equipoComputo-create.component';
 import { IncidenciasEmpleadoComponent } from '../modules/Incidencias/incidencias-empleado/incidencias-empleado.component';
 import { IncidenciasTecnicoComponent } from '../modules/Incidencias/incidencias-tecnico/incidencias-tecnico.component';
-import { equipoComputoEditComponent } from '../modules/equipoComputo/equipoComputo-edit/equipoComputo-edit.component';
-    
+import { IncidenciasMenuTecnicoComponent } from '../modules/Incidencias/incidencias-menu-tecnico/incidencias-menu-tecnico.component';
+import { IncidenciasMenuEmpleadoComponent } from '../modules/Incidencias/incidencias-menu-empleado/incidencias-menu-empleado.component';
+import { equipoComputoEditComponent } from '../modules/equipoComputo/equipoComputo-edit/equipoComputo-edit.component';    
 
 const routes: Routes = [
      {path:'menuAdministrador/:id',component: MenuComponent, canActivate:[ModulesGuard] },
@@ -57,8 +55,11 @@ const routes: Routes = [
      {path:'menuTecnico/:id', component:TecnicoMenuComponent,canActivate:[GuardTecnicoGuard]},
      {path:'empleadoDetalle/:id',component: EmpleadoDetailComponent,canActivate:[GuardEmpleadoGuard]},
      {path:'detalleTecnico/:id',component: TecnicoDetailComponent,canActivate:[GuardTecnicoGuard]},
+     {path:'detalleAdmin/:id',component: TecnicoDetailComponent,canActivate:[GuardTecnicoGuard]},
      {path:'listarIncidenciaEmpleado/:id/:idAdmi', component: IncidenciasEmpleadoComponent,canActivate:[ModulesGuard]},
      {path:'listarIncidenciasTecnico/:id/:idAdmi', component:IncidenciasTecnicoComponent, canActivate:[ModulesGuard]},     
+     {path:'listarIncidenciasMenuTecnico/:id', component:IncidenciasMenuTecnicoComponent,canActivate:[GuardTecnicoGuard]},
+     {path:'listarIncidenciasMenuEmpleado/:id', component:IncidenciasMenuEmpleadoComponent,canActivate:[GuardEmpleadoGuard]},
      
     {
         path: 'home',
